@@ -1,0 +1,25 @@
+{
+    "left": {
+        "position": {
+            "x": 112,
+            "y": 2120
+        },
+        "size": {
+            "x": 3464,
+            "y": 3177
+        }
+    },
+    "right": {
+        "position": {
+            "x": 112,
+            "y": 2120
+        },
+        "size": {
+            "x": 3464,
+            "y": 3177
+        }
+    },
+    "file": "page683.jxl",
+    "type": "anaglyph",
+    "preprocess": "white_balance"
+}
