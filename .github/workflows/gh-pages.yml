@@ -1,0 +1,56 @@
+name: Publish on GitHub pages
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron:  '30 23 1 * *'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3.6.0
+        with:
+          node-version-file: '.nvmrc'
+
+      - name: Set up Python
+        uses: actions/setup-python@v4.5.0
+        with:
+          python-version: '3.10'
+
+      - name: Install required dependencies
+        run: |
+          ./scripts/github-setup.sh
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2.6.0
+        with:
+          hugo-version: '0.118.2'
+          extended: true
+
+      - name: Create IIIF derivates
+        run: docker run -e CHOWN_UID=${UID} -v ${PWD}:${PWD} ghcr.io/cmahnke/iiif-action:latest-jxl-uploader sh -c "cd ${PWD} && ./scripts/iiif.sh"
+
+      - name: Generate Files
+        run: |
+          ./scripts/setup.sh
+
+      - name: Build Hugo site
+        run: hugo --printI18nWarnings
+
+      - name: Puppeteer
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+
+      - name: Deploy site
+        uses: peaceiris/actions-gh-pages@v3.9.2
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
+          force_orphan: true

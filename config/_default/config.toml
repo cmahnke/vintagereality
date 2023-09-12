@@ -1,0 +1,9 @@
+[params]
+    author = "Christian Mahnke"
+    keywords = ""
+    description = ""
+    copyrightYears = "MMXXII - MMXXIII"
+    cc = false
+    stylesheets = []
+    iiifCanvasHeight = 400
+    iiifCanvasWidth = 300
