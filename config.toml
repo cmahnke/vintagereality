@@ -1,3 +1,12 @@
-baseURL = 'http://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = "https://vintagereality.projektemacher.org/"
+languageCode = "de"
+title = 'Vintage Reality'
+languagecode = "de"
+defaultcontentlanguage = "de"
+publishDir = "docs"
+canonifyurls = true
+disablePathToLower = true
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+theme = ["projektemacher-base"]
+paginate = 5
