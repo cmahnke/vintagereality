@@ -10,3 +10,21 @@ disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 paginate = 5
+
+[mediaTypes]
+  [mediaTypes."application/geo+json"]
+    suffixes = ["geojson", "gjson"]
+  [mediaTypes."application/ld+json"]
+    suffixes = ["json"]
+# See https://www.loc.gov/preservation/digital/formats/fdd/fdd000538.shtml
+  [mediaTypes."image/jxl"]
+    suffixes = ["jxl"]
+
+[outputFormats]
+
+  [outputFormats.geojson]
+    mediaType = "application/geo+json"
+    isPlainText = true
+    isHTML = false
+    baseName = "map"
+    notAlternative = true
