@@ -1,0 +1,13 @@
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
+  <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
+  <div class="meta">
+{{ if not .Date.IsZero }}
+    <span class="key">{{ i18n "publishedOn" }}</span>
+    <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{- partial "date.html" . -}}</time></span>
+{{ end }}
+  </div>
+  <section class="summary">
+    {{ .Summary }}
+    {{ if .Truncated }} <a href="{{ .RelPermalink }}">{{ i18n "readmore" }}</a>{{ end }}
+  </section>
+</article>

@@ -7,3 +7,5 @@
     stylesheets = []
     iiifCanvasHeight = 400
     iiifCanvasWidth = 300
+    headerImage = "images/Logo.svg"
+    disableScale = true

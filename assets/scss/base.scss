@@ -1,5 +1,60 @@
+@use 'sass:color';
+
 /* Colors */
 
 $cyan: rgb(0,255,255);
 $red: rgb(255,0,0);
 $magenta: rgb(255,0,255);
+
+/*
+* {
+  box-sizing: border-box;
+}
+*/
+
+html,body {
+  margin: 0;
+  height:100%;
+  background-color: black;
+  background: linear-gradient(70deg, color.adjust($cyan, $lightness: -40%) 0%, black 50%, color.adjust($magenta, $lightness: -40%) 100%) fixed;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+#page {
+  width: 100%;
+
+  #head {
+    margin-top: .5em;
+
+    .menu {
+
+    }
+
+    .header-logo {
+
+      max-width: 40%;
+    }
+
+  }
+
+  #main {
+    width: 80%;
+    margin: auto;
+  }
+}

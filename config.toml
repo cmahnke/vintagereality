@@ -11,6 +11,31 @@ ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 paginate = 5
 
+[languages]
+  [languages.de]
+    languagename = "Deutsch"
+
+    [languages.de.params]
+
+    [languages.de.menu]
+
+      [[languages.de.menu.main]]
+        name = "Geplante Blogs"
+        URL = "/future"
+        weight = 1
+
+      [[languages.de.menu.main]]
+        name = "Über"
+        weight = 5
+        url = "about/"
+
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[imaging]
+    quality = 95
+
 [mediaTypes]
   [mediaTypes."application/geo+json"]
     suffixes = ["geojson", "gjson"]
