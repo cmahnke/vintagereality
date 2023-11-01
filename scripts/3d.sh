@@ -2,7 +2,7 @@
 
 set -e -o pipefail
 
-IMAGE_PREFIX=content/future/3d/
+IMAGE_PREFIX=content/
 IMG_NAME_PREFIX=front
 IMG_METADATA=3d-images.json
 SCRIPT=`dirname $0`/./image-splitter.py
