@@ -1,9 +1,20 @@
 #!/usr/bin/env bash
 
+set -e -o pipefail
+
 IMAGE_PREFIX=content/future/3d/
 IMG_NAME_PREFIX=front
 IMG_METADATA=3d-images.json
 SCRIPT=`dirname $0`/./image-splitter.py
+
+
+if [ -z "$PYTHON" ] ; then
+  PYTHON=python3
+fi
+
+if [ `$PYTHON -V|cut -d ' ' -f2|cut -d '.' -f2` -gt 10 ] ; then
+  echo "Warning PyJXL not workimg with newer python versions"
+fi
 
 if [ -z "$CORES" ] ; then
   # https://stackoverflow.com/a/45181694
@@ -27,7 +38,7 @@ do
     else
       IMG_FILE=$DIR/$(jq -r .file $META)
     fi
-    echo "python3 $SCRIPT -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo" >> $JOBFILE
+    echo "$PYTHON $SCRIPT -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo" >> $JOBFILE
 
 done
 echo "Running generated jobs from $JOBFILE, $CORES in parallel"
