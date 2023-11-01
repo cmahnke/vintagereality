@@ -1,15 +1,11 @@
 #!/usr/bin/env bash
-
-IMAGES=$(find content -name '*.svg')
-
-for IMAGE in $IMAGES
+IFS=$(echo -en "\n\b")
+for IMAGE in $(find ./Source\ Files/ -name '*.svg')
 do
-    IMAGE_PREFIX=$(basename $IMAGE .svg)
-    TMP_FILE=${IMAGE_PREFIX}.tmp
+    IMAGE_PREFIX=$(basename "$IMAGE" .svg)
+    TMP_FILE=static/images/logo/$(echo $IMAGE_PREFIX | tr '[:upper:]' '[:lower:]').svg
 
     echo "Processing $IMAGE..."
     yarn run svgo --config ./config/svgo.config.js -i "$IMAGE" -o "$TMP_FILE" --multipass
-    rm "$IMAGE"
-    mv "$TMP_FILE" "$IMAGE"
 
 done
