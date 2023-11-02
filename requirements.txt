@@ -1,0 +1,7 @@
+numpy
+opencv-contrib-python-headless
+stereoscopy[auto_align]
+Pillow==10.0.1
+packaging
+pystereogram
+qrcode

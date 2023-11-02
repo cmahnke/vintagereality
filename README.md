@@ -14,10 +14,23 @@ Glass black and either neon or magenta cyan
 
 ### Fonts
 
-* https://fonts.google.com/specimen/Tilt+Neon
+#### Text
 
+* https://fonts.google.com/specimen/Tilt+Neon
+* https://fonts.google.com/specimen/Dosis?vfonly=true
+https://fonts.google.com/specimen/Exo+2/tester?vfonly=true
+https://fonts.google.com/specimen/Comfortaa?vfonly=true
+https://fonts.google.com/specimen/Pixelify+Sans?vfonly=true
+https://fonts.google.com/specimen/Jura/tester?vfonly=true
+https://fonts.google.com/specimen/Oxanium/tester?vfonly=true
+https://fonts.google.com/specimen/Fredoka/tester?vfonly=true
+https://fonts.google.com/specimen/Tektur?vfonly=true
+
+#### Logo
 * [Orbiton](https://github.com/theleagueof/orbitron)
 * [Permanent Marker](https://fonts.google.com/specimen/Permanent+Marker/about)
+
+
 
 ### Websites
 * https://devpod.sh/
