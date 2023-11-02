@@ -23,4 +23,4 @@ if [ -d ./scripts/post-build ] ; then
     echo "Don't forget to run post build scripts after 'hugo'!"
 fi
 
-SOURCE="static/images/Favicon.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
+SOURCE="static/images/logo/favicon.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
