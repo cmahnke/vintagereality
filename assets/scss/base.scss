@@ -1,5 +1,12 @@
 @use 'sass:color';
 
+@import "icons";
+@import "mirador";
+@import "ol-iiif";
+@import "iframe-consent";
+@import "map";
+@import "3d";
+
 /* Colors */
 
 $cyan: rgb(0,255,255);
