@@ -1,0 +1,113 @@
+{{- $page := .Page -}}
+{{- $context := path.Dir .File.Path -}}
+{{- $pageURL := .Permalink -}}
+
+{{- $baseImageName := "front" -}}
+{{- if eq .Params.resources nil -}}
+  {{- warnf "Page %s has no resources!" .File.Path -}}
+{{- end -}}
+{{/* {{- if .Params.resources -}} */}}
+  {{- if lt (len (where .Params.resources ".name" "front")) 1 -}}
+    {{- $frontResource := (where .Params.resources ".name" "page") -}}
+    {{- $infoJson := (index $frontResource 0).params.iiif -}}
+    {{- $baseImageName = path.Dir $infoJson -}}
+  {{- end -}}
+{{/* {{- end -}} */}}
+
+{{- $jps := path.Join $context (printf "%s.jps" $baseImageName) -}}
+{{- $gif := path.Join $context (printf "%s.gif" $baseImageName) -}}
+{{- $ana := path.Join $context (printf "%s-anaglyph.jpeg" $baseImageName) -}}
+{{- $mpo := path.Join $context (printf "%s.mpo" $baseImageName) -}}
+{{- $singleL := path.Join $context (printf "%s-left.jpeg" $baseImageName) -}}
+{{- $singleR := path.Join $context (printf "%s-right.jpeg" $baseImageName) -}}
+
+{{/* See https://codepen.io/Wendy-Ho/pen/MWWBvmd */}}
+
+<div class="dreiD-images">
+    <div class="wrapper">
+        {{ if (fileExists $jps) -}}
+            <input class="radio" id="dreiD-jps" name="3d" type="radio" checked>
+         {{- end }}
+         {{ if (fileExists $gif) -}}
+             <input class="radio" id="dreiD-gif" name="3d" type="radio">
+         {{- end }}
+         {{ if (fileExists $ana) -}}
+             <input class="radio" id="dreiD-ana" name="3d" type="radio">
+         {{- end }}
+         {{ if (fileExists $mpo) -}}
+             <input class="radio" id="dreiD-mpo" name="3d" type="radio">
+         {{- end }}
+         {{ if and (fileExists $singleL) (fileExists $singleR) -}}
+            <input class="radio" id="dreiD-single" name="3d" type="radio">
+            <input class="radio" id="dreiD-vr" name="3d" type="radio">
+         {{- end -}}
+        <div class="tabs">
+            {{ if (fileExists $jps) -}}
+                <label class="tab" id="dreiD-jps-tab" for="dreiD-jps">{{ i18n "sterescopic_jpeg" }}</label>
+            {{- end }}
+            {{ if (fileExists $gif) -}}
+                <label class="tab" id="dreiD-gif-tab" for="dreiD-gif">{{ i18n "wigglegram" }}</label>
+            {{- end }}
+            {{ if (fileExists $ana) -}}
+                <label class="tab" id="dreiD-ana-tab" for="dreiD-ana">{{ i18n "anaglyph" }}</label>
+            {{- end }}
+            {{ if (fileExists $mpo) -}}
+                <label class="tab" id="dreiD-mpo-tab" for="dreiD-mpo">{{ i18n "mpo" }}</label>
+            {{- end }}
+            {{ if and (fileExists $singleL) (fileExists $singleR) -}}
+                <label class="tab" id="dreiD-single-tab" for="dreiD-single">{{ i18n "single_frames" }}</label>
+                <label class="tab" id="dreiD-vr-tab" for="dreiD-vr">{{ i18n "fullscreen" }}</label>
+            {{- end }}
+        </div>
+
+        <div class="panels">
+            {{ if (fileExists $jps) -}}
+                <div class="panel" id="dreiD-jps-panel">
+                    <img class="jps" src="{{ $jps | relURL }}" />
+                    <div class="description">
+                        {{ i18n "sterescopic_jpeg_desc" | safeHTML }} <a class="newTab" href="{{ $jps | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                </div>
+            {{- end }}
+            {{ if (fileExists $gif) -}}
+                <div class="panel" id="dreiD-gif-panel">
+                    <img class="gif" src="{{ $gif | relURL }}" />
+                    <div class="description">
+                        {{ i18n "wigglegram_desc" | safeHTML }} <a class="newTab" href="{{ $gif | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                </div>
+            {{- end }}
+            {{ if (fileExists $ana) -}}
+                <div class="panel" id="dreiD-ana-panel">
+                    <img class="ana" src="{{ $ana | relURL }}" />
+                    <div class="description">
+                        {{ i18n "anaglyph_desc" | safeHTML }} <a class="newTab" href="{{ $ana | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                </div>
+            {{- end }}
+            {{ if (fileExists $mpo) -}}
+                <div class="panel" id="dreiD-mpo-panel">
+                    <img class="mpo" src="{{ $mpo | relURL }}" />
+                    <div class="description">
+                        {{ i18n "mpo_desc" | safeHTML }} <a class="newTab" href="{{ $mpo | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                </div>
+            {{- end }}
+            {{ if and (fileExists $singleL) (fileExists $singleR) -}}
+                <div class="panel" id="dreiD-single-panel">
+                    <img class="singleL" src="{{ $singleL | relURL }}" />
+                    <div class="description">
+                        {{ i18n "left_image" | safeHTML }} <a class="newTab" href="{{ $singleL | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                    <img class="singleR" src="{{ $singleR | relURL }}" />
+                    <div class="description">
+                        {{ i18n "right_image" | safeHTML }} <a class="newTab" href="{{ $singleR | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+                    </div>
+                </div>
+                <div class="panel" id="dreiD-vr-panel">
+                    {{- partial "3d/cardboard.html" (dict "left" $singleL "right" $singleR "tab" "dreiD-vr") -}}
+                </div>
+            {{- end }}
+        </div>
+    </div>
+</div>

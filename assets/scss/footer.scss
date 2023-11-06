@@ -1,0 +1,50 @@
+.footer {
+  font-family: $special-font, sans-serif;
+  background-image: url('/images/svgs/footer.svg');
+  background-size: cover;
+  padding-top: 1em;
+  margin-top: 1.4em;
+  width: 100%;
+  overflow: hidden;
+
+  .menu-container.menu-footer {
+    display: flex;
+
+    .menu {
+      width: 80%;
+      margin: auto;
+
+      .menu-footer-items {
+        padding-inline-start: unset;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .menu-item  {
+          display: inline;
+          text-shadow: 0 0 2px, 0 0 4px black;
+
+          &::marker {
+            display: none;
+          }
+
+        }
+      }
+    }
+  }
+
+  .footer-container {
+    padding-bottom: .6em;
+
+    p {
+      font-size: 1em;
+      text-align: center;
+      color: $blue;
+      text-shadow: 0 0 2.6px $blue, 0 0 4.6px black;
+      margin-block-start: .4em;
+      margin-block-end: .4em;
+    }
+
+  }
+
+}

@@ -10,4 +10,5 @@
     {{ .Summary }}
     {{ if .Truncated }} <a href="{{ .RelPermalink }}">{{ i18n "readmore" }}</a>{{ end }}
   </section>
+  {{- partial "3d-preview.html" . -}}
 </article>

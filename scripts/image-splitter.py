@@ -4,9 +4,12 @@ from PIL import Image
 import argparse, pathlib, json, sys
 from packaging import version
 from termcolor import cprint
+import cv2, numpy
 
 # Duration for Wigglegrams im ms
 defaultDuration = 100
+# Save method for jpeg file (anaglyphs)
+save_method = 'opencv'
 
 # See http://www.sview.ru/en/help/input/
 # See https://note.nkmk.me/en/python-pillow-concat-images/
@@ -65,7 +68,6 @@ def cut_stereo(coords, im):
 
 # See https://parth3d.co.uk/splitting-anaglyph-images-in-python
 def cut_anaglyph(coords, im):
-    #from matplotlib import pyplot as plt
     if not coords['left'] or not coords['right']:
         h, w = im.size
         for side in ['left', 'right']:
@@ -128,10 +130,42 @@ def white_balance(im, coords = None, file = None):
         im.save(file)
     return im
 
+# This isn't working as expected
+def check_jpeg(image_file):
+    with open(image_file, 'rb') as f:
+        f.seek(-2, 2)
+        if f.read() == '\xff\xd9':
+            return True
+        else:
+            return False
+
+def pad_image(img):
+    import math
+    top_left_color = img.getpixel((1, 1))
+    new_width = math.ceil(img.size[0] / 8) * 8
+    new_height = math.ceil(img.size[1] / 8) * 8
+    paste_left = math.floor((new_width - img.size[0]) / 2)
+    paste_top = math.floor((new_height - img.size[1]) / 2)
+    cprint(f"Padding image with {img.size[0]}x{img.size[1]} into {new_width}x{new_height} at ({paste_left},{paste_top}), color {top_left_color}", "yellow")
+    background = Image.new(img.mode, (new_width, new_height), top_left_color)
+    background.paste(img, (paste_left, paste_top))
+    return background
+
+def save_opencv(img, file_name, options=[cv2.IMWRITE_JPEG_OPTIMIZE, 1, cv2.IMWRITE_JPEG_QUALITY, 100]):
+    cv_img = numpy.array(img)
+    cv_img = cv_img[:, :, ::-1].copy()
+    cv2.imwrite(file_name, cv_img)
+
+def save_copy(img, file_name, type="JPEG", options={'optimize': True, 'quality': 90}):
+    new_img = img.copy()
+    new_img.save(file_name, format=type, **options)
+    new_img.close()
+
 parser = argparse.ArgumentParser(description='Extract steroscopic images')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
 parser.add_argument('--coords', type=pathlib.Path, help='File containing coordinates', required=True)
 parser.add_argument('--output', choices=['gif', 'jps', 'images', 'jpg', 'mpo'], action='append', nargs='+', help='Output format', default=[])
+parser.add_argument('--white-balance', '-w', help='Do a white balance', default=False, action='store_true')
 parser.add_argument('--samesize', '-s', help='Force same size (implies advanced)', default=False, action='store_true')
 parser.add_argument('--advanced', '-a', help='Use advanced features provided by StereoscoPy', default=False, action='store_true')
 
@@ -155,14 +189,19 @@ else:
 cprint('Requested output formats: ' + ', '.join(outputs), 'yellow')
 same_size = False
 advanced = False
+wb = False
 
 if args.samesize:
     same_size = True
     cprint('Forcing same image size', 'yellow')
     advanced = True
 
+if args.white_balance:
+    white_balance = True
+    cprint('Using white balance', 'yellow')
+
 if ('jpg' in outputs):
-    cprint('Anayglyph output requires -s and -a, setting it automaticlly', 'yellow')
+    cprint('Anayglyph output requires -s and -a, setting it automatically', 'yellow')
     advanced = True
     same_size = True
 
@@ -186,7 +225,11 @@ if 'preprocess' in coords and advanced:
         methods = [coords['preprocess']]
     for method in methods:
         preprocessFileName = args.image.parent.joinpath(args.image.stem + '-' + method + images_suffix)
-        locals()[method](im, coords, preprocessFileName)
+        cprint(f"Running method {method}, output will be {preprocessFileName}", "green")
+        im = locals()[method](im, coords, preprocessFileName)
+
+if wb:
+    cprint("Use preprocessing section in config to enable white balance")
 
 if not 'type' in coords:
     (left, right) = cut_stereo(coords, im)
@@ -204,8 +247,28 @@ if ('jps' in outputs):
     ceFileName = args.image.parent.joinpath(args.image.stem + '.jps')
     crossed_eyed(left, right, ceFileName)
 if ('jpg' in outputs):
-    anagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph.jpg')
-    stereoscopy.create_anaglyph((left, right), method="gray").save(anagFileName)
+    # This should be gray for gray base images
+    if left.mode == 'L':
+        anaglyph_method = "gray"
+    elif left.mode == 'RGB':
+        anaglyph_method = "color"
+    else:
+        raise Exception(f"Unsupported image mode: {left.mode}")
+    anagFileName = str(args.image.parent.joinpath(args.image.stem + '-anaglyph.jpeg'))
+    if same_size and left.size[0] % 8 != 0 or left.size[1] % 8 != 0:
+        left = pad_image(left)
+        right = pad_image(right)
+    cprint(f"Saving anaglyph to {anagFileName}", "yellow")
+    anaglyph_image = stereoscopy.create_anaglyph((left, right), method=anaglyph_method)
+    try:
+        anaglyph_image.verify()
+    except Exception:
+        cprint(f"Anaglyph image {anagFileName} is invalid!", "red")
+    if save_method == 'pil':
+        anaglyph_image.save(anagFileName, format='JPEG', quality=90, optimize=True)
+    elif save_method == 'opencv':
+        save_opencv(anaglyph_image, anagFileName)
+    anaglyph_image.close()
 if ('images' in outputs):
     left.save(leftFileName)
     right.save(rightFileName)

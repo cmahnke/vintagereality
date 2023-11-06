@@ -13,12 +13,15 @@
   {{- $nonStickyPages := where $pages "Params.sticky" "!=" true -}}
   {{- $pages = union $stickyPages $nonStickyPages -}}
 
+  {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
+
   <div class="container">
-      <main role="main" class="article-list">
-          <h1 class="list-title">{{ .Title }}</h1>
-              {{ partial "article.html" . }}
-      </main>
+    <main role="main" class="article-list">
+      {{ range $paginator.Pages }}
+        {{ partial "list-item.html" . }}
+      {{ end }}
+
+    </main>
   </div>
-  {{ partial "pagination.html" . }}
-  {{- partial "footer.html" . -}}
+  {{ partial "paginator.html" $paginator }}
 {{ end }}

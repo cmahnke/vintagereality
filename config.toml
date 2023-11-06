@@ -20,8 +20,8 @@ paginate = 5
     [languages.de.menu]
 
       [[languages.de.menu.main]]
-        name = "Geplante Blogs"
-        URL = "/future"
+        name = "Links"
+        URL = "/links"
         weight = 1
 
       [[languages.de.menu.main]]
@@ -53,3 +53,12 @@ paginate = 5
     isHTML = false
     baseName = "map"
     notAlternative = true
+
+[module]
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
+  [[module.mounts]]
+    source = "static"
+    target = "static"

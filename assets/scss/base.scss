@@ -1,17 +1,36 @@
 @use 'sass:color';
 
+/* Colors */
+$cyan: rgb(0,255,255);
+$red: rgb(255,0,0);
+$magenta: rgb(255,0,255);
+$blue: rgb(132,255,255);
+$yellow: rgb(251,238,153);
+$red2: rgb(248,229,216);
+
+$heading-font: 'Oxanium Variable';
+$text-font: 'Fredoka Variable';
+$special-font: 'Tektur Variable';
+@import "fonts/oxanium";
+@import "fonts/fredoka";
+@import "fonts/tektur";
+
+@import "normalize";
 @import "icons";
 @import "mirador";
 @import "ol-iiif";
 @import "iframe-consent";
 @import "map";
+@import "share";
 @import "3d";
-
-/* Colors */
-
-$cyan: rgb(0,255,255);
-$red: rgb(255,0,0);
-$magenta: rgb(255,0,255);
+@import "header";
+@import "footer";
+$font-color-body: var(#000);
+$secondary-icon-color: #69c;
+$frame-bg-color: var(--base01);
+$color-body-text: var(white);
+$fullscreen-color: var(--base07);
+@import "menu";
 
 /*
 * {
@@ -37,31 +56,47 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
   place-items: center;
-  min-width: 100vw;
+  min-width: 100%;
   min-height: 100vh;
+  font-family: $text-font;
 }
 
 #page {
   width: 100%;
 
-  #head {
-    margin-top: .5em;
-
-    .menu {
-
-    }
-
-    .header-logo {
-
-      max-width: 40%;
-    }
-
-  }
-
   #main {
     width: 80%;
     margin: auto;
+
+    .article-list {
+
+      .list-item {
+        display: flex;
+        margin: 1.6em;
+        padding: 1em;
+
+
+        .preview {
+
+          background: rgba(255, 255, 255, 0.2);
+          border-radius: 16px;
+          /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
+          backdrop-filter: blur(5px);
+          -webkit-backdrop-filter: blur(5px);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow:
+            12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+            -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+        }
+      }
+
+    }
+
   }
+}
+
+.list-title,
+.headline {
+  font-family: $heading-font, sans-serif;
 }

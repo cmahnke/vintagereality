@@ -1,0 +1,21 @@
+#head {
+  margin-top: .5em;
+
+  .header-logo {
+    position: relative;
+    margin: auto;
+
+    .header-logo-first {
+      max-width: 30%;
+    }
+
+    .header-logo-second {
+      position: absolute;
+      max-width: 30%;
+      left: 0;
+      top: 0;
+    }
+
+  }
+
+}

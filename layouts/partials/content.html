@@ -1,0 +1,9 @@
+{{ .Content }}
+
+{{- if or .Page.Params.iiifcontext .Page.Params.iiif.context -}}
+  {{- partial "iiif-content.html" . -}}
+{{- end -}}
+
+{{- if and (isset .Page.Params "type") (eq .Page.Params.type "3d") -}}
+  {{- partial "3d/3d-content.html" . -}}
+{{- end -}}

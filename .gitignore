@@ -32,4 +32,9 @@ content/**/*.gif
 content/**/*.jps
 content/**/*.mpo
 content/**/*-anaglyph.jpg
+content/**/*-anaglyph.jpeg
 content/**/*-white_balance.jpg
+# Generated files
+static/fonts
+static/images/svgs
+assets/css

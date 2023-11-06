@@ -1,0 +1,48 @@
+{{/* Required arguments */}}
+
+{{- $left := .left -}}
+{{- $right := .right -}}
+{{- $tab := .tab -}}
+
+{{/*
+{{- $jps := .jps -}}
+*/}}
+{{ $main := $left }}
+
+{{- $class := "vr cardboard" -}}
+{{- if isset . "class" -}}
+  {{- $class = .class -}}
+{{- end -}}
+{{- $baseURL := "" -}}
+{{- if isset . "baseURL" -}}
+  {{- $baseURL = .baseURL -}}
+{{- else -}}
+  {{- $baseURL := path.Dir $main -}}
+{{- end -}}
+
+{{- $idSuffix := replace (replace (replace $main "/" "_") "." "") "-" "_" -}}
+{{- $divName := printf "cardboard_vr_%s_%s" (delimit (shuffle (seq 1 9)) "") $idSuffix -}}
+
+<div id="{{ $divName }}" class="viewer {{ $class }}">
+
+</div>
+<script type="text/javascript">
+  {{ $divName | safeJS }}_Div = document.getElementById("{{ $divName }}");
+  {{ $divName | safeJS }} = addFullScreen({{ $divName | safeJS }}_Div, '{{ printf "/%s" $left }}', '{{ printf "/%s" $right }}');
+  {{/*
+  {{ $divName | safeJS }}_Div.dataset.renderer = {{ $divName | safeJS }};
+
+  var tabEl = document.querySelector('input[id="{{ $tab | safeJS }}"]')
+  tabEl.addEventListener('change', function() {
+    console.log("VR Tab activated");
+    {{ $divName | safeJS }}.then(function(renderer) {
+      stereoCanvas = renderer.domElement;
+      console.log(renderer)
+      var width = stereoCanvas.parentElement.clientWidth;
+      var multiplier = width / stereoCanvas.parentElement.dataset.width;
+      var height = stereoCanvas.parentElement.dataset.height * multiplier;
+      renderer.setSize(width, height);
+    });
+  });
+  */}}
+</script>

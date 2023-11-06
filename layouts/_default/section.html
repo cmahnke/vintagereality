@@ -1,6 +1,59 @@
-{{ define "title" }}
-  {{- .Title }} · {{ .Site.Title -}}
-{{ end }}
-{{ define "content" }}
+{{- partial "header.html" . -}}
+<div class="container">
+    <main role="main" class="sections">
+        <h1 class="headline">{{ .CurrentSection.Title }}</h1>
+        <div class="article-list">
+            {{- if .Description -}}
+                <article class="section-description">
+                    <div class="description">
+                        {{ .Description }}
+                    </div>
+                    {{- if .Content -}}
+                      {{- partial "list-item.html" . -}}
+                    {{- end -}}
+                    {{/*
+                    <div class="content">
+                        {{ .Content }}
+                    </div>
+                    */}}
+                </article>
+            {{- end -}}
 
-{{ end }}
+            {{- $pages := .CurrentSection.Pages -}}
+            {{- $defaultContentLanguage := partialCached "functions/i18n/default-lang" . -}}
+            {{- if ne $.Site.Language.Lang $defaultContentLanguage -}}
+                {{- $defaultPath := (substr .RelPermalink (len .Site.LanguagePrefix)) -}}
+                {{- $defaultPages := (where $.Sites.First.Pages "Section" .Section) -}}
+                {{- $defaultPages := (where $defaultPages "Page.Parent.RelPermalink" $defaultPath) -}}
+                {{- .Scratch.Set "pages" ($pages | lang.Merge $defaultPages) -}}
+            {{- else -}}
+                {{- .Scratch.Set "pages" $pages -}}
+            {{- end -}}
+
+            {{- $pages = .Scratch.Get "pages" -}}
+
+            {{- if eq .CurrentSection .FirstSection -}}
+                {{- range $pages -}}
+                    <article class="list-item">
+                        <h2 class="headline" itemprop="headline">
+                            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+                        </h2>
+                        <div>
+                            {{- if .Description -}}
+                                {{ .Description }}
+                            {{- end -}}
+                        </div>
+                    </article>
+                {{- end -}}
+            {{- else -}}
+                {{- $paginator := .Paginate $pages -}}
+                <div class="article-list">
+                    {{- range $paginator.Pages -}}
+                        {{ partial "list-item.html" . }}
+                    {{- end -}}
+                 </div>
+                 <div class="section-pagination">{{ template "_internal/pagination.html" . }}</div>
+            {{- end -}}
+        </div>
+    </main>
+</div>
