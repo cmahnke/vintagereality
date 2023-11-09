@@ -5,6 +5,8 @@
 {{- end -}}
 {{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
 
+{{- $previewWidth := "200" -}}
+
   <div class="preview" style="transform: rotate({{$rotation}}deg);">
     {{- $context := path.Dir .File.Path -}}
     {{- $baseImageName := "front" -}}
@@ -17,8 +19,8 @@
       {{- $ana := path.Join $context (printf "%s-anaglyph.jpeg" $baseImageName) -}}
       {{ if (fileExists $ana) -}}
         {{ $image := .Resources.Get (printf "%s-anaglyph.jpeg" $baseImageName) }}
-        {{ $image = $image.Process "resize 400x" }}
-        <img src="{{- $image.RelPermalink -}}" alt="{{ .Title }} {{ i18n "preview" }}">
+        {{ $image = $image.Process (printf "resize %sx" $previewWidth) }}
+        <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
       {{- else -}}
         {{- warnf "3D Preview: Can't find file '%s'" $ana -}}
       {{- end -}}
