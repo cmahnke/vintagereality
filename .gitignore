@@ -38,3 +38,4 @@ content/**/*-white_balance.jpg
 static/fonts
 static/images/svgs
 assets/css
+**/vips-properties.xml
