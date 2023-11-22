@@ -2,10 +2,11 @@
     author = "Christian Mahnke"
     keywords = ""
     description = ""
-    copyrightYears = "MMXXII - MMXXIII"
+    copyrightYears = "2023"
     cc = false
     stylesheets = []
     iiifCanvasHeight = 400
     iiifCanvasWidth = 300
-    headerImage = "images/Logo.svg"
+    headerImage = "images/logo/logo.svg"
     disableScale = true
+    favicon = "images/favicon-32.png"

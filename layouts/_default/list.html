@@ -3,6 +3,10 @@
 {{ end }}
 {{ define "content" }}
 
+  {{- if .IsHome -}}
+    {{- partial "front.html" . -}}
+  {{- end -}}
+
   {{- $pages := .Pages -}}
   {{- if .IsHome -}}
       {{- $pages = .Site.RegularPages -}}
