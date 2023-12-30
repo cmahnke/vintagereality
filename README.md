@@ -9,6 +9,10 @@ Vintage Reality
 * https://dev.to/crayoncode/shiny-glass-hover-effect-glassmorphism-17n7
 * https://css-tricks.com/neumorphism-and-css/
 * https://css.glass/
+* https://www.blender.org/download/releases/4-0/
+* https://muuri.dev/
+* https://affinity.serif.com/en-gb/store/
+* https://surrealdb.com/
 
 Glass black and either neon or magenta cyan
 
