@@ -10,3 +10,4 @@
     headerImage = "images/logo/logo.svg"
     disableScale = true
     favicon = "images/favicon-32.png"
+    debug = false

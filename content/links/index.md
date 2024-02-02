@@ -25,3 +25,5 @@ https://codepen.io/chrisjdesigner/pen/yLzopXW
 https://github.com/topics/stereoscopy
 https://github.com/urix/HTML5-Stereo-Viewer
 https://www.stereoscopy.com/
+* [The Stereoscopy Blog](https://stereoscopy.blog/)
+https://flothesof.github.io/making-stereograms-Python.html
