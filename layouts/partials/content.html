@@ -1,7 +1,7 @@
 {{ .Content }}
 
 {{- if or .Page.Params.iiifcontext .Page.Params.iiif.context -}}
-  {{- partial "iiif-content.html" . -}}
+  {{- partial "iiif/iiif-content.html" . -}}
 {{- end -}}
 
 {{- if and (isset .Page.Params "type") (eq .Page.Params.type "3d") -}}
