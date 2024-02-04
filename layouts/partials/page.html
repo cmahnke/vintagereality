@@ -3,7 +3,17 @@
     <div class="content">
       <h1 class="post-title">{{ .Title }}</h1>
       <div class="post-body">
-          {{ partial "content.html" . }}
+          {{- partial "content.html" . -}}
+
+          {{- if .IsSection -}}
+            <div class="sections-contents">
+              {{ range where .Site.Pages "Section" .Section }}
+
+                {{ partial "list-item.html" . }}
+
+              {{ end }}
+            </div>
+          {{- end -}}
       </div>
      </div>
     {{- if not .Params.metaPage -}}

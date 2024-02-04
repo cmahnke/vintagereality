@@ -32,6 +32,9 @@ $color-body-text: var(white);
 $fullscreen-color: var(--base07);
 @import "menu";
 
+/* Site includes */
+@import "nav";
+
 /*
 * {
   box-sizing: border-box;

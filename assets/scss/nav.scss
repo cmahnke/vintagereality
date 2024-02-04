@@ -1,0 +1,31 @@
+/* Pagination */
+
+nav.paginator {
+    text-align: center;
+
+    a {
+        color: var(--base0e);
+    }
+
+    .faded {
+        color: var(--base02);
+    }
+
+    .nav-left {
+        margin-left: auto;
+        margin-right: 1%;
+
+        a {
+            color: $cyan;
+        }
+    }
+
+    .nav-right {
+        margin-left: 1%;
+        margin-right: auto;
+
+        a {
+            color: $red;
+        }
+    }
+}

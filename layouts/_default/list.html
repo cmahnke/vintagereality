@@ -19,10 +19,14 @@
 
   {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
 
+  {{/* TODO: Check if we have sections, don't display their contents in lists */}}
+
   <div class="container">
     <main role="main" class="article-list">
       {{ range $paginator.Pages }}
+
         {{ partial "list-item.html" . }}
+
       {{ end }}
 
     </main>
