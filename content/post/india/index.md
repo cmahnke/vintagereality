@@ -1,5 +1,5 @@
 ---
-title: "Ausladen von Armee-Elephnaten in Indien"
+title: "Ausladen von Armee-Elephanten in Indien"
 date: 2022-12-26T22:15:07+02:00
 type: 3d
 subtype: stereoscopic

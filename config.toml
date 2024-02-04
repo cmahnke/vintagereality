@@ -25,6 +25,11 @@ paginate = 5
         weight = 1
 
       [[languages.de.menu.main]]
+        name = "Karte"
+        URL = "/map"
+        weight = 2
+
+      [[languages.de.menu.main]]
         name = "Über"
         weight = 5
         url = "about/"

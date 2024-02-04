@@ -1,10 +1,19 @@
 {{ $class := .Params.type }}
 <div class="post {{ $class }}">
     <div class="content">
+      {{/* TODO: Fix heading and metadata */}}
       <h1 class="post-title">{{ .Title }}</h1>
+      {{- if not .Params.metaPage -}}
+          <div class="meta">
+            <div class="date">
+                <a href="{{ .RelPermalink }}">{{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}</a>
+            </div>
+            {{ partial "meta/tags.html" . }}
+          </div>
+      {{ end }}
       <div class="post-body">
           {{- partial "content.html" . -}}
-
+          {{/* TODO: Finish display of section contents */}}
           {{- if .IsSection -}}
             <div class="sections-contents">
               {{ range where .Site.Pages "Section" .Section }}
@@ -16,12 +25,5 @@
           {{- end -}}
       </div>
      </div>
-    {{- if not .Params.metaPage -}}
-        <div class="meta">
-          <div class="date">
-              <a href="{{ .RelPermalink }}">{{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}</a>
-          </div>
-          {{ partial "meta/tags.html" . }}
-        </div>
-    {{ end }}
+
 </div>

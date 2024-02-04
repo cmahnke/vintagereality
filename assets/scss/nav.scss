@@ -2,6 +2,7 @@
 
 nav.paginator {
     text-align: center;
+    font-size: 1.6em;
 
     a {
         color: var(--base0e);
@@ -14,18 +15,27 @@ nav.paginator {
     .nav-left {
         margin-left: auto;
         margin-right: 1%;
+    }
+    span.nav-left.disabled {
+        color: color.adjust($cyan, $lightness: -25%);
+    }
+    a.nav-left {
+        color: color.adjust($cyan, $lightness: -10%);
+    }
 
-        a {
-            color: $cyan;
-        }
+    .nav-counter {
+        font-size: 1.8em;
+        /* TODO: Change color */
     }
 
     .nav-right {
         margin-left: 1%;
         margin-right: auto;
-
-        a {
-            color: $red;
-        }
+    }
+    span.nav-right.disabled {
+        color: color.adjust($magenta, $lightness: -25%);
+    }
+    a.nav-right {
+        color: color.adjust($magenta, $lightness: -10%);
     }
 }

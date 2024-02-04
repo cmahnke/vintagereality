@@ -1,9 +1,9 @@
 {{ if gt .TotalPages 1 }}
   <nav class="paginator">
     {{ if .HasPrev }}
-      <a class="nav-left" href="{{ .Prev.URL }}">{{- i18n "prev_page" -}}</a>
+      <a class="nav-left" href="{{ .Prev.URL }}">{{- i18n "previous_page" -}}</a>
     {{ else }}
-      <span class="nav-left disabled">{{- i18n "prev_page" -}}</span>
+      <span class="nav-left disabled">{{- i18n "previous_page" -}}</span>
     {{ end }}
     <span class="nav-counter">{{ .PageNumber}} / {{ .TotalPages }}</span>
     {{ if .HasNext }}

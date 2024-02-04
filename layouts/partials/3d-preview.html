@@ -1,13 +1,8 @@
 {{- if and (isset .Page.Params "type") (eq .Page.Params.type "3d")  -}}
-{{- $rotation := "" }}
-{{- range (seq 0 1) -}}
-    {{- $rotation = printf "%s%d" $rotation (index (shuffle (seq 0 99)) 0) }}
-{{- end -}}
-{{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
 
 {{- $previewWidth := "200" -}}
 
-  <div class="preview" style="transform: rotate({{$rotation}}deg);">
+  <div class="preview">
     {{- $context := path.Dir .File.Path -}}
     {{- $baseImageName := "front" -}}
     {{- if lt (len (where .Params.resources ".name" "front")) 1 -}}

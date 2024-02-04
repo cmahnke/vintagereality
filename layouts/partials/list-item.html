@@ -1,10 +1,18 @@
-<article class="list-item" itemscope itemtype="http://schema.org/Blog">
-  <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
-  <div class="meta">
-{{ if not .Date.IsZero }}
-    <span class="key">{{ i18n "publishedOn" }}</span>
-    <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{- partial "date.html" . -}}</time></span>
-{{ end }}
+{{- $rotation := "" }}
+{{- range (seq 0 1) -}}
+    {{- $rotation = printf "%s%d" $rotation (index (shuffle (seq 0 99)) 0) }}
+{{- end -}}
+{{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
+
+<article class="list-item" style="transform: rotate({{$rotation}}deg);" itemscope itemtype="http://schema.org/Blog">
+  <div class="list-item-head">
+    <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
+    <div class="meta">
+  {{ if not .Date.IsZero }}
+      <span class="key">{{ i18n "publishedOn" }}</span>
+      <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{- partial "date.html" . -}}</time></span>
+  {{ end }}
+    </div>
   </div>
   <section class="summary">
     {{ .Summary }}
