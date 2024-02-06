@@ -2,23 +2,27 @@
 
 {{- $previewWidth := "200" -}}
 
-  <div class="preview">
-    {{- $context := path.Dir .File.Path -}}
-    {{- $baseImageName := "front" -}}
-    {{- if lt (len (where .Params.resources ".name" "front")) 1 -}}
-      {{- $frontResource := (where .Params.resources ".name" "page") -}}
-      {{- $infoJson := (index $frontResource 0).params.iiif -}}
-      {{- $baseImageName = path.Dir $infoJson -}}
+{{- $contextPath := "" -}}
+{{- if and (ne nil .File) (ne nil .File.Path) -}}
+  {{- $contextPath = path.Dir .File.Path -}}
+{{- end -}}
+
+<div class="preview">
+  {{- $baseImageName := "front" -}}
+  {{- if lt (len (where .Params.resources ".name" "front")) 1 -}}
+    {{- $frontResource := (where .Params.resources ".name" "page") -}}
+    {{- $infoJson := (index $frontResource 0).params.iiif -}}
+    {{- $baseImageName = path.Dir $infoJson -}}
+  {{- end -}}
+  {{- if and (isset .Page.Params "subtype") (or (eq .Page.Params.subtype "stereoscopic") (eq .Page.Params.subtype "anaglyph")) -}}
+    {{- $ana := path.Join $contextPath (printf "%s-anaglyph.jpeg" $baseImageName) -}}
+    {{ if (fileExists $ana) -}}
+      {{ $image := .Resources.Get (printf "%s-anaglyph.jpeg" $baseImageName) }}
+      {{ $image = $image.Process (printf "resize %sx" $previewWidth) }}
+      <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
+    {{- else -}}
+      {{- warnf "[partials/3d-preview.html] Can't find file '%s'" $ana -}}
     {{- end -}}
-    {{- if and (isset .Page.Params "subtype") (or (eq .Page.Params.subtype "stereoscopic") (eq .Page.Params.subtype "anaglyph")) -}}
-      {{- $ana := path.Join $context (printf "%s-anaglyph.jpeg" $baseImageName) -}}
-      {{ if (fileExists $ana) -}}
-        {{ $image := .Resources.Get (printf "%s-anaglyph.jpeg" $baseImageName) }}
-        {{ $image = $image.Process (printf "resize %sx" $previewWidth) }}
-        <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
-      {{- else -}}
-        {{- warnf "3D Preview: Can't find file '%s'" $ana -}}
-      {{- end -}}
-    {{- end -}}
-  </div>
+  {{- end -}}
+</div>
 {{- end -}}

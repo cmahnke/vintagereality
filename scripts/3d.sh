@@ -13,7 +13,8 @@ if [ -z "$PYTHON" ] ; then
 fi
 
 if [ `$PYTHON -V|cut -d ' ' -f2|cut -d '.' -f2` -gt 10 ] ; then
-  echo "Warning PyJXL not workimg with newer python versions"
+  echo "Warning PyJXL not working with newer python versions"
+  PARALLEL_OPTS="--halt-on-error 2"
 fi
 
 if [ -z "$CORES" ] ; then
@@ -42,4 +43,8 @@ do
 
 done
 echo "Running generated jobs from $JOBFILE, $CORES in parallel"
-parallel --jobs $CORES < $JOBFILE
+parallel $PARALLEL_OPTS --jobs $CORES < $JOBFILE
+if [ $? -ne 0 ] ; then
+  echo "Image processing failed!"
+  exit 10
+fi

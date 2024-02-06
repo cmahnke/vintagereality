@@ -15,7 +15,9 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
-./scripts/3d.sh
+set -e -o pipefail
+
+PYTHON=`./scripts/find-python3.sh` ./scripts/3d.sh
 ./scripts/height-map.sh
 ./scripts/svgo.sh
 
