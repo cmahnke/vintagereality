@@ -10,6 +10,8 @@ SCRIPT=`dirname $0`/./image-splitter.py
 
 if [ -z "$PYTHON" ] ; then
   PYTHON=python3
+else
+  echo "Using python command '$python'"
 fi
 
 if [ `$PYTHON -V|cut -d ' ' -f2|cut -d '.' -f2` -gt 10 ] ; then
@@ -39,7 +41,7 @@ do
     else
       IMG_FILE=$DIR/$(jq -r .file $META)
     fi
-    echo "$PYTHON $SCRIPT -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo" >> $JOBFILE
+    echo "$PYTHON $SCRIPT -d -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo" >> $JOBFILE
 
 done
 echo "Running generated jobs from $JOBFILE, $CORES in parallel"
