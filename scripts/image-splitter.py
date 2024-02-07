@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-from PIL import Image
+from PIL import Image, ImageDraw
 import argparse, pathlib, json, sys
 from packaging import version
 from termcolor import cprint
@@ -112,7 +112,7 @@ def get_patch (im):
     return im.crop((nx, ny, nx + nw, ny + nh))
 
 # See https://mattmaulion.medium.com/white-balancing-an-enhancement-technique-in-image-processing-8dd773c69f6
-def white_balance(im, coords = None, file = None):
+def white_balance(im, coords = None, file = None, opts = None):
     import numpy
     mode = 'mean'
     if im.mode == "RGBA":
@@ -124,6 +124,16 @@ def white_balance(im, coords = None, file = None):
     if mode == 'max':
        image_gt = ((image * 1.0 / image_patch.max(axis=(0,1))).clip(0, 1))
     im = Image.fromarray(image_gt.astype('uint8'))
+    if file != None:
+        im.save(file)
+    return im
+
+def blank_out(im, coords = None, file = None, opts = None):
+    color = "white"
+    draw = ImageDraw.Draw(im)
+    if opts is not None and len(opts) == 4:
+        draw.rectangle(((opts[0], opts[1]), (opts[0] + opts[2], opts[1] + opts[3])), fill=color, width=0)
+
     if file != None:
         im.save(file)
     return im
@@ -146,7 +156,7 @@ if args.debug:
 
 if str(args.image).endswith('.jxl'):
     from jxlpy import JXLImagePlugin
-    images_suffix = '.jpeg'
+    images_suffix = '.jpg'
 
 im = Image.open(args.image)
 
@@ -190,8 +200,13 @@ if 'preprocess' in coords and advanced:
     else:
         methods = [coords['preprocess']]
     for method in methods:
+        if isinstance(method, dict):
+            params = method['args']
+            method = method['method']
+        else:
+            params = {}
         preprocessFileName = args.image.parent.joinpath(args.image.stem + '-' + method + images_suffix)
-        locals()[method](im, coords, preprocessFileName)
+        locals()[method](im, coords, preprocessFileName, params)
 
 if not 'type' in coords:
     (left, right) = cut_stereo(coords, im)

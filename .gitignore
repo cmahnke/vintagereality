@@ -35,6 +35,8 @@ content/**/*-anaglyph.jpg
 content/**/*-anaglyph.jpeg
 content/**/*-white_balance.jpg
 content/**/*-white_balance.jpeg
+content/**/*-blank_out.jpeg
+content/**/*-blank_out.jpg
 #Backups
 scripts/*.bak.sh
 # Generated files

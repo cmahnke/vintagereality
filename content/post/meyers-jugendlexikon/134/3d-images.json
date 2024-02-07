@@ -1,0 +1,25 @@
+{
+    "left": {
+        "position": {
+            "x": 288,
+            "y": 360
+        },
+        "size": {
+            "x": 3480,
+            "y": 4888
+        }
+    },
+    "right": {
+        "position": {
+            "x": 288,
+            "y": 360
+        },
+        "size": {
+            "x": 3480,
+            "y": 4888
+        }
+    },
+    "file": "page134.jxl",
+    "type": "anaglyph",
+    "preprocess": ["white_balance", {"method": "blank_out", "args": [1968, 2864, 1752, 2392]} ]
+}
