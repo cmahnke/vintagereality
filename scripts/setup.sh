@@ -18,7 +18,6 @@ done
 set -e -o pipefail
 
 PYTHON=`./themes/projektemacher-base/scripts/find-python3.sh` ./scripts/3d.sh
-./scripts/height-map.sh
 ./scripts/svgo.sh
 
 if [ -d ./scripts/post-build ] ; then

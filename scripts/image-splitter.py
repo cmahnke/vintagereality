@@ -146,7 +146,7 @@ if args.debug:
 
 if str(args.image).endswith('.jxl'):
     from jxlpy import JXLImagePlugin
-    images_suffix = '.jpg'
+    images_suffix = '.jpeg'
 
 im = Image.open(args.image)
 

@@ -26,37 +26,47 @@
 <div class="dreiD-images">
     <div class="wrapper">
         {{ if (fileExists $jps) -}}
-            <input class="radio" id="dreiD-jps" name="3d" type="radio" checked>
-         {{- end }}
-         {{ if (fileExists $gif) -}}
-             <input class="radio" id="dreiD-gif" name="3d" type="radio">
-         {{- end }}
-         {{ if (fileExists $ana) -}}
-             <input class="radio" id="dreiD-ana" name="3d" type="radio">
-         {{- end }}
-         {{ if (fileExists $mpo) -}}
-             <input class="radio" id="dreiD-mpo" name="3d" type="radio">
-         {{- end }}
-         {{ if and (fileExists $singleL) (fileExists $singleR) -}}
-            <input class="radio" id="dreiD-single" name="3d" type="radio">
-            <input class="radio" id="dreiD-vr" name="3d" type="radio">
-         {{- end -}}
+          <input class="radio" id="dreiD-jps" name="3d" type="radio" checked>
+        {{- end }}
+        {{ if (fileExists $gif) -}}
+          <input class="radio" id="dreiD-gif" name="3d" type="radio">
+        {{- end }}
+        {{ if (fileExists $ana) -}}
+          <input class="radio" id="dreiD-ana" name="3d" type="radio">
+        {{- end }}
+        {{ if (fileExists $mpo) -}}
+          <input class="radio" id="dreiD-mpo" name="3d" type="radio">
+        {{- end }}
+        {{ if and (fileExists $singleL) (fileExists $singleR) -}}
+          <input class="radio" id="dreiD-single" name="3d" type="radio">
+          <input class="radio" id="dreiD-vr" name="3d" type="radio">
+        {{- end -}}
         <div class="tabs">
             {{ if (fileExists $jps) -}}
-                <label class="tab" id="dreiD-jps-tab" for="dreiD-jps">{{ i18n "sterescopic_jpeg" }}</label>
+              <label class="tab" id="dreiD-jps-tab" for="dreiD-jps">{{ i18n "sterescopic_jpeg" }}</label>
+            {{- else -}}
+              {{- warnf "[partials/3d/3d-content.html] File %s missing!" $jps -}}
             {{- end }}
             {{ if (fileExists $gif) -}}
-                <label class="tab" id="dreiD-gif-tab" for="dreiD-gif">{{ i18n "wigglegram" }}</label>
+              <label class="tab" id="dreiD-gif-tab" for="dreiD-gif">{{ i18n "wigglegram" }}</label>
+            {{- else -}}
+              {{- warnf "[partials/3d/3d-content.html] File %s missing!" $gif -}}
             {{- end }}
             {{ if (fileExists $ana) -}}
-                <label class="tab" id="dreiD-ana-tab" for="dreiD-ana">{{ i18n "anaglyph" }}</label>
+              <label class="tab" id="dreiD-ana-tab" for="dreiD-ana">{{ i18n "anaglyph" }}</label>
+            {{- else -}}
+              {{- warnf "[partials/3d/3d-content.html] File %s missing!" $ana -}}
             {{- end }}
             {{ if (fileExists $mpo) -}}
-                <label class="tab" id="dreiD-mpo-tab" for="dreiD-mpo">{{ i18n "mpo" }}</label>
+              <label class="tab" id="dreiD-mpo-tab" for="dreiD-mpo">{{ i18n "mpo" }}</label>
+            {{- else -}}
+              {{- warnf "[partials/3d/3d-content.html] File %s missing!" $mpo -}}
             {{- end }}
             {{ if and (fileExists $singleL) (fileExists $singleR) -}}
-                <label class="tab" id="dreiD-single-tab" for="dreiD-single">{{ i18n "single_frames" }}</label>
-                <label class="tab" id="dreiD-vr-tab" for="dreiD-vr">{{ i18n "fullscreen" }}</label>
+              <label class="tab" id="dreiD-single-tab" for="dreiD-single">{{ i18n "single_frames" }}</label>
+              <label class="tab" id="dreiD-vr-tab" for="dreiD-vr">{{ i18n "fullscreen" }}</label>
+            {{- else -}}
+              {{- warnf "[partials/3d/3d-content.html] Either %s or %s missing!" $singleL $singleR -}}
             {{- end }}
         </div>
 

@@ -34,6 +34,7 @@ content/**/*.mpo
 content/**/*-anaglyph.jpg
 content/**/*-anaglyph.jpeg
 content/**/*-white_balance.jpg
+content/**/*-white_balance.jpeg
 #Backups
 scripts/*.bak.sh
 # Generated files
