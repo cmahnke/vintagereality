@@ -1,7 +1,7 @@
 [params]
     author = "Christian Mahnke"
     keywords = ""
-    description = "'Virtuelle Realität' im 19. und 20. Jahrhundert"
+    description = "'Virtuelle Realität' im späten 19. und frühen 20. Jahrhundert"
     copyrightYears = "2023"
     cc = false
     stylesheets = []
@@ -10,4 +10,4 @@
     headerImage = "images/logo/logo.svg"
     disableScale = true
     favicon = "images/favicon-32.png"
-    debug = false
+    debug = true
