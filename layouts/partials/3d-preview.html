@@ -20,12 +20,12 @@
   {{- if and (isset .Page.Params "subtype") (or (eq .Page.Params.subtype "stereoscopic") (eq .Page.Params.subtype "anaglyph")) -}}
     {{- $ana := path.Join $contextPath (printf "%s-anaglyph.jpg" $baseImageName) -}}
     {{- if fileExists $ana -}}
-      {{- $image := .Resources.Get $ana -}}
+      {{- $image := .Resources.Get (printf "%s-anaglyph.jpg" $baseImageName) -}}
       {{- if ne $image nil -}}
         {{ $image = $image.Process (printf "resize %sx" $previewWidth) }}
         <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
       {{- else -}}
-        {{- warnf "[partials/3d-preview.html] Can't load %s" $ana -}}
+        {{- warnf "[partials/3d-preview.html] Can't load '%s'" $ana -}}
       {{- end -}}
     {{- else -}}
       {{- warnf "[partials/3d-preview.html] Can't find file '%s'" $ana -}}
