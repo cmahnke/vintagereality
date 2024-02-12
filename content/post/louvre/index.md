@@ -10,6 +10,7 @@ geojson:
   - 48.8599137
 tags:
 - 3D
+- Museum
 js:
   - js/3d.js
 resources:

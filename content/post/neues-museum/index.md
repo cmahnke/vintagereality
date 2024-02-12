@@ -6,6 +6,7 @@ subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- Museum
 geojson:
   coordinates:
   - 13.3976604

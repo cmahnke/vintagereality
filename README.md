@@ -4,10 +4,12 @@ Vintage Reality
 
 # TODO
 * Finish theme
-  * Homapge and logo animation
+  * Homapage and logo animation
   * CSS
   * Templating for sections
 * Check A-Frame integration
+* Change Tags / create tag cloud
+* Change Dates
 
 ## Other Inspirations
 * https://reverb.laravel.com/
