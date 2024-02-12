@@ -14,7 +14,7 @@ geojson:
 js:
   - js/3d.js
 resources:
-- src: "front.jpg"
+- src: "front.jxl"
   name: front
   params:
     iiif: front/info.json
