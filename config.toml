@@ -9,7 +9,7 @@ disablePathToLower = true
 disableKinds = ["taxonomy"]
 ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
-paginate = 5
+paginate = 10
 
 [languages]
   [languages.de]
