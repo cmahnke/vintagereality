@@ -8,6 +8,9 @@ from termcolor import cprint
 # Duration for Wigglegrams im ms
 defaultDuration = 100
 
+# How many iterations for autoalignment, 20 is mostly sufficient, 50 improve results
+auto_align_iterations = 75
+
 # See http://www.sview.ru/en/help/input/
 # See https://note.nkmk.me/en/python-pillow-concat-images/
 def crossed_eyed(left, right, file, format='jpeg'):
@@ -138,6 +141,10 @@ def blank_out(im, coords = None, file = None, opts = None):
         im.save(file)
     return im
 
+# TODO: This is just a placeholder for auto alignment metadata
+def auto_align(im, coords = None, file = None, opts = None):
+    return im
+
 parser = argparse.ArgumentParser(description='Extract steroscopic images')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
 parser.add_argument('--coords', type=pathlib.Path, help='File containing coordinates', required=True)
@@ -187,6 +194,8 @@ if args.advanced and not advanced:
 
 if advanced:
     import stereoscopy
+    #import numpy as np
+    #import cv2 as cv
 
 leftFileName = args.image.parent.joinpath(args.image.stem + '-left' + images_suffix)
 rightFileName = args.image.parent.joinpath(args.image.stem + '-right' + images_suffix)
@@ -211,7 +220,7 @@ if 'preprocess' in coords and advanced:
 if not 'type' in coords:
     (left, right) = cut_stereo(coords, im)
     if same_size:
-        (left, right) = stereoscopy.auto_align((left, right), shrink=same_size)
+        (left, right) = stereoscopy.auto_align((left, right), shrink=same_size, iterations=auto_align_iterations)
 elif 'type' in coords and coords['type'] == 'anaglyph':
     (left, right) = cut_anaglyph(coords, im)
 

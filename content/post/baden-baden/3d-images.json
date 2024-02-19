@@ -18,5 +18,6 @@
             "x": 1914,
             "y": 1828
         }
-    }
+    },
+    "preprocess": [{"method": "auto_align", "args": [75]} ]
 }
