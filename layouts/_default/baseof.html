@@ -32,23 +32,23 @@
 
   </head>
 
-    {{- $class := "" }}
-    {{- with .Page.File -}}
-      {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
-          {{- $class = "about" -}}
-      {{- end -}}
+  {{- $class := "" }}
+  {{- with .Page.File -}}
+    {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
+      {{- $class = "about" -}}
     {{- end -}}
+  {{- end -}}
 
-     {{ if .Params.metaPage }}
-         {{ $class = printf "%s %s" $class "meta" }}
-     {{ end }}
-     <body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
-       <div id="page">
-         {{ partial "header.html" . }}
-         <div id="main">
-             {{ block "content" . }}{{ end }}
-         </div>
-         {{ partial "footer.html" . }}
-       </div>
-   </body>
+  {{ if .Params.metaPage }}
+    {{ $class = printf "%s %s" $class "meta" }}
+  {{ end }}
+  <body class="{{ $class }} {{ if .IsHome }}home{{ end }}">
+    <div id="page">
+      {{ partial "header.html" . }}
+        <div id="main">
+          {{ block "content" . }}{{ end }}
+        </div>
+      {{ partial "footer.html" . }}
+    </div>
+  </body>
  </html>

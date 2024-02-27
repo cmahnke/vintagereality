@@ -24,7 +24,7 @@ resources:
 ---
 
 Dieses Bild zeigt die Trommelbrücke am [Kameido-Schrein](https://de.wikipedia.org/wiki/Kameido-Schrein) (Kameido Tenjin Taikobashi).
-
+<!--more-->
 
 Es gibt auch Farbholzschnitte, die die Brücke zeigen:
 * [, ca. 1830](https://www.metmuseum.org/art/collection/search/53792) von [Katsushika Hokusai](https://de.wikipedia.org/wiki/Katsushika_Hokusai).

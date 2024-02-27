@@ -10,6 +10,7 @@ $red2: rgb(248,229,216);
 
 $heading-font: 'Oxanium Variable';
 $text-font: 'Fredoka Variable';
+$text-color: rgba(255,255,255,.6);
 $special-font: 'Tektur Variable';
 @import "fonts/oxanium";
 @import "fonts/fredoka";
@@ -35,6 +36,11 @@ $fullscreen-color: var(--base07);
 /* Site includes */
 @import "nav";
 @import "page";
+
+:root {
+  --cyan: $cyan;
+  --magenta: $magenta;
+}
 
 /*
 * {
@@ -72,6 +78,9 @@ body {
   #main {
     width: 80%;
     margin: auto;
+    @media only screen and (max-width: 600px) {
+      width: 95%;
+    }
 
     .article-list {
 
@@ -89,8 +98,12 @@ body {
         margin: 3.8em;
         padding: 1em;
 
+        @media only screen and (max-width: 600px) {
+          margin: unset;
+        }
+
         .list-item-head {
-            max-width: 52em;
+            max-width: 52rem;
             margin: auto;
 
             h2 {
@@ -115,16 +128,38 @@ body {
                 text-align: end;
                 font-size: small;
                 margin: .8em 0 1.4em;
+                color: $text-color;
             }
 
         }
 
         .summary {
-          max-width: 48em;
+          max-width: 48rem;
           margin: auto;
           width: 100%;
           font-size: 1.4em;
           text-align: justify;
+          display: flex;
+          flex-direction: column;
+          color: $text-color;
+
+          p {
+            flex-basis: 100%;
+            margin-block-start: .4em;
+            margin-block-end: .4em;
+          }
+
+          a:not(.readmore) {
+            mix-blend-mode: unset;
+            background-image: linear-gradient(90deg, $cyan, $magenta);
+            background-clip: text;
+            color: transparent;
+          }
+
+          a.readmore {
+            text-align: right;
+            margin: .6em 0;
+          }
 
         }
 
@@ -138,9 +173,20 @@ body {
           .glasses {
             position: absolute;
             aspect-ratio: 236 / 79;
-            background: url(/images/svgs/glasses_background.svg);
-            background-size: 100% 100%;
             height: 100%;
+
+            svg {
+              height: 100%;
+              width: 100%;
+              /*background-image: linear-gradient(0deg, rgba(--cyan, .2), rgba(--magenta, .2));*/
+
+              path {
+                fill: darken(#373f43, 7%);
+                stroke: rgba(255,255,255,.3);
+                stroke-width: 1px;
+              }
+            }
+
           }
 
           .eye {
@@ -152,23 +198,28 @@ body {
             border-radius: 2.4em;
 
             &.left {
-              left: 0;
+              left: 3px;
             }
 
             &.right {
-              right: 0;
+              right: 3px;
             }
           }
 
           .preview-img {
             padding: 10px;
             box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
-
+            @media only screen and (min-width: 600px) {
+                display: none;
+            }
           }
 
           @media only screen and (max-width: 600px) {
-            display: none;
+            .wide {
+              display: none;
+            }
           }
+
 
         }
       }

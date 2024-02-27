@@ -14,7 +14,7 @@
   </div>
   <section class="summary">
     {{ .Summary }}
-    {{ if .Truncated }} <a href="{{ .RelPermalink }}">{{ i18n "readmore" }}</a>{{ end }}
+    {{ if .Truncated }} <a href="{{ .RelPermalink }}" class="readmore">{{ i18n "readmore" }}</a>{{ end }}
   </section>
   {{- partial "3d-preview.html" . -}}
 </article>

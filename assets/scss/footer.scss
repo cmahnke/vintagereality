@@ -1,7 +1,6 @@
 .footer {
   font-family: $special-font, sans-serif;
-  background-image: url('/images/svgs/footer.svg');
-  background-size: cover;
+
   padding-top: 1em;
   margin-top: 1.4em;
   width: 100%;
@@ -19,6 +18,8 @@
         display: flex;
         flex-direction: row;
         justify-content: space-around;
+        margin-block-start: unset;
+        margin-block-end: unset;
 
         .menu-item  {
           display: inline;
@@ -28,13 +29,31 @@
             display: none;
           }
 
+          a {
+            font-size: 1.4rem;
+            color: darken($magenta, 10%);
+            text-shadow: $cyan 1px 0 10px;
+
+          }
+
         }
       }
     }
   }
 
   .footer-container {
-    padding-bottom: .6em;
+    padding-top: 1.2em;
+    background-image: url('/images/svgs/footer.svg');
+    background-size: cover;
+
+    .projektemacher {
+      padding-top: .6em;
+
+      img {
+        vertical-align: middle;
+        filter: drop-shadow(0 0 4px cyan);
+      }
+    }
 
     p {
       font-size: 1em;

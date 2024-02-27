@@ -18,6 +18,18 @@
   <img alt="Vintage" src="/images/svgs/vintage.svg" id="vintage-image" />
   <img alt="Reality" src="/images/svgs/reality.svg" id="reality-image" />
 
+  <div class="header-menu">
+    <ul class="header-menu-list">
+      {{- with .Site.Menus.main -}}
+        {{- range sort . -}}
+          <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>
+            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+          </li>
+        {{- end -}}
+      {{- end -}}
+    </ul>
+  </div>
+
   <script>
 
   </script>

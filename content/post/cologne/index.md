@@ -19,4 +19,6 @@ resources:
     iiif: front/info.json
 ---
 
-Ein Ansicht des Kölner Doms, heute it die Bahnstrecke im Vordergrund deutlich breiter und die Dombauschatzkammer erweitert. Daher ist das Bild um ca. 1900 entstanden.
+Ein Ansicht des Kölner Doms.
+<!--more-->
+Heute ist die Bahnstrecke im Vordergrund deutlich breiter und die Dombauschatzkammer erweitert. Daher ist das Bild um ca. 1900 entstanden.

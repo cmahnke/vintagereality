@@ -18,4 +18,4 @@ resources:
   params:
     iiif: back/info.json
 ---
-Jaffa ist ehute ein Teil von [Tel Aviv](https://de.wikipedia.org/wiki/Tel_Aviv-Jaffa).
+Jaffa ist heute ein Teil von [Tel Aviv](https://de.wikipedia.org/wiki/Tel_Aviv-Jaffa).
