@@ -17,9 +17,7 @@
           {{- if .IsSection -}}
             <div class="sections-contents">
               {{ range where .Site.Pages "Section" .Section }}
-
                 {{ partial "list-item.html" . }}
-
               {{ end }}
             </div>
           {{- end -}}

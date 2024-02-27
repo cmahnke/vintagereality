@@ -1,12 +1,10 @@
-{{- $rotation := "" }}
-{{- range (seq 0 1) -}}
-    {{- $rotation = printf "%s%d" $rotation (index (shuffle (seq 0 99)) 0) }}
-{{- end -}}
-{{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
-
-<article class="list-item" style="transform: rotate({{$rotation}}deg);" itemscope itemtype="http://schema.org/Blog">
+<article class="list-item" itemscope itemtype="http://schema.org/Blog">
   <div class="list-item-head">
-    <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ .Title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
+    {{- $title := .Title -}}
+    {{- if ne .CurrentSection.Path "/post" -}}
+      {{- $title = printf "%s: %s" .CurrentSection.Title .Title -}}
+    {{- end -}}
+    <h2 class="headline" itemprop="headline"><a href="{{ .RelPermalink }}">{{ $title }}{{ if .Draft }} (Draft){{ end }}</a></h2>
     <div class="meta">
   {{ if not .Date.IsZero }}
       <span class="key">{{ i18n "publishedOn" }}</span>

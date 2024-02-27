@@ -9,7 +9,8 @@
 
   {{- $pages := .Pages -}}
   {{- if .IsHome -}}
-      {{- $pages = .Site.RegularPages -}}
+    {{- $pages = where .Site.Pages "Section" "post" -}}
+    {{- $pages = where $pages "Path" "!=" "/post" -}}
   {{- end -}}
 
   {{/* Sort sticky pages to top */}}

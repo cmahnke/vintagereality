@@ -1,13 +1,19 @@
 {{- if and (isset .Page.Params "type") (eq .Page.Params.type "3d")  -}}
 
-{{- $previewWidth := "200" -}}
+{{- $previewWidth := "400" -}}
 
 {{- $contextPath := "" -}}
 {{- if and (ne nil .File) (ne nil .File.Path) -}}
   {{- $contextPath = path.Dir .File.Path -}}
 {{- end -}}
 
-<div class="preview">
+{{- $rotation := "" }}
+{{- range (seq 0 1) -}}
+    {{- $rotation = printf "%s%d" $rotation (index (shuffle (seq 0 99)) 0) }}
+{{- end -}}
+{{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
+
+<div class="preview" style="transform: rotate({{$rotation}}deg);" alt="{{ .Title }} {{ i18n "preview" }}">
   {{- $baseImageName := "front" -}}
   {{- if eq .Params.resources nil -}}
     {{- warnf "Page %s has no resources!" .File.Path -}}
@@ -20,10 +26,21 @@
   {{- if and (isset .Page.Params "subtype") (or (eq .Page.Params.subtype "stereoscopic") (eq .Page.Params.subtype "anaglyph")) -}}
     {{- $ana := path.Join $contextPath (printf "%s-anaglyph.jpg" $baseImageName) -}}
     {{- if fileExists $ana -}}
-      {{- $image := .Resources.Get (printf "%s-anaglyph.jpg" $baseImageName) -}}
-      {{- if ne $image nil -}}
-        {{ $image = $image.Process (printf "resize %sx" $previewWidth) }}
+      {{- $imageL := .Resources.Get (printf "%s-left.jpg" $baseImageName) -}}
+      {{- $imageR := .Resources.Get (printf "%s-right.jpg" $baseImageName) -}}
+
+      {{- if and (ne $imageL nil) (ne $imageR nil) -}}
+        {{ $imageL = $imageL.Process (printf "resize %sx" $previewWidth) }}
+        {{ $imageR = $imageR.Process (printf "resize %sx" $previewWidth) }}
+        <div class="eye left" style="background: url({{- $imageL.RelPermalink -}}) center no-repeat;">
+        </div>
+        <div class="eye right" style="background: url({{- $imageR.RelPermalink -}}) center no-repeat;">
+        </div>
+        {{/*
         <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
+        */}}
+        <div class="glasses">
+        </div>
       {{- else -}}
         {{- warnf "[partials/3d-preview.html] Can't load '%s'" $ana -}}
       {{- end -}}
