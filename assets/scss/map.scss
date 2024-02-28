@@ -1,11 +1,22 @@
-@import "fonts/eb-garamond";
+.iframe-wrapper .opt-in-overlay {
+  color: #272d2f;
+
+  .opt-in-overlay-content {
+    border-radius: 1em;
+  }
+}
+
 /*----------------------  MAPS ----------------------*/
 .map-wrapper {
     height: 20em;
-    font-family: 'EB Garamond', serif;
+    font-family: $text-font;
 
     .map {
         height: 100%;
+    }
+
+    .ol-viewport {
+      border-radius: 1em;
     }
 
     .ol-popup {
@@ -19,16 +30,33 @@
         bottom: 12px;
         left: -50px;
 
+        .geojsonPopup {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          color: #272d2f;
+
+          .preview-img {
+            margin: .2em 0;
+          }
+        }
+
         h1 {
             font-size: larger;
+            font-family: $heading-font;
+            text-align: center;
+            font-size: 1.2em;
+            margin: .2em 0;
         }
         .title {
             font-size: large;
             display: none;
 
         }
-        .content {
+        .popup-content {
             font-weight: 500;
+            text-align: center;
+            font-size: 0.8em;
         }
         .link {
             text-align: center;
@@ -73,4 +101,17 @@
     .ol-popup-closer:after {
         content: "✖";
     }
+}
+
+.iframe-wrapper {
+  margin-bottom: unset;
+
+  &+ .download-link {
+    display: flex;
+    justify-content: flex-end;
+    a {
+      color: rgba(255,255,255,.8);
+      font-size: small;
+    }
+  }
 }

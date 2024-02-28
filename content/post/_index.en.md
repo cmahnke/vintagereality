@@ -7,24 +7,7 @@ outputs:
 - html
 - geojson
 ---
-
-An experiment on media types and file formats.
-
-{{< html/link file="./map.geojson" content="GeoJSON" >}}
-
-{{< html/iframe-consent >}}
-    {{< maps/osm src="./map.geojson" >}}
-{{< /html/iframe-consent >}}
-
-# Update Christmas 2022
-
-* The quality of generated wigglegrams has been massively improved by using [StereoscoPy](https://github.com/2sh/StereoscoPy). It uses OpenCV to improve the image layout. Additionally, anaglyphs can now be generated.
-* The improved arrangement does not work very well with low structured content, like interiors or many plants, without horizon or without contrast.
-* There are now more images online
-* [MPO](https://de.wikipedia.org/wiki/Multi_Picture_Object) files are now generated.
-
-
-## For more information on viewing in the browser, see several blogs:
+# For more information on viewing in the browser, see several blogs:
 * [Learning to Free-View: See Stereoscopic Images with the Naked Eye](https://stereoscopy.blog/2022/03/11/learning-to-free-view-see-stereoscopic-images-with-the-naked-eye/)
 
 # Image licenses

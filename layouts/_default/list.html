@@ -2,11 +2,6 @@
   {{- .Title }} · {{ .Site.Title -}}
 {{ end }}
 {{ define "content" }}
-
-  {{- if .IsHome -}}
-    {{- partial "front.html" . -}}
-  {{- end -}}
-
   {{- $pages := .Pages -}}
   {{- if .IsHome -}}
     {{- $pages = where .Site.Pages "Section" "post" -}}

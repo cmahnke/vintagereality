@@ -1,12 +1,9 @@
 {{ $class := .Params.type }}
 <div class="post {{ $class }}">
   <div class="content">
-
     {{- partial "post-header.html" . -}}
-
     <div class="post-body">
       {{- partial "content.html" . -}}
-      {{/* TODO: Finish display of section contents */}}
     </div>
     {{- if .IsSection -}}
       <div class="sections-contents article-list">

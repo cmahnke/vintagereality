@@ -6,12 +6,10 @@ Vintage Reality
   * Homepage and logo animation
   * CSS
     * Mobile
-  * Templating for sections
-  * Layout for content pages
-    * Tag cloud
+  * Fix menues
 * Check A-Frame integration
 * Change Dates
-
+* Add translation
 
 ## Other Inspirations
 * https://reverb.laravel.com/

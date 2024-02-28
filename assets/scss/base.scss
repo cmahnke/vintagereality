@@ -8,8 +8,8 @@ $blue: rgb(132,255,255);
 $yellow: rgb(251,238,153);
 $red2: rgb(248,229,216);
 
-$heading-font: 'Oxanium Variable';
-$text-font: 'Fredoka Variable';
+$heading-font: 'Oxanium Variable', sans-serif;
+$text-font: 'Fredoka Variable', sans-serif;
 $text-color: rgba(255,255,255,.8);
 $special-font: 'Tektur Variable';
 @import "fonts/oxanium";
@@ -25,6 +25,7 @@ $special-font: 'Tektur Variable';
 @import "share";
 @import "3d";
 @import "header";
+@import "tagcloud";
 @import "footer";
 $font-color-body: var(#000);
 $secondary-icon-color: #69c;
@@ -94,6 +95,18 @@ body {
       width: 95%;
     }
 
+    .article-single,
+    .article-list {
+      .content {
+        margin: 2.8em 0;
+
+        h1, h2, h3 {
+          font-family: $heading-font;
+        }
+
+      }
+    }
+
     .article-single {
       color: $text-color;
       max-width: 52rem;
@@ -109,6 +122,7 @@ body {
         background-image: linear-gradient(90deg, $magenta, $cyan);
         background-clip: text;
         color: transparent;
+
       }
 
       .opt-in-header {
@@ -116,6 +130,7 @@ body {
         background-clip: unset;
         color: unset;
       }
+
     }
 
     .article-list {
@@ -125,7 +140,7 @@ body {
         border-radius: 16px;
         /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
         backdrop-filter: blur(5px);
-        -webkit-backdrop-filter: blur(5px);
+        /* -webkit-backdrop-filter: blur(5px); */
         border: 1px solid rgba(255, 255, 255, 0.3);
         box-shadow:
           12px 12px 16px 0 rgba(0, 0, 0, 0.25),
@@ -266,6 +281,8 @@ body {
             }
           }
 
+          /* TODO: mobile: max-width: 90% */
+
           .preview-img {
             padding: 10px;
             box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
@@ -291,7 +308,7 @@ body {
 
 .list-title,
 .headline {
-  font-family: $heading-font, sans-serif;
+  font-family: $heading-font;
 }
 
 .source {

@@ -1,0 +1,15 @@
+.tagcloud {
+  margin: .6em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: "Tektur Variable",sans-serif;
+
+  a.cloud-tag {
+    margin: .4em !important;
+    text-align: unset;
+    white-space: nowrap;
+    display: inline-block;
+  }
+}

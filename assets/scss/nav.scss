@@ -1,8 +1,11 @@
 /* Pagination */
-
 nav.paginator {
-    text-align: center;
+    /*text-align: center;*/
     font-size: 1.6em;
+    display: flex;
+    margin-bottom: 2.4em;
+    align-items: center;
+    justify-content: center;
 
     a {
         color: var(--base0e);
@@ -24,8 +27,11 @@ nav.paginator {
     }
 
     .nav-counter {
-        font-size: 1.8em;
-        /* TODO: Change color */
+      font-weight: bold;
+      background-image: linear-gradient(90deg, color.adjust($cyan, $lightness: -10%), color.adjust($magenta, $lightness: -10%));
+      background-clip: text;
+      color: transparent;
+      font-size: 1.4em;
     }
 
     .nav-right {

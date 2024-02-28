@@ -13,7 +13,8 @@
 {{- end -}}
 {{- $rotation = printf "%s%d.%s" (index (shuffle (slice "-" "")) 0) (index (shuffle (seq 0 1)) 0) $rotation -}}
 <a href="{{ .RelPermalink }}">
-  <div class="preview" style="transform: rotate({{$rotation}}deg);" alt="{{ .Title }} {{ i18n "preview" }}">
+  {{/* style="transform: rotate({{$rotation}}deg);"  */}}
+  <div class="preview" alt="{{ .Title }} {{ i18n "preview" }}">
     {{- $baseImageName := "front" -}}
     {{- if eq .Params.resources nil -}}
       {{- warnf "Page %s has no resources!" .File.Path -}}
@@ -43,7 +44,7 @@
           {{- $image = $image.Process (printf "resize %sx" $previewWidth) -}}
           {{- $height := $image.Height -}}
           {{- if (ne $image nil) -}}
-            <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; width: {{ $image.Width }}px; height: {{ $image.Height }}px" class="preview-img">
+            <div alt="{{ .Title }} {{ i18n "preview" }}" style="background: url({{- $image.RelPermalink -}}) center no-repeat; aspect-ratio: {{ $image.Width }} / {{ $image.Height }}; max-width: 90%;" class="preview-img">
           {{- end -}}
         {{- else -}}
           {{- warnf "[partials/3d-preview.html] Can't load '%s'" $ana -}}
