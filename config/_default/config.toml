@@ -4,7 +4,6 @@
     description = "'Virtuelle Realität' im späten 19. und frühen 20. Jahrhundert"
     copyrightYears = "2024"
     cc = false
-    stylesheets = []
     iiifCanvasHeight = 400
     iiifCanvasWidth = 300
     headerImage = "images/logo/logo.svg"

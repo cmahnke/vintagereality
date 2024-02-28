@@ -16,6 +16,10 @@ resources:
   name: page
   params:
     iiif: title/info.json
+- src: "glasses.jxl"
+  name: page
+  params:
+    iiif: glasses/info.json
 ---
 
 Das Meyers Jugendlexikon beinhaltet eine 3D-Brille um verschiedene enthaltene [Anaglyphen](https://de.wikipedia.org/wiki/Anaglyph_3D) anzuzeigen. Dazu zählen geometrische Figuren und Bilder.

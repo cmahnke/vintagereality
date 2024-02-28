@@ -25,17 +25,16 @@
     <link rel="shortcut icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
     <link rel="icon" href="{{ "img/favicon.ico" | absURL }}" type="image/x-icon">
 
-    {{/* External Styles - Fonts etc */}}
-    {{ range .Site.Params.stylesheets -}}
-        <link href="{{ . }}" rel="stylesheet">
-    {{- end -}}
-
   </head>
 
   {{- $class := "" }}
+  {{- if eq .Kind "section" -}}
+    {{- $class = "section" }}
+  {{- end -}}
+
   {{- with .Page.File -}}
     {{- if or (hasPrefix .Path "about") (hasPrefix .Path "/about") -}}
-      {{- $class = "about" -}}
+      {{- $class = printf "%s %s" $class "about" -}}
     {{- end -}}
   {{- end -}}
 
