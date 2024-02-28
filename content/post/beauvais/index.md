@@ -10,8 +10,6 @@ tags:
 - photo
 - Beauvais
 - france
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - 2.080874978937397

@@ -10,8 +10,6 @@ tags:
 - photo
 - Trouville-sur-Mer
 - france
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - 0.08650350370885652

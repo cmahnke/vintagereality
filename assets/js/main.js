@@ -5,6 +5,8 @@ import { fullscreen } from './fullscreen.js';
 window.addConsent = addConsent;
 window.initMap = initMap;
 
+require('./3d.js');
+
 import stickybits from 'stickybits'
 window.stickybits = stickybits;
 

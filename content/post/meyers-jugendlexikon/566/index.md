@@ -12,8 +12,6 @@ tags:
 - photo
 - Theuma
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page566.jxl"
   name: page

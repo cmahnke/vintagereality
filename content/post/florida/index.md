@@ -10,8 +10,6 @@ tags:
 - photo
 - Florida
 - usa
-js:
-  - js/3d.js
 resources:
 - src: "front.jxl"
   name: front

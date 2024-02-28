@@ -11,8 +11,6 @@ tags:
 - anaglyph
 - photo
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page335.jxl"
   name: page

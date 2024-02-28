@@ -12,8 +12,6 @@ tags:
 - Jaffa
 - israel
 - palestine
-js:
-  - js/3d.js
 resources:
 - src: "front.jxl"
   name: front

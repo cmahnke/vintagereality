@@ -14,8 +14,6 @@ tags:
 - photo
 - Stalheim
 - norway
-js:
-  - js/3d.js
 resources:
 - src: "front.jxl"
   name: front

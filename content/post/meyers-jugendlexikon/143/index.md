@@ -12,8 +12,6 @@ tags:
 - photo
 - Leipzig
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page143.jxl"
   name: page

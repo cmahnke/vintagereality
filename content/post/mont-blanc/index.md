@@ -10,8 +10,6 @@ tags:
 - photo
 - Mont Blanc
 - france
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - 6.864325

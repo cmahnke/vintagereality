@@ -10,8 +10,6 @@ tags:
 - photo
 - Colorado
 - usa
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - -105.705630

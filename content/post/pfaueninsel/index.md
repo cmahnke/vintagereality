@@ -14,8 +14,6 @@ geojson:
   coordinates:
   - 13.128029
   - 52.433951
-js:
-  - js/3d.js
 draft: true
 resources:
 - src: "front.jpg"

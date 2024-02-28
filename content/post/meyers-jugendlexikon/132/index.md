@@ -12,8 +12,6 @@ tags:
 - anaglyph
 - Vockerode
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page132.jxl"
   name: page

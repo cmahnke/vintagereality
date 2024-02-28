@@ -10,8 +10,6 @@ tags:
 - photo
 - Edinburgh
 - uk
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - -3.1873873

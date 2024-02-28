@@ -7,7 +7,8 @@ Vintage Reality
   * CSS
     * Mobile
   * Fix menues
-* Check A-Frame integration
+  * Page views
+* Fix JS fullscreen
 * Change Dates
 * Add translation
 

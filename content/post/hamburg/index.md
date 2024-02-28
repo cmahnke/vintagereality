@@ -10,8 +10,6 @@ tags:
 - photo
 - Hamburg
 - germany
-js:
-  - js/3d.js
 geojson:
   coordinates:
   - 10.02659235098882

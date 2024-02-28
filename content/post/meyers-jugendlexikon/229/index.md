@@ -12,8 +12,6 @@ tags:
 - photo
 - Rodewisch
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page229.jxl"
   name: page

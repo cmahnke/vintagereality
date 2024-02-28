@@ -12,8 +12,6 @@ tags:
 - anaglyph
 - Zschopau
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page073.jxl"
   name: page

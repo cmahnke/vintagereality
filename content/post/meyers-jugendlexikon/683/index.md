@@ -12,8 +12,6 @@ tags:
 - photo
 - Großenhain
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page683.jxl"
   name: page

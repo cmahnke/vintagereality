@@ -16,8 +16,6 @@ tags:
 - Paris
 - Louvre
 - france
-js:
-  - js/3d.js
 resources:
 - src: "front.jpg"
   name: front

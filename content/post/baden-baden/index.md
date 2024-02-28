@@ -14,8 +14,6 @@ geojson:
   coordinates:
   - 8.2368503
   - 48.7623869
-js:
-  - js/3d.js
 resources:
 - src: "front.jxl"
   name: front

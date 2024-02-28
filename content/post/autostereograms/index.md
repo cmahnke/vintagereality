@@ -4,8 +4,6 @@ date: 2022-12-31T12:15:07+02:00
 subtype: autostereogram
 tags:
 - 3D
-js:
-  - js/3d.js
 draft: true
 ---
 

@@ -14,8 +14,6 @@ tags:
 #  coordinates:
 #  -
 #  -
-js:
-  - js/3d.js
 resources:
 - src: "front.jxl"
   name: front

@@ -10,8 +10,6 @@ tags:
 - 3D
 - anaglyph
 - drawing
-js:
-  - js/3d.js
 resources:
 - src: "page578.jxl"
   name: page

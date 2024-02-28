@@ -12,8 +12,6 @@ tags:
 - photo
 - Jena
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page472.jxl"
   name: page

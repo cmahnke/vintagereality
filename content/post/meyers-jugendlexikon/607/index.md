@@ -12,8 +12,6 @@ tags:
 - photo
 - Leinefelde
 - germany
-js:
-  - js/3d.js
 resources:
 - src: "page607.jxl"
   name: page
