@@ -8,6 +8,10 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- photo
+- anaglyph
+- Zschopau
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +20,5 @@ resources:
   params:
     iiif: page073/info.json
 ---
+
+Seite 73: Taktstraße im VEB Motorradwerk Zschopau

@@ -8,6 +8,8 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- drawing
 js:
   - js/3d.js
 resources:
@@ -16,3 +18,5 @@ resources:
   params:
     iiif: page376/info.json
 ---
+
+Seite 376: Körper: Oben Tetraeder (links), Oktaeder (rechts);Mitte Hexaeder, Würfel; unten Ikosaeder (links), Dodekaeder (rechts)

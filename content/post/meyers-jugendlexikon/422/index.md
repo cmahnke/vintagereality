@@ -8,6 +8,9 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +19,5 @@ resources:
   params:
     iiif: page422/info.json
 ---
+
+Seite 422: Manipulator: Verarbeiten hochradioaktiver Stoffe mittels Manipulatoren, die durch eine starke Strahlenschutzwand führen. Durch ein 40 cm starkes Glasfenster werden die einzelnen Arbeitsvorgänge beobachtet. Die Bedienung von Apparaten und Versorgungseinrichtungen geschieht vom Bedienungsraum aus

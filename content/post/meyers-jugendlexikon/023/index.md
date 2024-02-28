@@ -8,6 +8,8 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- drawing
+- anaglyph
 js:
   - js/3d.js
 resources:

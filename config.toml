@@ -21,18 +21,18 @@ paginate = 7
 
       [[languages.de.menu.main]]
         name = "Links"
-        URL = "/links"
+        URL = "/links/"
         weight = 1
 
       [[languages.de.menu.main]]
         name = "Karte"
-        URL = "/map"
+        URL = "/map/"
         weight = 2
 
       [[languages.de.menu.main]]
         name = "Über"
         weight = 5
-        url = "about/"
+        url = "/about/"
 
 [markup]
 defaultMarkdownHandler = 'goldmark'

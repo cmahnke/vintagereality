@@ -25,6 +25,7 @@ static/images/logo.png
 content/**/ogPreview.*g
 content/**/ogPreview/
 content/**/ogPreview.en/
+content/post/meyers-jugendlexikon/glasses/
 **/.DS_Store
 content/**/*-right.*
 content/**/*-left.*

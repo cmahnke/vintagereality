@@ -2,7 +2,6 @@
 title: "Links"
 metaPage: true
 displayinlist: false
-draft: true
 ---
 
 # Historic 3D images
@@ -12,6 +11,7 @@ draft: true
 * [STEREOPI BLOG](https://stereopi.com/blog/art-stereoscopic-photo)
 * [Wikipedia: Underwood & Underwood](https://en.wikipedia.org/wiki/Underwood_%26_Underwood)
 * [Stereoscopy.com - The World of 3D-Imaging](https://www.stereoscopy.com/)
+* [Mathematische Basteleien: Stereogramm](https://www.mathematische-basteleien.de/stereogramm.htm) in German
 
 ## Sources
 

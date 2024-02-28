@@ -8,6 +8,8 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- drawing
 js:
   - js/3d.js
 resources:
@@ -16,3 +18,7 @@ resources:
   params:
     iiif: page346/info.json
 ---
+
+Seite 346:
+* Kegelschnitte, Abb. 3: Hyperbel (ß ist der Winkel zwischen der Schnittebene und der Kegelachse)
+* Kegelstumpf, Abb. 1: h= Höhe, n = großer Radius, r2 = kleiner Radius

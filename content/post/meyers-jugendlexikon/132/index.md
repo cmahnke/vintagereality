@@ -8,6 +8,10 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- photo
+- anaglyph
+- Vockerode
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +20,5 @@ resources:
   params:
     iiif: page132/info.json
 ---
+
+Seite 132: Blick in die Turbinenhalle des [Kraftwerkes „Elbe" in Vockerode](https://de.wikipedia.org/wiki/Kraftwerk_Vockerode) (LF)

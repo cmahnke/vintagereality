@@ -1,22 +1,24 @@
-<header class="header header-main" id="head">
+<header class="header header-main {{ if .IsHome }}home{{ end }}" id="head">
   <div class="menu">
     {{ partial "menu.html" . }}
   </div>
   <div class="header-logo">
 
     <a href="/" title="{{ .Site.Title }}">
-      <img class="header-logo-first" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg">
+      <img class="header-logo-first logo-part" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg">
     </a>
     <a href="/" title="{{ .Site.Title }}">
-      <img class="header-logo-second" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
+      <img class="header-logo-second logo-part" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
     </a>
   </div>
   {{- $subtitle := .Params.subtitle | default "" -}}
   {{- if ne $subtitle "" -}}
     <h2 class="header-subtitle">{{ $subtitle }}</h2>
   {{- end -}}
+  {{/*
   <img alt="Vintage" src="/images/svgs/vintage.svg" id="vintage-image" />
   <img alt="Reality" src="/images/svgs/reality.svg" id="reality-image" />
+  */}}
 
   <div class="header-menu">
     <ul class="header-menu-list">

@@ -1,0 +1,75 @@
+[3d]
+other = "3D"
+
+# Tags
+
+[stereoscopic_image]
+other = "Stereoscopic image"
+
+[anaglyph]
+other = "Anaglyph"
+
+[photo]
+other = "Photo"
+
+[drawing]
+other = "Drawing"
+
+# Places
+
+[usa]
+other = "Unites States"
+
+[uk]
+other = "United Kingdom"
+
+[germany]
+other = "Germany"
+
+[france]
+other = "France"
+
+[egypt]
+other = "Egypt"
+
+[switzerland]
+other = "Switzerland"
+
+[india]
+other = "India"
+
+[syria]
+other = "Syria"
+
+[norway]
+other = "Norway"
+
+[italy]
+other = "Italy"
+
+[japan]
+other = "Japan"
+
+[israel]
+other = "Israel"
+
+[palestine]
+other = "Palestine"
+
+[cologne]
+other = "Cologne"
+
+[calcutta]
+other = "Kolkata"
+
+[damascus]
+other = "Damacus"
+
+[milan]
+other = "Milan"
+
+[nigara_falls]
+other = "Niagara Falls"
+
+[giza]
+other = "Giza"

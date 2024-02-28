@@ -1,6 +1,11 @@
 #head {
   margin-top: .5em;
 
+  /* TODO: The menu for mobile devices */
+  .menu {
+    display: none;
+  }
+
   .header-logo {
     position: relative;
     margin: auto;
@@ -16,9 +21,18 @@
       top: 0;
     }
 
+    .logo-part {
+      margin: auto;
+    }
+
   }
 
+  /* TODO: Hide this this for mobile devices */
   .header-menu {
+    background-image: url(/images/svgs/footer.svg);
+    background-size: cover;
+    padding: 0.4em;
+
     .header-menu-list {
       display: flex;
       flex-direction: row;
@@ -27,6 +41,8 @@
       margin-block-end: unset;
       width: 80%;
       font-size: 1.4rem;
+      margin: auto;
+
 
       .menu-item {
         display: inline;

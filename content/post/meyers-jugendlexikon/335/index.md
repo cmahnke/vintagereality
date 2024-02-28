@@ -8,6 +8,9 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +19,5 @@ resources:
   params:
     iiif: page335/info.json
 ---
+
+Seite 335: Bohrung der Sprenglöcher in einem Kalischacht. Die Korbkugel schützt die Bergleute vor Stürzen in das tiefe Loch, in das das abgesprengte Kali nachrutscht (oben)

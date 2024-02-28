@@ -10,6 +10,10 @@ geojson:
   - 60.835248
 tags:
 - 3D
+- stereoscopic_image
+- photo
+- Stalheim
+- norway
 js:
   - js/3d.js
 resources:
@@ -22,3 +26,5 @@ resources:
   params:
     iiif: back/info.json
 ---
+
+Das berühmte Hotel in [Stalheim](https://de.wikipedia.org/wiki/Stalheim), Norwegen.

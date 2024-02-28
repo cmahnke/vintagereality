@@ -8,6 +8,9 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- photo
+- anaglyph
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +19,5 @@ resources:
   params:
     iiif: page106/info.json
 ---
+
+Seite 106: Automatisch arbeitende Mehrspindelbohrmaschine für Bohren und Senken, 1 Bohreinheit BMG 63 für 36 gleichzeitig arbeitende Bohrspindeln, 2 Aufspannschlitten mit aufgespanntem Motorblock

@@ -6,6 +6,12 @@ subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- stereoscopic_image
+- photo
+- Tel Aviv
+- Jaffa
+- israel
+- palestine
 js:
   - js/3d.js
 resources:

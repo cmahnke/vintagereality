@@ -11,6 +11,11 @@ geojson:
 tags:
 - 3D
 - Museum
+- stereoscopic_image
+- photo
+- Paris
+- Louvre
+- france
 js:
   - js/3d.js
 resources:

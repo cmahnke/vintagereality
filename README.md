@@ -1,18 +1,17 @@
 Vintage Reality
 ===============
 
-
 # TODO
 * Finish theme
-  * Homapage and logo animation
+  * Homepage and logo animation
   * CSS
+    * Mobile
   * Templating for sections
+  * Layout for content pages
+    * Tag cloud
 * Check A-Frame integration
-* Change Tags / create tag cloud
 * Change Dates
 
-# Known issues
-* Try to guess misalignment (relates to low contrast)
 
 ## Other Inspirations
 * https://reverb.laravel.com/
@@ -21,3 +20,15 @@ Vintage Reality
 
 * https://medium.com/@damngoodtech/creating-3d-stereo-images-from-2d-images-using-invokeai-4245902abef5
 * https://codepen.io/alisasila/pen/qBRNJbj
+
+# Tags
+
+## Media types
+* Original Stereoscopic image -> stereoscopicImage
+* Original Anaglyph -> anaglyph
+* Photo -> photo
+* Drawing -> drawing
+
+# Places
+* City
+* Country

@@ -8,6 +8,10 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- Rodewisch
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +20,5 @@ resources:
   params:
     iiif: page229/info.json
 ---
+
+Seite 229: Fernrohr, Abb. 2: 305-mm-Reflektor mit aufgesetztem 105-mm-Refraktor als Sucher ([Schulsternwarte Rodewisch](https://de.wikipedia.org/wiki/Sternwarte_und_Planetarium_%E2%80%9ESigmund_J%C3%A4hn%E2%80%9C_Rodewisch))

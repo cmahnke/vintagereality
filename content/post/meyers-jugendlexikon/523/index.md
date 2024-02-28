@@ -8,6 +8,8 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- drawing
 js:
   - js/3d.js
 resources:
@@ -16,3 +18,4 @@ resources:
   params:
     iiif: page523/info.json
 ---
+Seite 523: Pyramidenstumpf, Abb. 1

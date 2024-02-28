@@ -1,7 +1,24 @@
-{{ partial "header.html" . }}
-<div class="container">
-    <main role="main" class="article">
-      {{ partial "404.html" . }}
-    </main>
-</div>
-{{ partial "footer.html" . }}
+{{ define "title" }}
+  {{- $title := "" -}}
+  {{- if ne .Params.metaPage true -}}
+    {{- if eq .CurrentSection.Title "" -}}
+      {{- $title = .Title -}}
+    {{- else if eq .CurrentSection.Title .Title -}}
+      {{- $title = .Title -}}
+    {{- else -}}
+      {{- $title = printf "%s: %s" .CurrentSection.Title .Title -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $title = .Title -}}
+  {{- end -}}
+
+  {{ $title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "content" }}
+  <div class="container error404">
+      <main role="main" class="article">
+        {{ partial "404.html" . }}
+      </main>
+  </div>
+{{- end -}}

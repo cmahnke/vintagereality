@@ -6,6 +6,10 @@ subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- stereoscopic_image
+- photo
+- Kameido
+- japan
 geojson:
   coordinates:
   - 139.820750

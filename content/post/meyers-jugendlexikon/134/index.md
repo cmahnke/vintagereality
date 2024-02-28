@@ -8,6 +8,8 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- drawing
 js:
   - js/3d.js
 resources:
@@ -16,3 +18,7 @@ resources:
   params:
     iiif: page134/info.json
 ---
+Seite 134:
+* darstellende Geometrie, Abb. 2 (links oben): Abbildung eines Körpers in senkrechter Parallelprojektion (Eintafelprojektion)
+* darstellende Geometrie, Abb. 3 (rechts oben): Abbildung eines Körpers in Zweitafelprojektion
+* darstellende Geometrie, Abb. 4: Abbildung eines Körpers in senkrechter Parallelprojektion auf drei Bildebenen

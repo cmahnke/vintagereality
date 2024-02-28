@@ -8,6 +8,10 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- Theuma
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +20,4 @@ resources:
   params:
     iiif: page566/info.json
 ---
+Seite 566: Schiefer: [Schieferbruch Theuma](https://de.wikipedia.org/wiki/Fruchtschiefer)

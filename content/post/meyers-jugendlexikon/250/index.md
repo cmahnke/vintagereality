@@ -8,6 +8,9 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +19,6 @@ resources:
   params:
     iiif: page250/info.json
 ---
+
+Seite 250: 1: Senkrechtfräsmaschine, 1 schwenkbarer Fräserspindelkopf für Schaftfräser und Messerköpfe,
+2 Konsoltisch für Vertikalverstellungen, 3 Querschieber für Seiteneinstellungen, 4 Frästisch für Längsbewegungen und zum Aufspannen der Werkstücke, 5 Schaltschrank mit Lochstreifenleser

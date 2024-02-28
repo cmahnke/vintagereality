@@ -8,6 +8,10 @@ iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
+- anaglyph
+- photo
+- Leinefelde
+- germany
 js:
   - js/3d.js
 resources:
@@ -16,3 +20,4 @@ resources:
   params:
     iiif: page607/info.json
 ---
+Seite 6ß7: Spinnerei: Der Spinnmaschinensaal im [VEB Baumwollspinnerei Leinefelde](https://de.wikipedia.org/wiki/Baumwollspinnerei_und_Zwirnerei_Leinefelde)
