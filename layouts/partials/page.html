@@ -1,18 +1,16 @@
 {{ $class := .Params.type }}
+{{- if eq $class "3d" -}}
+  {{- $class = printf "_%s" $class -}}
+{{- end -}}
+
 <div class="post {{ $class }}">
-  <div class="content">
-    {{- partial "post-header.html" . -}}
-    <div class="post-body">
-      {{- partial "content.html" . -}}
-    </div>
-    {{- if .IsSection -}}
-      <div class="sections-contents article-list">
-        {{ range where .Site.Pages "Section" .Section }}
-          {{ partial "list-item.html" . }}
-        {{ end }}
-      </div>
-    {{- end -}}
+  {{- partial "post-header.html" . -}}
+  <div class="post-body">
+    {{- partial "content.html" . -}}
   </div>
+  {{- if .IsSection -}}
+    {{- partial "section-listing.html" . -}}
+  {{- end -}}
 </div>
 
 {{- define "partials/post-header.html" -}}
@@ -20,16 +18,19 @@
     <h1 class="post-title">{{ .Title }}</h1>
     {{- if not .Params.metaPage -}}
       <div class="post-meta">
-        <div class="date">
-          <a href="{{ .RelPermalink }}">{{- partial "date.html" (dict "date" .Date "language" $.Page.Language "months" $.Site.Data.months) -}}</a>
-        </div>
-        {{ partial "meta/tags.html" . }}
-        {{- if ne .CurrentSection.Path "/post" -}}
+        {{- if and (ne .CurrentSection.Path "/post") (ne .CurrentSection.Path .Path) -}}
           <div class="parent-section">
-            {{- $partOf := printf "%s: %s" (i18n "partOf") .CurrentSection.Title -}}
-            <a href="{{ .CurrentSection.RelPermalink }}" title="{{ $partOf }}">{{ $partOf }}</a>
+            {{ i18n "sectionParent" }}
+            <a href="{{ .CurrentSection.RelPermalink }}" title="{{ .CurrentSection.Title }}">{{ .CurrentSection.Title }}</a>
           </div>
         {{- end -}}
+        <div class="date">
+          {{ if not .Date.IsZero }}
+            <span class="key">{{ i18n "publishedOn" }}</span>
+            <span class="val"><time itemprop="datePublished" datetime="{{ .Date.Format "2006-01-02" }}">{{- partial "date.html" . -}}</time></span>
+          {{ end }}
+        </div>
+        {{ partial "meta/tags.html" . }}
       </div>
     {{- end -}}
   </div>

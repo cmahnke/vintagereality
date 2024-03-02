@@ -35,7 +35,7 @@ paginate = 7
         url = "/about/"
 
 [markup]
-defaultMarkdownHandler = 'goldmark'
+  defaultMarkdownHandler = 'goldmark'
 
 [markup.goldmark]
     [markup.goldmark.renderer]
@@ -79,6 +79,9 @@ defaultMarkdownHandler = 'goldmark'
     isHTML = false
     baseName = "map"
     notAlternative = true
+
+[sitemap]
+  changeFreq = 'weekly'
 
 [module]
   [[module.mounts]]

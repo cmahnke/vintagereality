@@ -1,4 +1,6 @@
-{{ .Content }}
+<div class="post-content">
+  {{ .Content }}
+</div>
 
 {{- if or .Page.Params.iiifcontext .Page.Params.iiif.context -}}
   {{- partial "iiif/iiif-content.html" . -}}

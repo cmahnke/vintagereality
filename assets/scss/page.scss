@@ -1,43 +1,136 @@
-#main {
+.main .article-single {
+  color: $text-color;
+  margin: auto;
+  font-size: 1.4em;
 
-    .content {
+  .post-content {
+    margin-top: 2.4em;
+  }
 
-        .post-body {
+  h1 {
+    mix-blend-mode: unset;
+    background-image: linear-gradient(90deg, $magenta, $cyan);
+    background-clip: text;
+    color: transparent;
+  }
 
-            .iiif {
+  h2 {
+    mix-blend-mode: unset;
+    background-image: linear-gradient(90deg, darken($magenta, 15%), darken($cyan, 15%));
+    background-clip: text;
+    color: transparent;
+  }
 
-                .iiif-image {
+  h3 {
+    mix-blend-mode: unset;
+    background-image: linear-gradient(90deg, darken($magenta, 30%), darken($cyan, 30%));
+    background-clip: text;
+    color: transparent;
+  }
 
-                }
+  .download-link,
+  .share {
+    background-image: linear-gradient(90deg, $magenta, $cyan);
+    background-clip: text;
+    color: transparent;
+    background-size: 200% 200%;
 
-                .viewer {
-                    margin: auto;
-                    padding: 1.2em;
-                    background: rgba(255,255,255,.2);
-                    border-radius: 16px;
-                    backdrop-filter: blur(5px);
-                    -webkit-backdrop-filter: blur(5px);
-                    border: 1px solid rgba(255,255,255,.3);
-                    box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
-                }
-            }
-
-
-            /* TODO: Change color of tabs */
-            .dreiD-images {
-                margin: auto;
-                margin-bottom: 3.6em;
-
-                .wrapper .panels {
-                    background: rgba(255,255,255,.2);
-                    border-radius: 16px;
-                    backdrop-filter: blur(5px);
-                    -webkit-backdrop-filter: blur(5px);
-                    border: 1px solid rgba(255,255,255,.3);
-                    box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
-                }
-            }
-
-        }
+    &:hover {
+      animation: moving-gradient alternate 5s infinite;
     }
+
+    @keyframes moving-gradient {
+      0% {background-position: 0% 50%}
+      100% {background-position: 100% 50%}
+    }
+
+    a {
+      color: transparent;
+
+      &:visited {
+        color: transparent;
+      }
+
+      &:hover {
+        color: transparent;
+      }
+    }
+  }
+
+  /* TODO: Finish this */
+  .post-header {
+
+    .post-title {
+
+    }
+
+    .post-meta {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .date {
+        text-align: end;
+        font-size: small;
+        /* margin: 0.8em 0 1.4em; */
+      }
+
+      .tags {
+        flex-basis: 50%;
+        list-style-type: none;
+        margin-block-start: unset;
+        margin-block-end: unset;
+        padding-inline-start: unset;
+      }
+
+      .parent-section {
+        flex-basis: 50%;
+      }
+
+    }
+
+  }
+
+  .post-body {
+
+    /* TODO: Fix center */
+    .iiif {
+
+      .iiif-image {
+        padding: unset;
+      }
+
+      .viewer {
+        width: 100%;
+        padding: .8em;
+        background: rgba(255,255,255,.2);
+        border-radius: 16px;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(255,255,255,.3);
+        box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
+      }
+    }
+
+    /* TODO: Remove this */
+    .dreiD-images .wrapper .panels {
+      //backdrop-filter: blur(5px);
+      //-webkit-backdrop-filter: blur(5px);
+
+    }
+
+  }
+
+}
+
+.meta .main .article-single {
+
+  .post-header {
+
+  }
+
+  .post-body {
+
+  }
+
 }

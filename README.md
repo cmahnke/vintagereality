@@ -6,9 +6,10 @@ Vintage Reality
   * Homepage and logo animation
   * CSS
     * Mobile
+    * see page.scss
   * Fix menues
   * Page views
-* Fix JS fullscreen
+
 * Change Dates
 * Add translation
 

@@ -1,12 +1,14 @@
 .dreiD-images {
     width: 100%;
     margin-top: 1em;
+    margin-bottom: 3.6em;
 
     .wrapper {
         display: flex;
         flex-direction: column;
         align-items: center;
 
+        /* TODO: Change color of tabs */
         .tab-header {
             display: flex;
             flex-direction: row;
@@ -18,13 +20,29 @@
         }
 
         .panels {
-            background: #f1f0ec;
             min-height: 200px;
             width: 100%;
             border-radius: 1em;
             padding: 10px;
             border: black 1px solid;
             transition: width 0.6s, height 0.6s;
+            background: rgba(255,255,255,.2);
+            border: 1px solid rgba(255,255,255,.3);
+            box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
+
+            .single {
+              border-radius: 1em;
+            }
+
+            .left-img {
+              border-top-left-radius: 1em;
+              border-bottom-left-radius: 1em;
+            }
+
+            .right-img {
+              border-top-right-radius: 1em;
+              border-bottom-right-radius: 1em;
+            }
 
             .panel {
                 display: none;
@@ -111,11 +129,14 @@
       &.active {
         position: absolute;
         height: 100vh;
+        width: 100vw;
         top: 0;
         left: 0;
         right: 0;
         background: black;
         overflow: hidden;
+        max-width: 100%;
+        z-index: 999;
 
         .fullscreen-viewer-image {
           object-fit: contain;

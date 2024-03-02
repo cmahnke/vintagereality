@@ -16,46 +16,38 @@
 {{ end }}
 
 {{ define "content" }}
-  <div class="container">
-    <main role="main" class="sections">
-      {{- if and (eq .Kind "section") .Content -}}
-        <div class="content article-single">
-          {{- partial "post-header.html" . -}}
-          <div class="post-body">
-            {{- partial "content.html" . -}}
-            {{/* TODO: Finish display of section contents */}}
-          </div>
+  <main role="main" class="section-single">
+    {{- if and (eq .Kind "section") .Content -}}
+      <div class="content article-single">
+        {{- partial "post-header.html" . -}}
+        <div class="post-body">
+          {{- partial "content.html" . -}}
+          {{/* TODO: Finish display of section contents */}}
         </div>
-      {{- end -}}
-      <div class="article-list">
-        {{- $pages := .CurrentSection.RegularPages -}}
-        {{- if eq .Kind "section" -}}
-          {{- $pages = where $pages "Path" "!=" .Path -}}
-        {{- end -}}
-
-        {{- if eq .CurrentSection .FirstSection -}}
-          {{- range $pages -}}
-            <article class="list-item">
-              <h2 class="headline" itemprop="headline">
-                <a href="{{ .RelPermalink }}">{{.Title}}</a>
-              </h2>
-              <div>
-                {{- if .Description -}}
-                  {{ .Description }}
-                {{- end -}}
-              </div>
-            </article>
-          {{- end -}}
-        {{- else -}}
-          {{- $paginator := .Paginate $pages -}}
-          <div class="article-list">
-            {{- range $paginator.Pages -}}
-              {{ partial "list-item.html" . }}
-            {{- end -}}
-          </div>
-          {{ partial "paginator.html" $paginator }}
-        {{- end -}}
       </div>
-    </main>
-  </div>
+    {{- end -}}
+    <div class="article-list">
+      {{- $pages := .CurrentSection.RegularPages -}}
+      {{- if eq .Kind "section" -}}
+        {{- $pages = where $pages "Path" "!=" .Path -}}
+      {{- end -}}
+
+      {{- if eq .CurrentSection .FirstSection -}}
+        {{- range $pages -}}
+          <article class="list-item">
+            <h2 class="headline" itemprop="headline">
+              <a href="{{ .RelPermalink }}">{{.Title}}</a>
+            </h2>
+            <div>
+              {{- if .Description -}}
+                {{ .Description }}
+              {{- end -}}
+            </div>
+          </article>
+        {{- end -}}
+      {{- else -}}
+        {{- partial "section-listing.html" . -}}
+      {{- end -}}
+    </div>
+  </main>
 {{- end -}}

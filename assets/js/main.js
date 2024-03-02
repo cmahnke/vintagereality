@@ -12,9 +12,9 @@ window.stickybits = stickybits;
 
 let mql = window.matchMedia('(max-width: 35em)');
 
-if (!mql.matches) {
+//if (!mql.matches) {
   var sticky = stickybits('.header-menu', { useStickyClasses: true, stuckClass: "sticky-top"});
-}
+//}
 
 window.addEventListener("mouseover", turnGlases);
 

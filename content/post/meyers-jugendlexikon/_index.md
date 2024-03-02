@@ -3,6 +3,9 @@ title: Mayers Jugendlexikon
 description: 3. Auflage Leipzig 1973
 iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
+tags:
+- Book
+- germany
 resources:
 - src: "cover.jxl"
   name: page

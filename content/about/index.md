@@ -38,7 +38,6 @@ Für die Nachbearbeitung der Stereobilder wurden die folgenden Bibliotheken eing
 
 Für die Darstellung der Digitalisate von Einzelbildern wird [OpenLayers](https://openlayers.org/) verwendet. Die jeweils angezeigten Ausschnitte wurden mit [libvips](https://libvips.github.io/libvips/) erzeugt.
 
-# Animierte Gif-Dateien
 Animierte Gif-Dateien stammen aus dem [Internet Archiv](https://gifcities.org/).
 
 Die Seite wird von [GitHub](https://github.com/) gehosted.

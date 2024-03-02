@@ -1,0 +1,17 @@
+{{- $pages := .CurrentSection.RegularPages -}}
+{{- if eq .Kind "section" -}}
+  {{- $pages = where $pages "Path" "!=" .Path -}}
+{{- end -}}
+<div class="section-content">
+  {{ i18n "sectionContentsList" }}
+  <ul class="section-content-list">
+    {{- range $pages -}}
+      <li><a title="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{/*
+        {{ range where .Site.Pages "Section" .Section }}
+          {{ partial "list-item.html" . }}
+        {{ end }}
+      */}}
+    {{- end -}}
+  </ul>
+</div>

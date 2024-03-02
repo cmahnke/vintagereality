@@ -1,0 +1,11 @@
+{
+ "compilerOptions": {
+  "baseUrl": ".",
+  "paths": {
+   "*": [
+    "*",
+    "../themes/projektemacher-base/assets/*"
+   ]
+  }
+ }
+}

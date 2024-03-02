@@ -15,6 +15,9 @@ other = "Foto"
 [drawing]
 other = "Zeichnung"
 
+[book]
+other = "Buch"
+
 # Places
 
 [usa]
@@ -73,3 +76,10 @@ other = "Niagara Fälle"
 
 [giza]
 other = "Gizeh"
+
+# Post relations
+[sectionParent]
+other = "Diese Seite ist Teil von"
+
+[sectionContentsList]
+other = "Enthält die folgenden Seiten"

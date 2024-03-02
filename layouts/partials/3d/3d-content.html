@@ -70,7 +70,7 @@
     <div class="panels">
       {{ if (fileExists $jps) -}}
         <div class="panel" id="dreiD-jps-panel">
-          <img class="jps" src="{{ $jps | relURL }}" />
+          <img class="jps single" src="{{ $jps | relURL }}" />
           <div class="description">
             {{ i18n "sterescopic_jpeg_desc" | safeHTML }} <a class="newTab" href="{{ $jps | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -78,7 +78,7 @@
       {{- end }}
       {{ if (fileExists $gif) -}}
         <div class="panel" id="dreiD-gif-panel">
-          <img class="gif" src="{{ $gif | relURL }}" />
+          <img class="gif single" src="{{ $gif | relURL }}" />
           <div class="description">
             {{ i18n "wigglegram_desc" | safeHTML }} <a class="newTab" href="{{ $gif | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -86,7 +86,7 @@
       {{- end }}
       {{ if (fileExists $ana) -}}
         <div class="panel" id="dreiD-ana-panel">
-          <img class="ana" src="{{ $ana | relURL }}" />
+          <img class="ana single" src="{{ $ana | relURL }}" />
           <div class="description">
             {{ i18n "anaglyph_desc" | safeHTML }} <a class="newTab" href="{{ $ana | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -94,7 +94,7 @@
       {{- end }}
       {{ if (fileExists $mpo) -}}
         <div class="panel" id="dreiD-mpo-panel">
-          <img class="mpo" src="{{ $mpo | relURL }}" />
+          <img class="mpo single" src="{{ $mpo | relURL }}" />
           <div class="description">
             {{ i18n "mpo_desc" | safeHTML }} <a class="newTab" href="{{ $mpo | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -102,11 +102,11 @@
       {{- end }}
       {{ if and (fileExists $singleL) (fileExists $singleR) -}}
         <div class="panel" id="dreiD-single-panel">
-          <img class="singleL" src="{{ $singleL | relURL }}" />
+          <img class="singleL single" src="{{ $singleL | relURL }}" />
           <div class="description">
             {{ i18n "left_image" | safeHTML }} <a class="newTab" href="{{ $singleL | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
-          <img class="singleR" src="{{ $singleR | relURL }}" />
+          <img class="singleR single" src="{{ $singleR | relURL }}" />
           <div class="description">
             {{ i18n "right_image" | safeHTML }} <a class="newTab" href="{{ $singleR | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
