@@ -15,19 +15,21 @@ displayinlist: false
 
 ## Sources
 
+### General
+
 * [DigitaltMuseum](https://digitaltmuseum.org/search/?aq=topic%3A%22stereobild%22)
+
+### Special
+
+* [Yellowstone Stereoview](https://www.yellowstonestereoviews.com/index.html)
 
 # Implementations (technical)
 
-https://github.com/moul/3d-stereo-html5
-https://threejs.org/docs/#api/en/cameras/StereoCamera
-https://codepen.io/chrisjdesigner/pen/yLzopXW
-https://github.com/topics/stereoscopy
-https://github.com/urix/HTML5-Stereo-Viewer
-https://www.stereoscopy.com/
+* https://github.com/moul/3d-stereo-html5
+* https://threejs.org/docs/#api/en/cameras/StereoCamera
+* https://codepen.io/chrisjdesigner/pen/yLzopXW
+* https://github.com/topics/stereoscopy
+* https://github.com/urix/HTML5-Stereo-Viewer
+* https://www.stereoscopy.com/
 * [The Stereoscopy Blog](https://stereoscopy.blog/)
-https://flothesof.github.io/making-stereograms-Python.html
-
-# Other sites
-
-* [Yellowstone Stereoview](https://www.yellowstonestereoviews.com/index.html)
+* https://flothesof.github.io/making-stereograms-Python.html

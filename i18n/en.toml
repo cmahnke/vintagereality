@@ -19,7 +19,6 @@ other = "Drawing"
 other = "Book"
 
 # Places
-
 [usa]
 other = "Unites States"
 
@@ -83,3 +82,7 @@ other = "This page is part of"
 
 [sectionContentsList]
 other = "Contains the following pages"
+
+# Tags
+[tags]
+other = "Tags"

@@ -15,7 +15,6 @@ $special-font: 'Tektur Variable';
 @import "fonts/oxanium";
 @import "fonts/fredoka";
 @import "fonts/tektur";
-
 @import "normalize";
 @import "icons";
 @import "mirador";
@@ -109,6 +108,14 @@ a {
   .section-single {
     max-width: 56rem;
     margin: auto;
+    font-size: 1.4em;
+
+    h1 {
+      mix-blend-mode: unset;
+      background-image: linear-gradient(90deg, $magenta, $cyan);
+      background-clip: text;
+      color: transparent;
+    }
 
     h1, h2, h3 {
       font-family: $heading-font;
@@ -122,8 +129,11 @@ a {
       font-size: 1.6em;
     }
 
-    .post-title {
+    .post-title,
+    .tag-title {
+      margin-block-start: unset;
       font-size: 2.2em;
+      text-align: center;
     }
 
     a {
@@ -137,9 +147,7 @@ a {
       &:hover {
         color: $cyan;
       }
-
     }
-
 
     .post-meta,
     .meta {
@@ -147,26 +155,31 @@ a {
 
       .date {
         color: rgba(255,255,255,.6);
+        white-space: nowrap;
       }
     }
 
   }
 
-  .article-single,
   .section-single {
-    h1, h2, h3 {
-      margin-bottom: .2em;
-    }
-
-    .post-body .post-content {
-      margin-bottom: 3.4em;
-    }
-  }
-
-  .section-single {
-    /* TODO: Finish listing of section contents */
     .section-content {
+      color: rgba(255,255,255,.6);
+    }
 
+    .section-content-list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: space-between;
+      max-height: 8em;
+      padding-inline-start: 0;
+
+      .section-content-item {
+        &:marker {
+          display: none;
+        }
+      }
     }
   }
 
@@ -190,50 +203,48 @@ a {
       }
 
       .list-item-head {
-          max-width: 52rem;
-          margin: auto;
+        max-width: 52rem;
+        margin: auto;
 
-          h2 {
-              margin-block-start: .6em;
-              margin-block-end: 0;
-              font-size: 3em;
-              font-weight: bold;
-              mix-blend-mode: unset;
-              background-image: linear-gradient(90deg, $magenta, $cyan);
-              background-clip: text;
-              color: transparent;
-              text-align: center;
-              flex-basis: 100%;
-              transition: all 500ms linear;
+        h2 {
+          margin-block-start: .6em;
+          margin-block-end: 0;
+          font-size: 2.2eem;
+          font-weight: bold;
+          mix-blend-mode: unset;
+          background-image: linear-gradient(90deg, $magenta, $cyan);
+          background-clip: text;
+          color: transparent;
+          text-align: center;
+          flex-basis: 100%;
+          transition: all 500ms linear;
 
-              /*
-              &:hover {
-                background-image: linear-gradient(1.77rad, $magenta, $cyan);
-                transition: all 500ms linear;
-              }
-              */
-
-              a {
-                font-weight: unset;
-                color: unset;
-
-              }
+          /*
+          &:hover {
+            background-image: linear-gradient(1.77rad, $magenta, $cyan);
+            transition: all 500ms linear;
           }
+          */
 
-          .meta {
-              text-align: end;
-              font-size: small;
-              margin: .8em 0 1.4em;
-              color: rgba(255,255,255,.6);;
+          a {
+            font-weight: unset;
+            color: unset;
           }
+        }
 
+        .meta {
+          text-align: end;
+          font-size: small;
+          margin: .8em 0 1.4em;
+          color: rgba(255,255,255,.6);
+        }
       }
 
       .summary {
         max-width: 48rem;
         margin: auto;
         width: 100%;
-        font-size: 1.4em;
+        font-size: 1em;
         text-align: justify;
         display: flex;
         flex-direction: column;
@@ -339,9 +350,7 @@ a {
     }
 
   }
-
 }
-
 
 .list-title,
 .headline {
@@ -349,17 +358,23 @@ a {
 }
 
 .source {
-    font-size: small;
-    text-align: right;
-    margin: 1.5em;
-    margin-bottom: 4.5em;
-    color: lighten(#6c757d, 20%);
+  font-size: small;
+  text-align: right;
+  margin: 1.5em;
+  margin-bottom: 4.5em;
+  color: lighten(#6c757d, 20%);
 
-    @media (max-width : 30em) {
-        margin-bottom: unset;
-    }
+  @media (max-width : 30em) {
+      margin-bottom: unset;
+  }
 
-    a {
-        color: lighten(#007bff, 20%);
-    }
+  a {
+    color: lighten(#007bff, 20%);
+  }
+}
+
+
+@keyframes moving-gradient {
+  0% {background-position: 0% 50%}
+  100% {background-position: 100% 50%}
 }

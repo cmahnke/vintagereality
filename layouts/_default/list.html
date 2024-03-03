@@ -15,9 +15,18 @@
 
   {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
 
-  {{/* TODO: Check if we have sections, don't display their contents in lists */}}
-
   <main role="main" class="article-list">
+    {{/* This is true if list contains tags */}}
+    {{- if and (ne .Path nil) (hasPrefix .Path "/tags") -}}
+      {{ $tagTranslation := (i18n .Title) }}
+      {{- if eq $tagTranslation "" -}}
+        {{- $tagTranslation = .Title -}}
+      {{- end -}}
+      <div class="tag-header">
+        <h1 class="tag-title">{{ i18n "allTags" }} {{ $tagTranslation }}</h1>
+      </div>
+    {{- end -}}
+
     {{ range $paginator.Pages }}
       {{ partial "list-item.html" . }}
     {{ end }}

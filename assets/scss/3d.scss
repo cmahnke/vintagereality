@@ -1,156 +1,162 @@
 .dreiD-images {
-    width: 100%;
-    margin-top: 1em;
-    margin-bottom: 3.6em;
+  width: 100%;
+  margin-top: 1em;
+  margin-bottom: 3.6em;
 
-    .wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-        /* TODO: Change color of tabs */
-        .tab-header {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-
-        .radio {
-            display: none;
-        }
-
-        .panels {
-            min-height: 200px;
-            width: 100%;
-            border-radius: 1em;
-            padding: 10px;
-            border: black 1px solid;
-            transition: width 0.6s, height 0.6s;
-            background: rgba(255,255,255,.2);
-            border: 1px solid rgba(255,255,255,.3);
-            box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
-
-            .single {
-              border-radius: 1em;
-            }
-
-            .left-img {
-              border-top-left-radius: 1em;
-              border-bottom-left-radius: 1em;
-            }
-
-            .right-img {
-              border-top-right-radius: 1em;
-              border-bottom-right-radius: 1em;
-            }
-
-            .panel {
-                display: none;
-
-                img {
-                    width: 100%;
-                }
-
-                .description {
-                    margin: 1.4rem;
-                }
-            }
-        }
-
-        .tabs {
-            .tab {
-                cursor: pointer;
-                padding: 10px 10px;
-                margin: 0 2px;
-                background: #2d2d2d;
-                display: inline-block;
-                color: #fff;
-                border-radius: 6px 6px 0 0;
-            }
-
-            @media only screen and (max-width: 400px) {
-              display: flex;
-              flex-wrap: wrap;
-              justify-content: center;
-            }
-
-        }
-        /* Inspired by https://codepen.io/Wendy-Ho/pen/MWWBvmd */
-        #dreiD-ana:checked ~ .panels #dreiD-ana-panel,
-        #dreiD-gif:checked ~ .panels #dreiD-gif-panel,
-        #dreiD-jps:checked ~ .panels #dreiD-jps-panel,
-        #dreiD-mpo:checked ~ .panels #dreiD-mpo-panel,
-        #dreiD-single:checked ~ .panels #dreiD-single-panel,
-        #dreiD-vr:checked ~ .panels #dreiD-vr-panel {
-            display: block;
-        }
-
-        #dreiD-ana:checked ~ .tabs #dreiD-ana-tab,
-        #dreiD-gif:checked ~ .tabs #dreiD-gif-tab,
-        #dreiD-jps:checked ~ .tabs #dreiD-jps-tab,
-        #dreiD-mpo:checked ~ .tabs #dreiD-mpo-tab,
-        #dreiD-single:checked ~ .tabs #dreiD-single-tab,
-        #dreiD-vr:checked ~ .tabs #dreiD-vr-tab {
-            background: #fc6;
-            color: #000;
-            border-top: 3px solid #393939;
-        }
-    }
-
-    .stereo-canvas {
-        width: 100%;
-        display: block;
-        aspect-ratio: .9 / 1;
-    }
-
-    .viewer.vr {
-      position: relative;
-    }
-
-    .fullscreen-viewer {
+    .tab-header {
       display: flex;
       flex-direction: row;
-      position: relative;
-      justify-content: center;
+      justify-content: space-evenly;
+    }
 
-      .fullscreen-viewer-image {
-        width: 50% !important;
+    .radio {
+      display: none;
+    }
+
+    .panels {
+      min-height: 200px;
+      width: 100%;
+      border-radius: 1em;
+      padding: 10px;
+      transition: width 0.6s, height 0.6s;
+      background: rgba(255,255,255,.2);
+      border: 1px solid rgba(255,255,255,.3);
+      box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
+
+      .single {
+        border-radius: 1em;
       }
 
-      .fullscreen-button {
-        position: absolute;
-        bottom: 1em;
-        margin: auto;
-        padding: 0.6em;
-        opacity: .85;
-        border-radius: 6px;
+      .left-img {
+        border-top-left-radius: 1em;
+        border-bottom-left-radius: 1em;
       }
 
-      &.active {
-        position: absolute;
-        height: 100vh;
-        width: 100vw;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: black;
-        overflow: hidden;
-        max-width: 100%;
-        z-index: 999;
+      .right-img {
+        border-top-right-radius: 1em;
+        border-bottom-right-radius: 1em;
+      }
 
-        .fullscreen-viewer-image {
-          object-fit: contain;
+      .panel {
+        display: none;
+
+        img {
+          width: 100%;
         }
 
-        .right-img {
-          object-position: left;
-          border-left: 0.1rem solid black;
-        }
-
-        .left-img {
-          object-position: right;
-          border-right: 0.1rem solid black;
+        .description {
+          margin: 1.4rem;
         }
       }
     }
+
+    .tabs {
+      .tab {
+        cursor: pointer;
+        padding: 10px 10px;
+        margin: 0 2px;
+        background: #2d2d2d;
+        display: inline-block;
+        color: #fff;
+        border-radius: 6px 6px 0 0;
+        border: 1px solid rgba(255,255,255,.3);
+        transition: all 100ms linear;
+
+        &:active {
+          transform: translateX(2px) translateY(1px);
+          transition: all 100ms linear;
+        }
+      }
+
+      @media only screen and (max-width: 400px) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+    }
+    /* Inspired by https://codepen.io/Wendy-Ho/pen/MWWBvmd */
+    #dreiD-ana:checked ~ .panels #dreiD-ana-panel,
+    #dreiD-gif:checked ~ .panels #dreiD-gif-panel,
+    #dreiD-jps:checked ~ .panels #dreiD-jps-panel,
+    #dreiD-mpo:checked ~ .panels #dreiD-mpo-panel,
+    #dreiD-single:checked ~ .panels #dreiD-single-panel,
+    #dreiD-vr:checked ~ .panels #dreiD-vr-panel {
+      display: block;
+    }
+
+    #dreiD-ana:checked ~ .tabs #dreiD-ana-tab,
+    #dreiD-gif:checked ~ .tabs #dreiD-gif-tab,
+    #dreiD-jps:checked ~ .tabs #dreiD-jps-tab,
+    #dreiD-mpo:checked ~ .tabs #dreiD-mpo-tab,
+    #dreiD-single:checked ~ .tabs #dreiD-single-tab,
+    #dreiD-vr:checked ~ .tabs #dreiD-vr-tab {
+      /*background: #fc6;*/
+      background: lighten($magenta, 25%);
+      color: #000;
+      border-top: 3px solid lighten($magenta, 10%);
+    }
+  }
+
+  .stereo-canvas {
+      width: 100%;
+      display: block;
+      aspect-ratio: .9 / 1;
+  }
+
+  .viewer.vr {
+    position: relative;
+  }
+
+  .fullscreen-viewer {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+
+    .fullscreen-viewer-image {
+      width: 50% !important;
+    }
+
+    .fullscreen-button {
+      position: absolute;
+      bottom: 1em;
+      margin: auto;
+      padding: 0.6em;
+      opacity: .85;
+      border-radius: 6px;
+    }
+
+    &.active {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: black;
+      overflow: hidden;
+      max-width: 100%;
+      z-index: 999;
+
+      .fullscreen-viewer-image {
+        object-fit: contain;
+      }
+
+      .right-img {
+        object-position: left;
+        border-left: 0.1rem solid black;
+      }
+
+      .left-img {
+        object-position: right;
+        border-right: 0.1rem solid black;
+      }
+    }
+  }
 }

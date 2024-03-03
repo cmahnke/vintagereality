@@ -1,47 +1,69 @@
 /* Pagination */
 nav.paginator {
-    /*text-align: center;*/
-    font-size: 1.6em;
-    display: flex;
-    margin-bottom: 2.4em;
-    align-items: center;
-    justify-content: center;
+  font-size: 1.6em;
+  display: flex;
+  margin-bottom: 2.4em;
+  align-items: center;
+  justify-content: center;
+  font-family: $special-font, sans-serif;
 
-    a {
-        color: var(--base0e);
-    }
+  a {
+    color: var(--base0e);
+  }
 
-    .faded {
-        color: var(--base02);
-    }
+  .faded {
+    color: var(--base02);
+  }
 
-    .nav-left {
-        margin-left: auto;
-        margin-right: 1%;
-    }
-    span.nav-left.disabled {
-        color: color.adjust($cyan, $lightness: -25%);
-    }
-    a.nav-left {
-        color: color.adjust($cyan, $lightness: -10%);
+  .nav-left {
+    margin-left: auto;
+    margin-right: 1%;
+    transition: all 200ms linear;
+
+    &:hover {
+      transform: scale(1.1);
     }
 
-    .nav-counter {
-      font-weight: bold;
-      background-image: linear-gradient(90deg, color.adjust($cyan, $lightness: -10%), color.adjust($magenta, $lightness: -10%));
-      background-clip: text;
-      color: transparent;
-      font-size: 1.4em;
+    &.disabled {
+      color: color.adjust($cyan, $lightness: -25%);
+
+      &:hover {
+        transform: unset;
+      }
+    }
+  }
+
+  a.nav-left {
+    color: color.adjust($cyan, $lightness: -10%);
+  }
+
+  .nav-counter {
+    font-weight: bold;
+    background-image: linear-gradient(90deg, color.adjust($cyan, $lightness: -10%), color.adjust($magenta, $lightness: -10%));
+    background-clip: text;
+    color: transparent;
+    font-size: 1.4em;
+  }
+
+  .nav-right {
+    margin-left: 1%;
+    margin-right: auto;
+    transition: all 200ms linear;
+
+    &:hover {
+      transform: scale(1.1);
     }
 
-    .nav-right {
-        margin-left: 1%;
-        margin-right: auto;
+    &.disabled {
+      color: color.adjust($magenta, $lightness: -25%);
+
+      &:hover {
+        transform: unset;
+        }
     }
-    span.nav-right.disabled {
-        color: color.adjust($magenta, $lightness: -25%);
-    }
-    a.nav-right {
-        color: color.adjust($magenta, $lightness: -10%);
-    }
+  }
+
+  a.nav-right {
+      color: color.adjust($magenta, $lightness: -10%);
+  }
 }

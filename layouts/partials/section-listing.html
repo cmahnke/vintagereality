@@ -3,10 +3,10 @@
   {{- $pages = where $pages "Path" "!=" .Path -}}
 {{- end -}}
 <div class="section-content">
-  {{ i18n "sectionContentsList" }}
+  <h2 class="section-content-heading">{{ i18n "sectionContentsList" }}:</h2>
   <ul class="section-content-list">
     {{- range $pages -}}
-      <li><a title="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      <li class="section-content-item"><a title="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{/*
         {{ range where .Site.Pages "Section" .Section }}
           {{ partial "list-item.html" . }}

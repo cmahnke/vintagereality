@@ -18,11 +18,14 @@
 {{ define "content" }}
   <main role="main" class="section-single">
     {{- if and (eq .Kind "section") .Content -}}
-      <div class="content article-single">
+      <div class="post section">
         {{- partial "post-header.html" . -}}
         <div class="post-body">
           {{- partial "content.html" . -}}
-          {{/* TODO: Finish display of section contents */}}
+          {{- if ne .CurrentSection .FirstSection -}}
+            {{- partial "section-listing.html" . -}}
+          {{- end -}}
+          {{- partial "attachments.html" . -}}
         </div>
       </div>
     {{- end -}}
@@ -45,8 +48,6 @@
             </div>
           </article>
         {{- end -}}
-      {{- else -}}
-        {{- partial "section-listing.html" . -}}
       {{- end -}}
     </div>
   </main>

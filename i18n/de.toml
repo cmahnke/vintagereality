@@ -19,7 +19,6 @@ other = "Zeichnung"
 other = "Buch"
 
 # Places
-
 [usa]
 other = "Vereinigte Staaten"
 
@@ -83,3 +82,7 @@ other = "Diese Seite ist Teil von"
 
 [sectionContentsList]
 other = "Enthält die folgenden Seiten"
+
+# Tags
+[tags]
+other = "Schlagworte"

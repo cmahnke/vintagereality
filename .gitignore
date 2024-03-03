@@ -45,3 +45,4 @@ static/fonts
 static/images/svgs
 assets/css
 **/vips-properties.xml
+assets/jsconfig.json

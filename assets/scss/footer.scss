@@ -9,10 +9,28 @@
 
   .menu-container.menu-footer {
     display: flex;
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: -2px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      height: 2px;
+      background-image: linear-gradient(90deg, $magenta, $cyan)
+    }
 
     .menu {
       width: 80%;
       margin: auto;
+      background-image: linear-gradient(90deg, $magenta, $cyan);
+      background-clip: text;
+      color: transparent;
+      background-size: 200% 200%;
+      animation: moving-gradient alternate 5s infinite;
 
       .menu-footer-items {
         padding-inline-start: unset;
@@ -21,22 +39,24 @@
         justify-content: space-around;
         margin-block-start: unset;
         margin-block-end: unset;
+        height: 2rem;
+        align-items: center;
 
         .menu-item  {
           display: inline;
-          text-shadow: 0 0 2px, 0 0 4px black;
+          /*text-shadow: 0 0 2px, 0 0 4px black;*/
 
-          &::marker {
+          &:marker {
             display: none;
           }
 
           a {
-            font-size: 1.4rem;
-            color: darken($magenta, 10%);
+            font-size: 1.2rem;
+            /*color: darken($magenta, 10%);
             text-shadow: $cyan 1px 0 10px;
-
+            */
+            color: transparent;
           }
-
         }
       }
     }
@@ -46,10 +66,13 @@
     padding-top: 1.2em;
     background-image: url('/images/svgs/footer.svg');
     background-size: cover;
+    height: 4rem;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
 
     .projektemacher {
-      padding-top: .6em;
-
       img {
         vertical-align: middle;
         filter: drop-shadow(0 0 4px cyan);
@@ -61,10 +84,8 @@
       text-align: center;
       color: $blue;
       text-shadow: 0 0 2.6px $blue, 0 0 4.6px black;
-      margin-block-start: .4em;
-      margin-block-end: .4em;
+      margin-block-start: unset;
+      margin-block-end: unset;
     }
-
   }
-
 }

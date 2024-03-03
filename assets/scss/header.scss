@@ -61,6 +61,7 @@
   }
 
   /* TODO: Hide this this for mobile devices */
+  /* TODO: Change Link color */
   .header-menu {
     height: 2rem;
     min-height: 2rem;
@@ -68,6 +69,7 @@
     align-items: center;
     position: relative;
     background: transparent;
+    font-family: $special-font, sans-serif;
 
     &:before {
       position: absolute;
