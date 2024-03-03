@@ -1,9 +1,53 @@
 #head {
-
-
   /* TODO: The menu for mobile devices */
   .menu {
-    display: none;
+    height: 2.4rem;
+    width: 100vw;
+    display: flex;
+
+    @media (min-width: 20em) {
+      display: none;
+    }
+
+    a {
+      text-decoration: none;
+      color: darken($cyan, 10%);
+
+      &:visited {
+        color: darken($cyan, 20%);
+      }
+
+      &:hover {
+        color: $cyan;
+      }
+    }
+
+    .top-menu {
+      margin: unset;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+
+      .menu-button {
+        .menu-icon {
+          height: 2em;
+          width: 2em;
+        }
+      }
+
+      .navigation-list {
+        background-color: unset;
+        border-top: unset;
+        border-bottom: unset;
+        backdrop-filter: blur(5px);
+
+        .navigation-link {
+
+        }
+      }
+
+    }
   }
 
   .header-logo {
@@ -60,7 +104,6 @@
     }
   }
 
-  /* TODO: Hide this this for mobile devices */
   /* TODO: Change Link color */
   .header-menu {
     height: 2rem;
@@ -70,6 +113,10 @@
     position: relative;
     background: transparent;
     font-family: $special-font, sans-serif;
+
+    @media (max-width: 20em) {
+      display: none;
+    }
 
     &:before {
       position: absolute;
@@ -92,6 +139,7 @@
       margin: auto;
       background: transparent;
       z-index: 1;
+      padding-inline-start: 0;
 
       .menu-item {
         display: inline;

@@ -23,15 +23,15 @@ $special-font: 'Tektur Variable';
 @import "map";
 @import "share";
 @import "3d";
-@import "header";
 @import "tagcloud";
 @import "footer";
-$font-color-body: var(#000);
+$font-color-body: $text-color;
 $secondary-icon-color: #69c;
 $frame-bg-color: var(--base01);
 $color-body-text: var(white);
 $fullscreen-color: var(--base07);
 @import "menu";
+@import "header";
 
 /* Site includes */
 @import "nav";
@@ -99,7 +99,8 @@ a {
   margin: auto;
   margin-top: 3.2em;
   min-height: calc(100vh - 8em - 7em - 3.2em);
-  @media only screen and (max-width: 600px) {
+
+  @media (max-width: 30em) {
     width: 95%;
   }
 
@@ -109,6 +110,10 @@ a {
     max-width: 56rem;
     margin: auto;
     font-size: 1.4em;
+
+    @media (max-width: 30em) {
+      font-size: 1em;
+    }
 
     h1 {
       mix-blend-mode: unset;
@@ -156,6 +161,10 @@ a {
       .date {
         color: rgba(255,255,255,.6);
         white-space: nowrap;
+
+        @media (max-width: 30em) {
+          display: none;
+        }
       }
     }
 
@@ -198,8 +207,11 @@ a {
       padding: 1em;
       margin-bottom: 2.8em;
 
-      @media only screen and (max-width: 600px) {
-        margin: unset;
+      @media (max-width: 30em) {
+        border-radius: unset;
+        box-shadow: unset;
+        /* margin: unset; */
+        margin-bottom: 1em;
       }
 
       .list-item-head {
@@ -251,6 +263,10 @@ a {
         color: $text-color;
         margin-top: .8em;
         margin-bottom: .8em;
+
+        @media (max-width: 30em) {
+          text-align: center;
+        }
 
         p {
           flex-basis: 100%;
@@ -330,17 +346,20 @@ a {
           }
         }
 
-        /* TODO: mobile: max-width: 90% */
-
         .preview-img {
           padding: 10px;
           box-shadow: 25px 25px 50px 0 white inset, -25px -25px 50px 0 white inset;
-          @media only screen and (min-width: 600px) {
-              display: none;
+
+          @media (min-width: 30em) {
+            display: none;
+          }
+
+          @media (max-width: 30em) {
+
           }
         }
 
-        @media only screen and (max-width: 600px) {
+        @media (max-width: 30em) {
           .wide {
             display: none;
           }

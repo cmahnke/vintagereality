@@ -52,8 +52,8 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
   * Homepage and logo animation
   * CSS
     * Mobile
-    * see page.scss
-  * Fix menues
+    * see `grep -r TODO assets/scss/`
+  * Fix header menues
 
 * Add translation
 

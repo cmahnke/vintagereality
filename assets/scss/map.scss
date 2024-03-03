@@ -9,6 +9,12 @@
   margin-bottom: .8em;
   margin-top: 2.4em;
 
+  @media (max-width: 30em) {
+    border-radius: unset;
+    box-shadow: unset;
+    padding: unset;
+  }
+
   &+ .download-link {
     margin-top: .4em;
     display: flex;
@@ -36,12 +42,24 @@
     .opt-in-overlay-content {
       border-radius: 1em;
       background-color: rgba(169,211,223, .1);
+
+      @media (max-width: 30em) {
+        border-radius: unset;
+        background-color: unset;
+      }
+    }
+  }
+
+  .switch-wrapper {
+    @media (max-width: 30em) {
+      margin: .4em;
     }
   }
 }
 
 /*----------------------  MAPS ----------------------*/
 .map-wrapper {
+  min-height: 60vh;
   height: 20em;
   font-family: $text-font;
 
@@ -51,18 +69,27 @@
 
   .ol-viewport {
     border-radius: 1em;
+
+    @media (max-width: 30em) {
+      border-radius: unset;
+    }
   }
 
   .ol-popup {
     position: absolute;
-    min-width: 180px;
+    min-width: 250px;
     background-color: white;
     filter: drop-shadow(0 1px 4px rgba(0,0,0,0.2));
-    padding: 15px;
+    padding: 10px;
     border-radius: 10px;
     border: 1px solid #ccc;
     bottom: 12px;
     left: -50px;
+    font-size: 1em;
+
+    @media (max-width: 30em) {
+      border-radius: unset;
+    }
 
     .geojsonPopup {
       display: flex;
@@ -76,24 +103,27 @@
     }
 
     h1 {
-      font-size: larger;
       font-family: $heading-font;
       text-align: center;
-      font-size: 1.2em;
+      font-size: 1.2em !important;
       margin: .2em 0;
     }
+
     .title {
       font-size: large;
       display: none;
     }
+
     .popup-content {
       font-weight: 500;
       text-align: center;
       font-size: 0.8em;
     }
+
     .link {
       text-align: center;
     }
+
     .preview {
       display: block;
     }
