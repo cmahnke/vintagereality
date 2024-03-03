@@ -1,6 +1,6 @@
 ---
 title: "Eine Karawane von Kamelen bei Jaffa, Palästina"
-date: 2022-12-26T22:15:07+02:00
+date: 2024-06-14T22:15:07+02:00
 type: 3d
 subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json

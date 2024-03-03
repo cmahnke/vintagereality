@@ -1,6 +1,6 @@
 ---
 title: "Unterhalb des Niagara-Falles mitten im Winter V. St. v. N.-A."
-date: 2022-12-26T22:15:07+02:00
+date: 2024-07-19T22:15:07+02:00
 type: 3d
 subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json

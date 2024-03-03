@@ -1,7 +1,7 @@
 ---
 title: "Seite 229"
 weight: 7
-date: 2022-12-31T12:15:07+02:00
+date: 2024-09-13T12:15:07+02:00
 type: 3d
 subtype: anaglyph
 iiifClass: page

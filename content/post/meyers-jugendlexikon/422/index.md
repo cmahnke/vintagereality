@@ -1,7 +1,7 @@
 ---
 title: "Seite 422"
 weight: 16
-date: 2022-12-31T12:15:07+02:00
+date: 2024-11-15T12:15:07+02:00
 type: 3d
 subtype: anaglyph
 iiifClass: page

@@ -10,7 +10,6 @@ Vintage Reality
   * Fix menues
   * Page views
 
-* Change Dates
 * Add translation
 
 ## Other Inspirations

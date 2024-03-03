@@ -1,6 +1,6 @@
 ---
 title: "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen"
-date: 2022-12-31T08:15:07+02:00
+date: 2024-06-07T08:15:07+02:00
 type: 3d
 subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
