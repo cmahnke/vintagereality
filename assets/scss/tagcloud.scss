@@ -26,5 +26,10 @@
     text-align: unset;
     white-space: nowrap;
     display: inline-block;
+
+    @media (max-width: 30em) {
+      white-space: unset;
+      text-align: center;
+    }
   }
 }

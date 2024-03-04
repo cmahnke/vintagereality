@@ -151,3 +151,19 @@
     }
   }
 }
+
+li:has(img.flag) {
+  height: 1.6em;
+}
+
+img.flag {
+  margin-left: 1rem;
+  image-rendering: pixelated;
+  transform: scale(1.5);
+  vertical-align: top;
+  display: inline-block;
+
+  @media (max-width: 30em) {
+    display: none;
+  }
+}

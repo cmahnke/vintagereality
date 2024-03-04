@@ -223,7 +223,6 @@ body {
       @media (max-width: 30em) {
         border-radius: unset;
         box-shadow: unset;
-        /* margin: unset; */
         margin-bottom: 1em;
       }
 
@@ -244,18 +243,10 @@ body {
           flex-basis: 100%;
           transition: all 500ms linear;
 
-          /*
-          &:hover {
-            background-image: linear-gradient(1.77rad, $magenta, $cyan);
-            transition: all 500ms linear;
-          }
-          */
-
           a {
             font-weight: unset;
             color: unset;
 
-            /* TODO: fix overflow in headings */
             @media (max-width: 30em) {
               max-width: 90vw;
               text-overflow: clip;
@@ -330,7 +321,6 @@ body {
           svg {
             height: 100%;
             width: 100%;
-            /*background-image: linear-gradient(0deg, rgba(--cyan, .2), rgba(--magenta, .2));*/
 
             path {
               fill: darken(#373f43, 7%);
@@ -342,7 +332,6 @@ body {
             &:hover path {
               stroke: rgba(255,255,255,.6);
               transition: all 500ms ease-out;
-              /* filter: drop-shadow(0 0 0.75rem rgba(255,255,255,.3)); */
             }
           }
 

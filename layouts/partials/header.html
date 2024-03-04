@@ -23,9 +23,11 @@
     <ul class="header-menu-list">
       {{- with .Site.Menus.main -}}
         {{- range sort . -}}
-          <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>
-            <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-          </li>
+          {{- if ne (path.Base .URL) "/" -}}
+            <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>
+              <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+            </li>
+            {{- end -}}
         {{- end -}}
       {{- end -}}
     </ul>

@@ -86,3 +86,6 @@ other = "Contains the following pages"
 # Tags
 [tags]
 other = "Tags"
+
+[home]
+other = "Home"

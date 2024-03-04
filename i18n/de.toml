@@ -86,3 +86,6 @@ other = "Enthält die folgenden Seiten"
 # Tags
 [tags]
 other = "Schlagworte"
+
+[home]
+other = "Start"

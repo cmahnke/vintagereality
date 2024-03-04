@@ -52,8 +52,7 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
   * Homepage and logo animation
   * CSS
     * see `grep -r TODO assets/scss/`
-  * Fix header menues
-* Fix links
+  * Fix header menu
 * Add translation
 
 ## Other Inspirations

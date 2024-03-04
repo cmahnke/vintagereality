@@ -4,32 +4,34 @@ metaPage: true
 displayinlist: false
 ---
 
-# Historic 3D images
+# Historische Stereobilder
 
-## General information
-* [St John's College Cambridge: Early 3D images](https://www.joh.cam.ac.uk/library/Early_3D_images)
-* [STEREOPI BLOG](https://stereopi.com/blog/art-stereoscopic-photo)
-* [Wikipedia: Underwood & Underwood](https://en.wikipedia.org/wiki/Underwood_%26_Underwood)
-* [Stereoscopy.com - The World of 3D-Imaging](https://www.stereoscopy.com/)
-* [Mathematische Basteleien: Stereogramm](https://www.mathematische-basteleien.de/stereogramm.htm) in German
+Die verlinken Seiten sind hauptsächlich in Englisch
 
-## Sources
+## Allgemeine Information
+* [St John's College Cambridge: Early 3D images](https://www.joh.cam.ac.uk/library/Early_3D_images) {{< flag "en" >}}
+* [STEREOPI BLOG](https://stereopi.com/blog/art-stereoscopic-photo) {{< flag "en" >}}
+* [Wikipedia: Underwood & Underwood](https://de.wikipedia.org/wiki/Underwood_%26_Underwood) {{< flag "de" >}}
+* [Stereoscopy.com - The World of 3D-Imaging](https://www.stereoscopy.com/) {{< flag "en" >}}
+* [Mathematische Basteleien: Stereogramm](https://www.mathematische-basteleien.de/stereogramm.htm) {{< flag "de" >}}
+* [The Stereoscopy Blog](https://stereoscopy.blog/) {{< flag "en" >}}
 
-### General
+## Quellen
 
-* [DigitaltMuseum](https://digitaltmuseum.org/search/?aq=topic%3A%22stereobild%22)
+### Allgemein
 
-### Special
+* [DigitaltMuseum](https://digitaltmuseum.org/search/?aq=topic%3A%22stereobild%22) {{< flag "en" >}}
 
-* [Yellowstone Stereoview](https://www.yellowstonestereoviews.com/index.html)
+### Spezielle Themen / Gegenden
+
+* [Yellowstone Stereoview](https://www.yellowstonestereoviews.com/index.html) {{< flag "en" >}}
 
 # Implementations (technical)
 
-* https://github.com/moul/3d-stereo-html5
-* https://threejs.org/docs/#api/en/cameras/StereoCamera
-* https://codepen.io/chrisjdesigner/pen/yLzopXW
-* https://github.com/topics/stereoscopy
-* https://github.com/urix/HTML5-Stereo-Viewer
-* https://www.stereoscopy.com/
-* [The Stereoscopy Blog](https://stereoscopy.blog/)
-* https://flothesof.github.io/making-stereograms-Python.html
+* [3d html5 canvas viewer](https://github.com/moul/3d-stereo-html5) {{< flag "en" >}}
+* [Three.js: StereoCamera](https://threejs.org/docs/#api/en/cameras/StereoCamera) {{< flag "en" >}}
+* [Fake 3d Image - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW) {{< flag "en" >}}
+* [GitHub topic 'stereoscopy'](https://github.com/topics/stereoscopy) {{< flag "en" >}}
+* [HTML5-Stereo-Viewer](https://github.com/urix/HTML5-Stereo-Viewer) {{< flag "en" >}}
+* [StereoscoPy](https://github.com/2sh/StereoscoPy) {{< flag "en" >}}
+* [Making Your Own Autostereograms using Python](https://flothesof.github.io/making-stereograms-Python.html) {{< flag "en" >}}
