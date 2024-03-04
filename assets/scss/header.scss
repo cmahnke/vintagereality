@@ -1,5 +1,4 @@
 #head {
-  /* TODO: The menu for mobile devices */
   .menu {
     height: 2.4rem;
     width: 100vw;
@@ -33,6 +32,12 @@
         .menu-icon {
           height: 2em;
           width: 2em;
+          transition: all 200ms linear;
+
+          &:active {
+            transition: all 200ms linear;
+            transform: scale(1.1);
+          }
         }
       }
 
@@ -42,11 +47,18 @@
         border-bottom: unset;
         backdrop-filter: blur(5px);
 
-        .navigation-link {
+        .navigation-item {
+          padding: unset;
 
+          &::after {
+            content: "";
+            height: 3px;
+            background-image: radial-gradient(closest-side, color.adjust($magenta, $lightness: -10%), transparent);
+            width: 100%;
+            display: block;
+          }
         }
       }
-
     }
   }
 
@@ -55,12 +67,7 @@
     margin: auto;
     height: 6rem;
     transition: all 500ms linear;
-
-    /*
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    */
+    width: fit-content;
 
     .header-logo-first {
       max-width: 16em;
@@ -79,16 +86,19 @@
       margin: auto;
     }
 
-    &.big {
-      height: calc(100vh - 2rem);
-      transition: all 500ms linear;
-
-      .header-logo-first {
-        height: calc(100vh / 2 - 4rem);
-        max-width: 80%;
-        width: 70em;
+    @media (min-width: 30em) {
+      /* TODO: Add header animation */
+      &.big {
+        height: calc(100vh - 2rem);
         transition: all 500ms linear;
-        margin-top: 2rem;
+
+        .header-logo-first {
+          height: calc(100vh / 2 - 4rem);
+          max-width: 80%;
+          width: 70em;
+          transition: all 500ms linear;
+          margin-top: 2rem;
+        }
       }
 
       .header-logo-second {
@@ -118,11 +128,11 @@
       display: none;
     }
 
-    &:before {
+    &::before {
       position: absolute;
       width: 100%;
       height: 100%;
-      background-image: url(/images/svgs/footer.svg);
+      background-image: url('/images/svgs/footer.svg');
       background-size: 100% 900%;
       content: "";
       transform: rotate(180deg);
@@ -144,7 +154,7 @@
       .menu-item {
         display: inline;
 
-        &:marker {
+        &::marker {
           display:none;
         }
       }

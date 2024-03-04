@@ -10,8 +10,8 @@
   border: 1px solid rgba(255,255,255,.3);
   box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25),-8px -8px 12px 0 rgba(255,255,255,.3);
   width: 90%;
-  margin-top: 2.4em;
   margin: 1em auto;
+  margin-top: 2.4em;
 
   @media (max-width: 30em) {
     box-shadow: unset;
@@ -20,17 +20,6 @@
     overflow: hidden;
     width: unset;
   }
-
-  /*
-  @media (max-width: 45em) {
-  }
-
-  @media (max-width: 30em) {
-  }
-
-  @media (max-width: 20em) {
-  }
-  */
 
   a.cloud-tag {
     margin: .4em !important;

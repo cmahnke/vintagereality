@@ -11,7 +11,7 @@
     display: flex;
     position: relative;
 
-    &:before {
+    &::before {
       content: '';
       position: absolute;
       top: -2px;
@@ -48,17 +48,13 @@
 
         .menu-item  {
           display: inline;
-          /*text-shadow: 0 0 2px, 0 0 4px black;*/
 
-          &:marker {
+          &::marker {
             display: none;
           }
 
           a {
             font-size: 1.2rem;
-            /*color: darken($magenta, 10%);
-            text-shadow: $cyan 1px 0 10px;
-            */
             color: transparent;
           }
         }
@@ -79,7 +75,7 @@
     .projektemacher {
       img {
         vertical-align: middle;
-        filter: drop-shadow(0 0 4px cyan);
+        filter: drop-shadow(0 0 4px cyan) $magenta-filter;
       }
     }
 

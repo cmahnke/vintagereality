@@ -129,8 +129,8 @@
     }
   }
 
-  .ol-popup:after,
-  .ol-popup:before {
+  .ol-popup::after,
+  .ol-popup::before {
     top: 100%;
     border: solid transparent;
     content: " ";
@@ -140,15 +140,15 @@
     pointer-events: none;
   }
 
-  .ol-popup:after {
+  .ol-popup::after {
     border-top-color: white;
     border-width: 10px;
     left: 48px;
     margin-left: -10px;
   }
 
-  .ol-popup:before {
-    border-top-color: #cccccc;
+  .ol-popup::before {
+    border-top-color: #ccc;
     border-width: 11px;
     left: 48px;
     margin-left: -11px;
@@ -161,7 +161,7 @@
     right: 8px;
   }
 
-  .ol-popup-closer:after {
+  .ol-popup-closer::after {
     content: "✖";
   }
 }

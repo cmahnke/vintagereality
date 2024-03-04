@@ -51,10 +51,9 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
 * Finish theme
   * Homepage and logo animation
   * CSS
-    * Mobile
     * see `grep -r TODO assets/scss/`
   * Fix header menues
-
+* Fix links
 * Add translation
 
 ## Other Inspirations

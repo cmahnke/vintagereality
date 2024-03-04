@@ -4,6 +4,7 @@
 $cyan: rgb(0,255,255);
 $red: rgb(255,0,0);
 $magenta: rgb(255,0,255);
+$magenta-filter: invert(19%) sepia(100%) saturate(2161%) hue-rotate(285deg) brightness(124%) contrast(147%);
 $blue: rgb(132,255,255);
 $yellow: rgb(251,238,153);
 $red2: rgb(248,229,216);
@@ -42,16 +43,35 @@ $fullscreen-color: var(--base07);
   --magenta: $magenta;
 }
 
-/*
-* {
-  box-sizing: border-box;
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+
+  &:hover {
+    color: #535bf2;
+  }
 }
-*/
+
+.source {
+  font-size: small;
+  text-align: right;
+  margin: 1.5em;
+  margin-bottom: 4.5em;
+  color: lighten(#6c757d, 20%);
+
+  @media (max-width : 30em) {
+      margin-bottom: unset;
+  }
+
+  a {
+    color: lighten(#007bff, 20%);
+  }
+}
 
 html,body {
   margin: 0;
   height:100%;
-  background-color: black;
   background: linear-gradient(70deg, color.adjust($cyan, $lightness: -40%) 0%, black 50%, color.adjust($magenta, $lightness: -40%) 100%) fixed;
 }
 
@@ -84,16 +104,6 @@ body {
   }
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-
-  &:hover {
-    color: #535bf2;
-  }
-}
-
 .main {
   width: 80%;
   margin: auto;
@@ -115,19 +125,16 @@ a {
       font-size: 1em;
     }
 
-    h1 {
-      mix-blend-mode: unset;
-      background-image: linear-gradient(90deg, $magenta, $cyan);
-      background-clip: text;
-      color: transparent;
-    }
-
     h1, h2, h3 {
       font-family: $heading-font;
     }
 
     h1 {
       font-size: 2em;
+      mix-blend-mode: unset;
+      background-image: linear-gradient(90deg, $magenta, $cyan);
+      background-clip: text;
+      color: transparent;
     }
 
     h2 {
@@ -184,8 +191,14 @@ a {
       max-height: 8em;
       padding-inline-start: 0;
 
+      @media (max-width: 30em) {
+        max-height: 14em;
+        margin-left: .4em;
+        margin-right: .4em;
+      }
+
       .section-content-item {
-        &:marker {
+        &::marker {
           display: none;
         }
       }
@@ -221,7 +234,7 @@ a {
         h2 {
           margin-block-start: .6em;
           margin-block-end: 0;
-          font-size: 2.2eem;
+          font-size: 2.2em;
           font-weight: bold;
           mix-blend-mode: unset;
           background-image: linear-gradient(90deg, $magenta, $cyan);
@@ -241,6 +254,12 @@ a {
           a {
             font-weight: unset;
             color: unset;
+
+            /* TODO: fix overflow in headings */
+            @media (max-width: 30em) {
+              max-width: 90vw;
+              text-overflow: clip;
+            }
           }
         }
 
@@ -375,23 +394,6 @@ a {
 .headline {
   font-family: $heading-font;
 }
-
-.source {
-  font-size: small;
-  text-align: right;
-  margin: 1.5em;
-  margin-bottom: 4.5em;
-  color: lighten(#6c757d, 20%);
-
-  @media (max-width : 30em) {
-      margin-bottom: unset;
-  }
-
-  a {
-    color: lighten(#007bff, 20%);
-  }
-}
-
 
 @keyframes moving-gradient {
   0% {background-position: 0% 50%}
