@@ -6,8 +6,14 @@ displayinlist: false
 
 3D Bilder sind keine neue Erfindung - bereits Ende des 19. Jahrhunderts gab es 3D Betrachter...
 
-
 Dieses Blog zeigt meine Sammlung an dreidimensionalen Inhalten, wie Stereo-Fotographien aus dem späten 18. / frühen 19. Jahrhundert und perspektivisch auch Stereogrammen, .
+
+Jeder Eintrag mit stereoskopischen Bildern beinhaltet die Möglichkeit verschiedene Ansichten anzeigen zu lassen:
+* Beide Bilder als animiertes Gif mit schnellem Wechsel (Wackelbild, eng. [Wigglegram](https://en.wikipedia.org/wiki/Wiggle_stereoscopy)).
+* Beide Bilder im JPS (JPEG Stereoscopic) Format (vertauscht - "cross-eyed"). Kann mit [sView](http://www.sview.ru/en/) betrachtet werden.
+* Beide Bilder als [Anaglyphe](https://de.wikipedia.org/wiki/Anaglyph_3D).
+* Beide Bilder im [MPO Format](https://de.wikipedia.org/wiki/Multi_Picture_Object).
+* Vollbild - für die Betrachtung mit einem [Cardboard VR](https://de.wikipedia.org/wiki/Google_Cardboard) (oder ähnlich) Betrachter.
 
 ## Schlagworte
 
