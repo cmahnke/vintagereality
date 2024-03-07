@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "parallax-js": "^3.1.0"
+    "parallax-js": "^3.1.0",
+    "scroll-timeline": "flackr/scroll-timeline#69d5af9f7e88167b47a88a7c02e27d88bc9ca6f3",
   }
 }
