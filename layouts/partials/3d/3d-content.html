@@ -15,6 +15,7 @@
 {{- $jps := path.Join $context (printf "%s.jps" $baseImageName) -}}
 {{- $gif := path.Join $context (printf "%s.gif" $baseImageName) -}}
 {{- $ana := path.Join $context (printf "%s-anaglyph.jpg" $baseImageName) -}}
+{{- $depth := path.Join $context (printf "%s-depthmap.jpg" $baseImageName) -}}
 {{- $mpo := path.Join $context (printf "%s.mpo" $baseImageName) -}}
 {{- $singleL := path.Join $context (printf "%s-left.jpg" $baseImageName) -}}
 {{- $singleR := path.Join $context (printf "%s-right.jpg" $baseImageName) -}}
@@ -33,6 +34,9 @@
     {{- end }}
     {{ if (fileExists $mpo) -}}
       <input class="radio" id="dreiD-mpo" name="3d" type="radio">
+    {{- end }}
+    {{ if (fileExists $depth) -}}
+      <input class="radio" id="dreiD-depth" name="3d" type="radio">
     {{- end }}
     {{ if and (fileExists $singleL) (fileExists $singleR) -}}
       <input class="radio" id="dreiD-single" name="3d" type="radio">
@@ -58,6 +62,11 @@
         <label class="tab" id="dreiD-mpo-tab" for="dreiD-mpo">{{ i18n "mpo" }}</label>
       {{- else -}}
         {{- warnf "[partials/3d/3d-content.html] File %s missing!" $mpo -}}
+      {{- end }}
+      {{ if (fileExists $depth) -}}
+        <label class="tab" id="dreiD-depth-tab" for="dreiD-depth">{{ i18n "depthmap" }}</label>
+      {{- else -}}
+        {{- warnf "[partials/3d/3d-content.html] File %s missing!" $depth -}}
       {{- end }}
       {{ if and (fileExists $singleL) (fileExists $singleR) -}}
         <label class="tab" id="dreiD-single-tab" for="dreiD-single">{{ i18n "single_frames" }}</label>
@@ -100,9 +109,20 @@
           </div>
         </div>
       {{- end }}
+      {{ if (fileExists $depth) -}}
+        <div class="panel" id="dreiD-depth-panel">
+          <img class="depth single" src="{{ $depth | relURL }}" />
+          <div class="description">
+            {{ i18n "depthmap_desc" | safeHTML }} <a class="newTab" href="{{ $depth | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
+          </div>
+        </div>
+      {{- end }}
       {{ if and (fileExists $singleL) (fileExists $singleR) -}}
         <div class="panel" id="dreiD-single-panel">
           <img class="singleL single" src="{{ $singleL | relURL }}" />
+          {{ if (fileExists $depth) -}}
+            <canvas class="depth"></canvas>
+          {{- end }}
           <div class="description">
             {{ i18n "left_image" | safeHTML }} <a class="newTab" href="{{ $singleL | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>

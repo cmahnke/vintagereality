@@ -20,6 +20,70 @@ def crossed_eyed(left, right, file, format='jpeg'):
     ce.save(file, format)
     return ce
 
+def depth_map(pilLeft, pilRight, file):
+    # See https://github.com/pairote/stereo2depth
+    # Parameters from all steps are defined here to make it easier to adjust values.
+    resolution      = 1.0    # (0, 1.0]
+    numDisparities  = 16     # has to be dividable by 16
+    blockSize       = 5      # (0, 25]
+    windowSize      = 5      # Usually set equals to the block size
+    uniquenessRatio = 15
+    filterCap       = 63     # [0, 100]
+    lmbda           = 80000  # [80000, 100000]
+    sigma           = 1.2
+    brightness      = 0      # [-1.0, 1.0]
+    contrast        = .7      # [0.0, 3.0]
+
+    left = cv.cvtColor(np.array(pilLeft), cv.COLOR_RGB2GRAY)
+    right = cv.cvtColor(np.array(pilRight), cv.COLOR_RGB2GRAY)
+
+    height, width = left.shape[:2]
+
+    left_matcher = cv.StereoSGBM_create(
+        minDisparity = 0,
+        numDisparities = numDisparities,
+        blockSize = blockSize,
+        P1 = 8 * 3 * windowSize ** 2,
+        P2 = 32 * 3 * windowSize ** 2,
+        disp12MaxDiff = 1,
+        uniquenessRatio = uniquenessRatio,
+        speckleWindowSize = 0,
+        speckleRange = 2,
+        preFilterCap = filterCap,
+        mode = cv.STEREO_SGBM_MODE_HH
+        #mode = cv.STEREO_SGBM_MODE_SGBM_3WAY
+    )
+
+    right_matcher = cv.ximgproc.createRightMatcher(left_matcher)
+
+    # Step 5 - Setup a disparity filter to deal with stereo-matching errors.
+    #          It will detect inaccurate disparity values and invalidate them, therefore making the disparity map semi-sparse.
+    wls_filter = cv.ximgproc.createDisparityWLSFilter(matcher_left = left_matcher)
+    wls_filter.setLambda(lmbda)
+    wls_filter.setSigmaColor(sigma)
+
+    # Step 6 - Perform stereo matching to compute disparity maps for both left and right views.
+    displ = left_matcher.compute(left, right)
+    dispr = right_matcher.compute(right, left)
+
+    # Step 7 - Perform post-filtering
+    leftB = cv.copyMakeBorder(left, top = 0, bottom = 0, left = np.uint16(numDisparities / resolution), right = 0, borderType= cv.BORDER_CONSTANT, value = [155,155,155])
+    filteredImg = wls_filter.filter(displ, leftB, None, dispr)
+
+    # Step 8 - Adjust image resolution, brightness, contrast, and perform disparity truncation hack
+    filteredImg = filteredImg * resolution
+    filteredImg = filteredImg + (brightness / 100.0)
+    filteredImg = (filteredImg - 128) * contrast + 128
+    filteredImg = np.clip(filteredImg, 0, 255)
+    filteredImg = np.uint8(filteredImg)
+    filteredImg = filteredImg[0:height, np.uint16(numDisparities / resolution):width]
+    outImg = cv.medianBlur(filteredImg, 5)
+
+    if isinstance(file, pathlib.PurePath):
+        file = str(file)
+
+    cv.imwrite(file, outImg, [cv.IMWRITE_JPEG_QUALITY, 100])
+
 def cut_stereo(coords, im):
     left_left = coords['left']['position']['x']
     left_top = coords['left']['position']['y']
@@ -148,7 +212,7 @@ def auto_align(im, coords = None, file = None, opts = None):
 parser = argparse.ArgumentParser(description='Extract steroscopic images')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
 parser.add_argument('--coords', type=pathlib.Path, help='File containing coordinates', required=True)
-parser.add_argument('--output', choices=['gif', 'jps', 'images', 'jpg', 'mpo'], action='append', nargs='+', help='Output format', default=[])
+parser.add_argument('--output', choices=['gif', 'jps', 'images', 'jpg', 'mpo', 'depthmap'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--samesize', '-s', help='Force same size (implies advanced)', default=False, action='store_true')
 parser.add_argument('--advanced', '-a', help='Use advanced features provided by StereoscoPy', default=False, action='store_true')
 parser.add_argument('--debug', '-d', help='Print information about JXL bindings', default=False, action='store_true')
@@ -184,18 +248,23 @@ if args.samesize:
     advanced = True
 
 if ('jpg' in outputs):
-    cprint('Anayglyph output requires -s and -a, setting it automaticlly', 'yellow')
+    cprint('Anayglyph output requires -s and -a, setting it automatically', 'yellow')
+    advanced = True
+    same_size = True
+
+if ('depthmap' in outputs):
+    cprint('Depth map output requires -s and -a, setting it automatically', 'yellow')
     advanced = True
     same_size = True
 
 if args.advanced and not advanced:
     advanced = True
-    cprint('Using advanced features provided by StereoscoPy', 'yellow')
+    cprint('Using advanced features provided by StereoscoPy and OpenCV', 'yellow')
 
 if advanced:
     import stereoscopy
-    #import numpy as np
-    #import cv2 as cv
+    import numpy as np
+    import cv2 as cv
 
 leftFileName = args.image.parent.joinpath(args.image.stem + '-left' + images_suffix)
 rightFileName = args.image.parent.joinpath(args.image.stem + '-right' + images_suffix)
@@ -235,6 +304,9 @@ if ('jps' in outputs):
 if ('jpg' in outputs):
     anagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph.jpg')
     stereoscopy.create_anaglyph((left, right), method="gray").save(anagFileName)
+if ('depthmap' in outputs):
+    ceFileName = args.image.parent.joinpath(args.image.stem + '-depthmap.jpg')
+    depth_map(left, right, ceFileName)
 if ('images' in outputs):
     left.save(leftFileName)
     right.save(rightFileName)

@@ -52,8 +52,12 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
   * Homepage and logo animation
   * CSS
     * see `grep -r TODO assets/scss/`
-  * Fix header menu
+  * Fix header menu, see [scroll-timeline](https://github.com/flackr/scroll-timeline)
 * Add translation
+
+## Scripts
+
+* https://docs.opencv.org/4.x/d3/d14/tutorial_ximgproc_disparity_filtering.html
 
 ## Other Inspirations
 * https://reverb.laravel.com/

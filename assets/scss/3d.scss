@@ -79,6 +79,8 @@
     }
 
     .tabs {
+      display: flex;
+
       .tab {
         cursor: pointer;
         padding: 10px;
@@ -113,6 +115,7 @@
     #dreiD-gif:checked ~ .panels #dreiD-gif-panel,
     #dreiD-jps:checked ~ .panels #dreiD-jps-panel,
     #dreiD-mpo:checked ~ .panels #dreiD-mpo-panel,
+    #dreiD-depth:checked ~ .panels #dreiD-depth-panel,
     #dreiD-single:checked ~ .panels #dreiD-single-panel,
     #dreiD-vr:checked ~ .panels #dreiD-vr-panel {
       display: block;
@@ -122,6 +125,7 @@
     #dreiD-gif:checked ~ .tabs #dreiD-gif-tab,
     #dreiD-jps:checked ~ .tabs #dreiD-jps-tab,
     #dreiD-mpo:checked ~ .tabs #dreiD-mpo-tab,
+    #dreiD-depth:checked ~ .tabs #dreiD-depth-tab,
     #dreiD-single:checked ~ .tabs #dreiD-single-tab,
     #dreiD-vr:checked ~ .tabs #dreiD-vr-tab {
       /*background: #fc6;*/

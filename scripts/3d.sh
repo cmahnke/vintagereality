@@ -41,7 +41,7 @@ do
     else
       IMG_FILE=$DIR/$(jq -r .file $META)
     fi
-    echo "$PYTHON $SCRIPT -d -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo" >> $JOBFILE
+    echo "$PYTHON $SCRIPT -d -s --image $IMG_FILE --coords $DIR/3d-images.json --output jps images gif jpg mpo depthmap" >> $JOBFILE
 
 done
 echo "Running generated jobs from $JOBFILE, $CORES in parallel"
