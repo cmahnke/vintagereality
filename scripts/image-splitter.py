@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 from PIL import Image, ImageDraw
-import argparse, pathlib, json, sys
+import argparse, pathlib, json, sys, math
 from packaging import version
 from termcolor import cprint
 
@@ -22,6 +22,7 @@ def crossed_eyed(left, right, file, format='jpeg'):
 
 def depth_map(pilLeft, pilRight, file):
     # See https://github.com/pairote/stereo2depth
+    # See https://docs.opencv.org/4.9.0/d3/d14/tutorial_ximgproc_disparity_filtering.html
     # Parameters from all steps are defined here to make it easier to adjust values.
     resolution      = 1.0    # (0, 1.0]
     numDisparities  = 16     # has to be dividable by 16
@@ -34,8 +35,18 @@ def depth_map(pilLeft, pilRight, file):
     brightness      = 0      # [-1.0, 1.0]
     contrast        = .7      # [0.0, 3.0]
 
-    left = cv.cvtColor(np.array(pilLeft), cv.COLOR_RGB2GRAY)
-    right = cv.cvtColor(np.array(pilRight), cv.COLOR_RGB2GRAY)
+    gLeft = cv.cvtColor(np.array(pilLeft), cv.COLOR_RGB2GRAY)
+    gRight = cv.cvtColor(np.array(pilRight), cv.COLOR_RGB2GRAY)
+
+    if is_print(gLeft, gRight):
+        cprint("Detected printed image with raster, smoothen", 'yellow')
+        #TODO: This doens't really help
+        left = cv.medianBlur(gLeft, 5)
+        right = cv.medianBlur(gRight, 5)
+    else:
+        cprint("Image is almost certainly not a printed image", 'green')
+        left = gLeft
+        right = gRight
 
     height, width = left.shape[:2]
 
@@ -132,7 +143,6 @@ def cut_stereo(coords, im):
 
 # See https://parth3d.co.uk/splitting-anaglyph-images-in-python
 def cut_anaglyph(coords, im):
-    #from matplotlib import pyplot as plt
     if not coords['left'] or not coords['right']:
         h, w = im.size
         for side in ['left', 'right']:
@@ -178,36 +188,106 @@ def get_patch (im):
     (nh, ny) = (h / 30, h / 30)
     return im.crop((nx, ny, nx + nw, ny + nh))
 
+def is_print(left, right):
+    edges = cv.Canny(left, 50, 150, apertureSize=5)
+    height, width = left.shape[:2]
+    minLength = math.sqrt(math.pow(height / 3, 2) + math.pow(width / 3, 2))
+    threshold = width / 3
+    lines = cv.HoughLinesP(edges, 1, np.pi/180, 100, minLineLength=minLength, maxLineGap=10)
+    numLines = 0
+    if lines is not None:
+        numLines = len(lines)
+    cprint(f"Checking for print: Image height: {height}, width: {width}, min length of lines {minLength}, lines threshold: {threshold}, lines found: {numLines}", 'yellow')
+
+    if lines is not None and len(lines) > threshold:
+        return True
+    return False
+
+def debug_processor(im, file):
+    if file is not None:
+        if isinstance(im, tuple):
+            path = pathlib.Path(file)
+            im[0].save(path.parent.joinpath(path.stem + 'L' + path.suffix))
+            im[1].save(path.parent.joinpath(path.stem + 'R' + path.suffix))
+        else:
+            im.save(file)
+
 # See https://mattmaulion.medium.com/white-balancing-an-enhancement-technique-in-image-processing-8dd773c69f6
 def white_balance(im, coords = None, file = None, opts = None):
     import numpy
-    mode = 'mean'
-    if im.mode == "RGBA":
-        im = im.convert('RGB')
-    image = numpy.asarray(im)
-    image_patch = numpy.asarray(get_patch(im))
-    if mode == 'mean':
-       image_gt = ((image * (image_patch.mean() / image.mean(axis=(0, 1)))).clip(0, 255).astype(int))
-    if mode == 'max':
-       image_gt = ((image * 1.0 / image_patch.max(axis=(0,1))).clip(0, 1))
-    im = Image.fromarray(image_gt.astype('uint8'))
-    if file != None:
-        im.save(file)
-    return im
+    mode = "mean"
+    def single(im, opts):
+        if im.mode == "RGBA":
+            im = im.convert('RGB')
+        image = numpy.asarray(im)
+        image_patch = numpy.asarray(get_patch(im))
+        if mode == 'mean':
+            image_gt = ((image * (image_patch.mean() / image.mean(axis=(0, 1)))).clip(0, 255).astype(int))
+        elif mode == 'max':
+            image_gt = ((image * 1.0 / image_patch.max(axis=(0,1))).clip(0, 1))
+        else:
+            cprint("Mode not set! Failing!", 'red')
+
+        return Image.fromarray(image_gt.astype('uint8'))
+
+    if isinstance(im, tuple):
+        retIm = (single(im[0], opts), single(im[1]. opts))
+    else:
+        retIm = single(im, opts)
+
+    debug_processor(im, file)
+    return retIm
 
 def blank_out(im, coords = None, file = None, opts = None):
     color = "white"
-    draw = ImageDraw.Draw(im)
-    if opts is not None and len(opts) == 4:
-        draw.rectangle(((opts[0], opts[1]), (opts[0] + opts[2], opts[1] + opts[3])), fill=color, width=0)
+    def single(im, opts):
+        draw = ImageDraw.Draw(im)
+        if opts is not None and len(opts) == 4:
+            draw.rectangle(((opts[0], opts[1]), (opts[0] + opts[2], opts[1] + opts[3])), fill=color, width=0)
+        return im
 
-    if file != None:
-        im.save(file)
-    return im
+    if isinstance(im, tuple):
+        retIm = (single(im[0], opts), single(im[1]. opts))
+    else:
+        retIm = single(im, opts)
+
+    debug_processor(retIm, file)
+    return retIm
+
+def normalize(im, coords = None, file = None, opts = None):
+    import numpy as np
+    import cv2 as cv
+    def single(im):
+        cvAr = cv.cvtColor(np.array(im), cv.COLOR_RGB2GRAY)
+        normalized = cv.normalize(cvAr, None, beta=0, alpha=255, norm_type=cv.NORM_MINMAX)
+        return Image.fromarray(cv.cvtColor(normalized, cv.COLOR_GRAY2RGB))
+
+    if isinstance(im, tuple):
+        retIm = (single(im[0]), single(im[1]))
+    else:
+        retIm = single(im)
+
+    debug_processor(retIm, file)
+    return retIm
 
 # TODO: This is just a placeholder for auto alignment metadata
 def auto_align(im, coords = None, file = None, opts = None):
     return im
+
+def get_processors(config, phase = 'preprocess'):
+    if isinstance(coords[phase], list):
+        methods = coords[phase]
+    else:
+        methods = [coords[phase]]
+    processors = []
+    for method in methods:
+        if isinstance(method, dict):
+            params = method['args']
+            method = method['method']
+        else:
+            params = {}
+        processors.append({'method': method, 'params': params})
+    return processors
 
 parser = argparse.ArgumentParser(description='Extract steroscopic images')
 parser.add_argument('--image', type=pathlib.Path, help='Image to process', required=True)
@@ -273,18 +353,9 @@ if coords['left'] and coords['right']:
     cprint("Right start position {},{}, size {}, {} - File name {}".format(coords['right']['position']['x'], coords['right']['position']['y'], coords['right']['size']['x'], coords['right']['size']['y'], rightFileName), 'yellow')
 
 if 'preprocess' in coords and advanced:
-    if isinstance(coords['preprocess'], list):
-        methods = coords['preprocess']
-    else:
-        methods = [coords['preprocess']]
-    for method in methods:
-        if isinstance(method, dict):
-            params = method['args']
-            method = method['method']
-        else:
-            params = {}
-        preprocessFileName = args.image.parent.joinpath(args.image.stem + '-' + method + images_suffix)
-        locals()[method](im, coords, preprocessFileName, params)
+    for processor in get_processors(coords, 'preprocess'):
+        preprocessFileName = args.image.parent.joinpath(args.image.stem + '-pre-' + processor['method'] + images_suffix)
+        im = locals()[processor['method']](im, coords, preprocessFileName, processor['params'])
 
 if not 'type' in coords:
     (left, right) = cut_stereo(coords, im)
@@ -292,6 +363,11 @@ if not 'type' in coords:
         (left, right) = stereoscopy.auto_align((left, right), shrink=same_size, iterations=auto_align_iterations)
 elif 'type' in coords and coords['type'] == 'anaglyph':
     (left, right) = cut_anaglyph(coords, im)
+
+if 'postprocess' in coords and advanced:
+    for processor in get_processors(coords, 'postprocess'):
+        postprocessFileName = args.image.parent.joinpath(args.image.stem + '-post-' + processor['method'] + images_suffix)
+        (left, right) = locals()[processor['method']]((left, right), coords, postprocessFileName, processor['params'])
 
 # See https://blog.miguelgrinberg.com/post/take-3d-pictures-with-your-canon-dslr-and-magic-lantern
 

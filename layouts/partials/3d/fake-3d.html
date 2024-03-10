@@ -1,0 +1,40 @@
+{{/* Required arguments */}}
+
+{{- $left := .left -}}
+{{- $depthmap := .depthmap -}}
+
+{{ $main := $left }}
+
+{{- $class := "" -}}
+{{- if isset . "class" -}}
+  {{- $class = .class -}}
+{{- end -}}
+{{- $image := .image -}}
+
+{{- $baseURL := "" -}}
+{{- if isset . "baseURL" -}}
+  {{- $baseURL = .baseURL -}}
+{{- else -}}
+  {{- $baseURL := path.Dir $main -}}
+{{- end -}}
+
+{{- $idSuffix := replace (replace (replace $main "/" "_") "." "") "-" "_" -}}
+{{- $canvasName := printf "fake3d_%s_%s" (delimit (shuffle (seq 1 9)) "") $idSuffix -}}
+
+{{- $width := 0 -}}
+{{- $height := 0 -}}
+
+{{- with .Resources.GetMatch $left -}}
+  {{- $width := .Width -}}
+  {{- $height := .Height -}}
+{{- end -}}
+
+<div class="canvas-container ">
+  <img class="fallback single" src="{{ $left | relURL }}" />
+  <canvas class="fake3d single {{ $class }}" id="{{ $canvasName }}" ></canvas>
+</div>
+<script type="text/javascript">
+  var {{ $canvasName | safeJS }}_canvas = document.getElementById("{{ $canvasName }}");
+  var {{ $canvasName | safeJS }}_img = {{ $canvasName | safeJS }}_canvas.parentElement.querySelector("{{ $image | safeJS }}");
+  {{ $canvasName | safeJS }} = addDepthMap({{ $canvasName | safeJS }}_canvas, {{ $canvasName | safeJS }}_img, '{{ printf "/%s" $depthmap }}');
+</script>

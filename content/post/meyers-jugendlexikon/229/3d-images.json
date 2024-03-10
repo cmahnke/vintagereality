@@ -21,5 +21,6 @@
     },
     "file": "page229.jxl",
     "type": "anaglyph",
-    "preprocess": "white_balance"
+    "preprocess": "white_balance",
+    "postprocess": "normalize"
 }

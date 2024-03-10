@@ -6,6 +6,7 @@ type: 3d
 subtype: anaglyph
 iiifClass: page
 iiifContext: http://iiif.io/api/image/2/context.json
+depthmap: false
 tags:
 - 3D
 - drawing

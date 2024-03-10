@@ -39,6 +39,10 @@ content/**/*-white_balance.jpg
 content/**/*-white_balance.jpeg
 content/**/*-blank_out.jpeg
 content/**/*-blank_out.jpg
+content/**/*-pre-*.jpeg
+content/**/*-pre-*.jpg
+content/**/*-post-*.jpeg
+content/**/*-post-*.jpg
 #Backups
 scripts/*.bak.sh
 # Generated files

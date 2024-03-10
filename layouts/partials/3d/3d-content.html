@@ -63,7 +63,7 @@
       {{- else -}}
         {{- warnf "[partials/3d/3d-content.html] File %s missing!" $mpo -}}
       {{- end }}
-      {{ if (fileExists $depth) -}}
+      {{- if and (fileExists $depth) (or (eq .Params.depthmap nil) (ne .Params.depthmap false)) -}}
         <label class="tab" id="dreiD-depth-tab" for="dreiD-depth">{{ i18n "depthmap" }}</label>
       {{- else -}}
         {{- warnf "[partials/3d/3d-content.html] File %s missing!" $depth -}}
@@ -109,7 +109,7 @@
           </div>
         </div>
       {{- end }}
-      {{ if (fileExists $depth) -}}
+      {{- if and (fileExists $depth) (or (eq .Params.depthmap nil) (ne .Params.depthmap false)) -}}
         <div class="panel" id="dreiD-depth-panel">
           <img class="depth single" src="{{ $depth | relURL }}" />
           <div class="description">
@@ -119,10 +119,11 @@
       {{- end }}
       {{ if and (fileExists $singleL) (fileExists $singleR) -}}
         <div class="panel" id="dreiD-single-panel">
-          <img class="singleL single" src="{{ $singleL | relURL }}" />
-          {{ if (fileExists $depth) -}}
-            <canvas class="depth"></canvas>
-          {{- end }}
+          {{- if and (fileExists $depth) (or (eq .Params.depthmap nil) (ne .Params.depthmap false)) -}}
+            {{- partial "3d/fake-3d.html" (dict "left" $singleL "depthmap" $depth "tab" "dreiD-single" "image" "img.fallback") -}}
+          {{- else -}}
+            <img class="singleL single" src="{{ $singleL | relURL }}" />
+          {{- end -}}
           <div class="description">
             {{ i18n "left_image" | safeHTML }} <a class="newTab" href="{{ $singleL | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
