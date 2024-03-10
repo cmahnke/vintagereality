@@ -258,7 +258,12 @@ function addDepthMap(canvas, image, map) {
     width: image.width,
     height: image.height
   }
-  canvas.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+  //canvas.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
+  image.onload = () => {
+    sizes.width = image.width;
+    sizes.height = image.height;
+    resize();
+  }
   const sizeObserver = new ResizeObserver(entries => {
     sizes.width = image.width;
     sizes.height = image.height;

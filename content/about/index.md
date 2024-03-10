@@ -32,15 +32,19 @@ Die folgenden JavaScript und CSS Frameworks werden benutzt:
 * [normalize.css](https://necolas.github.io/normalize.css/)
 * [Stickybits](https://dollarshaveclub.github.io/stickybits/)
 * [JS-Cookie](https://github.com/js-cookie/js-cookie)
+* [`three.js`](https://threejs.org/)
+* [`scroll-timeline`](https://github.com/flackr/scroll-timeline)
 
 Die Nachbearbeitung der Digitalisate wurde mit [ScanTailor Advanced](https://github.com/4lex4/scantailor-advanced) durchgeführt.
 
-Für die Nachbearbeitung der Stereobilder wurden die folgenden Bibliotheken eingesetzt:
+Für die Nachbearbeitung und Präsentation der Stereobilder wurden die folgenden Bibliotheken / Beispielimplementierungen eingesetzt:
 * [OpenCV](https://opencv.org/)
 * [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
 * [JXLPy](https://github.com/olokelo/jxlpy)
 * [PyStereogram](https://github.com/yxiao1996/pystereogram)
 * [StereoscoPy](https://github.com/2sh/StereoscoPy)
+* [`stereo2depth`](https://github.com/pairote/stereo2depth)
+* [Fake 3d Image - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW) {{< flag "en" >}}
 
 Für die Darstellung der Digitalisate von Einzelbildern wird [OpenLayers](https://openlayers.org/) verwendet. Die jeweils angezeigten Ausschnitte wurden mit [libvips](https://libvips.github.io/libvips/) erzeugt.
 

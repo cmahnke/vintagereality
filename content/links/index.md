@@ -41,6 +41,7 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 
 * [StereoscoPy](https://github.com/2sh/StereoscoPy) {{< flag "en" >}}
 * [Making Your Own Autostereograms using Python](https://flothesof.github.io/making-stereograms-Python.html) {{< flag "en" >}}
+* [`stereo2depth`](https://github.com/pairote/stereo2depth)
 
 ## Sonstige
 
