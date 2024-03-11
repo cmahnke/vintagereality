@@ -25,5 +25,5 @@ Nicht das Holstentor, sondern der Bischofspalast in [Beauvais](https://de.wikipe
 <!--more-->
 
 {{< html/iframe-consent >}}
-<iframe src="https://www.google.com/maps/embed?pb=!4v1617610117460!6m8!1m7!1si6JD8yZ4uHy81BOKpBURxw!2m2!1d49.43219880014176!2d2.080874978937397!3f325.7127407142462!4f5.074383817339253!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1617610117460!6m8!1m7!1si6JD8yZ4uHy81BOKpBURxw!2m2!1d49.43219880014176!2d2.080874978937397!3f325.7127407142462!4f5.074383817339253!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 {{< /html/iframe-consent >}}

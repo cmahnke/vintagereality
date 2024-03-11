@@ -2,5 +2,11 @@
   "dependencies": {
     "parallax-js": "^3.1.0",
     "scroll-timeline": "flackr/scroll-timeline#69d5af9f7e88167b47a88a7c02e27d88bc9ca6f3"
+  },
+  "devDependencies": {
+    "vite": "^5.0.12"
+  },
+  "scripts":{
+    "postinstall-scroll-timeline": "cd node_modules/scroll-timeline && yarn install && yarn run build"
   }
 }

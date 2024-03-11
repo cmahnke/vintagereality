@@ -28,5 +28,5 @@ Die Galerie d’Apollon im [Louvre](https://de.wikipedia.org/wiki/Louvre) in Par
 <!--more-->
 
 {{< html/iframe-consent >}}
-<iframe src="https://www.google.com/maps/embed?pb=!4v1617532026652!6m8!1m7!1sCAoSLEFGMVFpcE5Mak1lTXhPRWVNUFZTbXdMempvUEhXSWdzT0F3NEJBNFJubGV1!2m2!1d48.8598918!2d2.3368344!3f196.88578493417293!4f5.532311548908666!5f0.7820865974627469" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!4v1617532026652!6m8!1m7!1sCAoSLEFGMVFpcE5Mak1lTXhPRWVNUFZTbXdMempvUEhXSWdzT0F3NEJBNFJubGV1!2m2!1d48.8598918!2d2.3368344!3f196.88578493417293!4f5.532311548908666!5f0.7820865974627469" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 {{< /html/iframe-consent >}}
