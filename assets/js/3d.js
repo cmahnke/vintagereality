@@ -2,6 +2,16 @@ import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
 import { OrbitControls  } from 'three/examples/jsm/controls/OrbitControls.js';
 
+// Check for WebGL support, see https://stackoverflow.com/a/77480016
+function isWebGLSupported() {
+  try {
+    var canvas = document.createElement('canvas');
+      return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+  } catch (e) {
+    return false;
+  }
+}
+
 // Inspired by https://github.com/steren/stereo-img/blob/main/stereo-img.js
 
 function angleOfViewFocalLengthIn35mmFormat(focalLengthIn35mmFormat, width, height) {
@@ -241,6 +251,12 @@ function addFullScreen(element, left, right) {
 
 // See https://codepen.io/chrisjdesigner/pen/yLzopXW
 function addDepthMap(canvas, image, map) {
+  if (!isWebGLSupported()) {
+    console.log("WebGL isn't supported!");
+    canvas.style.display = 'none';
+    return;
+  }
+
   /**
    * Variables
    */
@@ -250,7 +266,7 @@ function addDepthMap(canvas, image, map) {
     xThreshold: 20,
     yThreshold: 35,
     originalImagePath: image.src,
-    depthImagePath: map,
+    depthImagePath: map
   }
 
   // Sizes
@@ -262,6 +278,7 @@ function addDepthMap(canvas, image, map) {
   image.onload = () => {
     sizes.width = image.width;
     sizes.height = image.height;
+    //image.style.visibility = 'hidden';
     resize();
   }
   const sizeObserver = new ResizeObserver(entries => {
@@ -270,7 +287,6 @@ function addDepthMap(canvas, image, map) {
     resize();
   });
   sizeObserver.observe(image);
-  image.style.visibility = 'hidden'
 
   // Image Details
   let originalImage = null
@@ -278,7 +294,7 @@ function addDepthMap(canvas, image, map) {
   const originalImageDetails = {
     width: 0,
     height: 0,
-    aspectRatio: 0,
+    aspectRatio: 0
   }
 
   // Geometries and Material
@@ -294,15 +310,12 @@ function addDepthMap(canvas, image, map) {
     lerpY: 0,
   }
 
-
   // Scene
-  const scene = new THREE.Scene()
-
+  const scene = new THREE.Scene();
 
   /**
    * Camera
    */
-
   const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
   camera.position.x = 0
   camera.position.y = 0
@@ -311,17 +324,14 @@ function addDepthMap(canvas, image, map) {
 
   let fovY = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
 
-
   /**
   * Images
   */
-
   const textureLoader = new THREE.TextureLoader()
 
   const loadImages = () => {
 
-    if(originalImage !== null || depthImage !== null)
-    {
+    if (originalImage !== null || depthImage !== null) {
       originalImage.dispose()
       depthImage.dispose()
     }
@@ -340,19 +350,16 @@ function addDepthMap(canvas, image, map) {
 
   loadImages()
 
-
   /**
    * Create 3D Image
    */
-
   const create3dImage = () => {
 
     // Cleanup Geometry for GUI
-    if(plane !== null)
-    {
-        planeGeometry.dispose()
-        planeMaterial.dispose()
-        scene.remove(plane)
+    if(plane !== null) {
+        planeGeometry.dispose();
+        planeMaterial.dispose();
+        scene.remove(plane);
     }
 
     planeGeometry = new THREE.PlaneGeometry(1, 1);
@@ -403,90 +410,82 @@ function addDepthMap(canvas, image, map) {
   }
   create3dImage();
 
-
+  const transparentBg = (canvas) => {
+    var ctx = canvas.getContext("2d");
+    ctx.globalCompositeOperation = 'destination-over'
+    ctx.fillStyle = "transparent";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+  }
 
   /**
    * Resize
    */
-
   const resize = () => {
-
     // Update sizes
     sizes.width = image.width;
     sizes.height = image.height;
 
     // Update camera
     camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix()
+    camera.updateProjectionMatrix();
 
     // Update Image Size
-    if(sizes.height/sizes.width < originalImageDetails.aspectRatio) {
+    if (sizes.height/sizes.width < originalImageDetails.aspectRatio) {
       plane.scale.set( (fovY * camera.aspect), ((sizes.width / sizes.height) * originalImageDetails.aspectRatio), 1 );
     } else {
       plane.scale.set( (fovY / originalImageDetails.aspectRatio), fovY, 1 );
     }
 
     // Update renderer
-    renderer.setSize(sizes.width, sizes.height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
-  window.addEventListener('resize', () =>
-  {
+  window.addEventListener('resize', () => {
     resize()
-  })
-
+  });
 
   /**
    * Cursor
    */
-
-  window.addEventListener('mousemove', (event) =>
-  {
+  window.addEventListener('mousemove', (event) => {
     cursor.x = event.clientX / sizes.width - 0.5
     cursor.y = event.clientY / sizes.height - 0.5
-  })
+  });
 
-  window.addEventListener('mouseout', (event) =>
-  {
+  window.addEventListener('mouseout', (event) => {
     cursor.x = 0
     cursor.y = 0
-  })
-  window.addEventListener('touchmove', (event) =>
-  {
+  });
+  window.addEventListener('touchmove', (event) => {
     const touch = event.touches[0];
     cursor.x = touch.pageX / sizes.width - 0.5;
     cursor.y = touch.pageY / sizes.height - 0.5;
-  })
+  });
 
-  window.addEventListener('touchend', (event) =>
-  {
+  window.addEventListener('touchend', (event) => {
     cursor.x = 0
     cursor.y = 0
-  })
-
+  });
 
   /**
    * Renderer
    */
-
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas
-  })
+  });
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-  window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image }
+  window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image, 'resize': resize, 'camera': camera}
 
   /**
    * Animate
    */
-
   const clock = new THREE.Clock()
   let previousTime = 0
 
-  const tick = () =>
-  {
+  const tick = () => {
     const elapsedTime = clock.getElapsedTime()
     const deltaTime = elapsedTime - previousTime
     previousTime = elapsedTime
@@ -508,10 +507,7 @@ function addDepthMap(canvas, image, map) {
     window.requestAnimationFrame(tick)
   }
 
-  tick()
-
-
-  //----------
+  tick();
 }
 
 window.addFullScreen = addFullScreen;
