@@ -2,38 +2,28 @@
   <div class="menu">
     {{ partial "menu.html" . }}
   </div>
-  <div class="header-logo {{ if .IsHome }}big{{ end }}">
-    <a href="/" title="{{ .Site.Title }}" class="header-link">
-      <img class="header-logo-first logo-part" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg"/>
-    </a>
-    <a href="/" title="{{ .Site.Title }}" class="header-link">
-      <img class="header-logo-second logo-part" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
-    </a>
-  </div>
-  {{/*
-  {{- $subtitle := .Params.subtitle | default "" -}}
-  {{- if ne $subtitle "" -}}
-    <h2 class="header-subtitle">{{ $subtitle }}</h2>
-  {{- end -}}
-  <img alt="Vintage" src="/images/svgs/vintage.svg" id="vintage-image" />
-  <img alt="Reality" src="/images/svgs/reality.svg" id="reality-image" />
-  */}}
+  <div class="header-container">
+    <div class="header-logo">
+      <a href="/" title="{{ .Site.Title }}" class="header-link">
+        <img class="header-logo-first logo-part" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg"/>
+      </a>
+      <a href="/" title="{{ .Site.Title }}" class="header-link">
+        <img class="header-logo-second logo-part" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
+      </a>
+    </div>
 
-  <div class="header-menu">
-    <ul class="header-menu-list">
-      {{- with .Site.Menus.main -}}
-        {{- range sort . -}}
-          {{- if ne (path.Base .URL) "/" -}}
-            <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>
-              <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
-            </li>
-            {{- end -}}
+    <div class="header-menu">
+      <ul class="header-menu-list">
+        {{- with .Site.Menus.main -}}
+          {{- range sort . -}}
+            {{- if ne (path.Base .URL) "/" -}}
+              <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>
+                <a href="{{ .URL | absLangURL }}">{{ .Name }}</a>
+              </li>
+              {{- end -}}
+          {{- end -}}
         {{- end -}}
-      {{- end -}}
-    </ul>
+      </ul>
+    </div>
   </div>
-
-  <script>
-
-  </script>
 </header>

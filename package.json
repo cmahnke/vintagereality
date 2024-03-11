@@ -7,6 +7,7 @@
     "vite": "^5.0.12"
   },
   "scripts":{
+    "postinstall": "yarn run prepatch && yarn run patch && yarn run postinstall-mirador && yarn run postinstall-scroll-timeline",
     "postinstall-scroll-timeline": "cd node_modules/scroll-timeline && yarn install && yarn run build"
   }
 }

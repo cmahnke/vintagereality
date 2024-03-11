@@ -6,6 +6,7 @@ window.addConsent = addConsent;
 window.initMap = initMap;
 
 require('./3d.js');
+require('./header.js');
 
 import stickybits from 'stickybits'
 window.stickybits = stickybits;
@@ -34,5 +35,28 @@ function turnGlases(event){
     //console.log(x, y, transform);
     item.style.transform = transform;
   });
-
 }
+
+const resizeIFrame = (mutationList, observer) => {
+  for (const mutation of mutationList) {
+      mutation.target.style.height = '50vh';
+    if (mutation.type === "childList") {
+      mutation.addedNodes.forEach((node) => {
+        if (node instanceof HTMLIFrameElement) {
+          const iframe = node;
+          node.height = node.parentElement.offsetHeight
+        }
+      });
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', function(e) {
+  var iframes = document.querySelectorAll(".iframe-content");
+    for( var i = 0; i < iframes.length; i++) {
+      const config = { attributes: false, childList: true, subtree: false };
+      iframes[i].height = iframes[i].parentElement.offsetHeight
+      const observer = new MutationObserver(resizeIFrame);
+      observer.observe(iframes[i], config);
+    }
+});
