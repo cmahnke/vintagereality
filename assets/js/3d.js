@@ -270,10 +270,7 @@ function addDepthMap(canvas, image, map) {
     resize();
   });
   sizeObserver.observe(image);
-
   image.style.visibility = 'hidden'
-  console.log('image size', image.width, image.height, image.getBoundingClientRect());
-  console.log(image.naturalWidth, image.naturalHeight);
 
   // Image Details
   let originalImage = null
@@ -476,10 +473,10 @@ function addDepthMap(canvas, image, map) {
   const renderer = new THREE.WebGLRenderer({
     canvas: canvas
   })
-  //renderer.setSize(sizes.width, sizes.height)
-  renderer.setSize(canvas.width, canvas.height)
+  renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+  window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image }
 
   /**
    * Animate

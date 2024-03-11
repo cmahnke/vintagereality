@@ -98,6 +98,8 @@
 
     .tabs {
       display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
 
       .tab {
         cursor: pointer;
