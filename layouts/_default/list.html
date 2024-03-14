@@ -12,6 +12,7 @@
   {{- $stickyPages := where $pages "Params.sticky" "==" true -}}
   {{- $nonStickyPages := where $pages "Params.sticky" "!=" true -}}
   {{- $pages = union $stickyPages $nonStickyPages -}}
+  {{- $pages = $pages.ByDate.Reverse -}}
 
   {{- $paginator := .Paginate (where $pages "Params.displayinlist" "!=" false) -}}
 

@@ -20,7 +20,7 @@
       left: 0;
       z-index: -1;
       height: 2px;
-      background-image: linear-gradient(90deg, $magenta, $cyan)
+      background-image: linear-gradient(90deg, $magenta, $cyan);
     }
 
     .menu {
@@ -44,19 +44,6 @@
 
         @media (max-width: 20em) {
           font-size: 1rem;
-        }
-
-        .menu-item  {
-          display: inline;
-
-          &::marker {
-            display: none;
-          }
-
-          a {
-            font-size: 1.2rem;
-            color: transparent;
-          }
         }
       }
     }

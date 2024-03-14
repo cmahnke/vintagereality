@@ -25,3 +25,5 @@ if [ -d ./scripts/post-build ] ; then
 fi
 
 SOURCE="static/images/svgs/favicon.svg" OPTIONS="-transparent white static/images/favicon-128.png" ./themes/projektemacher-base/scripts/favicon.sh
+
+./themes/projektemacher-base/scripts/saxon.sh -s:Source\ Files/svgs/glasses_background.svg -xsl:themes/projektemacher-base/scripts/xslt/svg-clippath.xsl -o:static/images/svgs/glasses_background-clippath.svg

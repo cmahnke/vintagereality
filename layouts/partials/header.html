@@ -7,6 +7,7 @@
       <a href="/" title="{{ .Site.Title }}" class="header-link">
         <img class="header-logo-first logo-part" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg"/>
       </a>
+      {{- partialCached "glasses-svg.html" . -}}
       <a href="/" title="{{ .Site.Title }}" class="header-link">
         <img class="header-logo-second logo-part" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
       </a>

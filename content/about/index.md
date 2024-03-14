@@ -44,7 +44,7 @@ Für die Nachbearbeitung und Präsentation der Stereobilder wurden die folgenden
 * [PyStereogram](https://github.com/yxiao1996/pystereogram)
 * [StereoscoPy](https://github.com/2sh/StereoscoPy)
 * [`stereo2depth`](https://github.com/pairote/stereo2depth)
-* [Fake 3d Image - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW) {{< flag "en" >}}
+* [Fake 3d Image - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW)
 
 Für die Darstellung der Digitalisate von Einzelbildern wird [OpenLayers](https://openlayers.org/) verwendet. Die jeweils angezeigten Ausschnitte wurden mit [libvips](https://libvips.github.io/libvips/) erzeugt.
 

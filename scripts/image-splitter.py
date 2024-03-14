@@ -311,7 +311,11 @@ if str(args.image).endswith('.jxl'):
 
 im = Image.open(args.image)
 
-coords = json.load(args.coords.open())
+try:
+    coords = json.load(args.coords.open())
+except:
+    cprint(f"Failed to read {str(args.coords)}, might be malformed", 'red')
+    sys.exit(10)
 
 if (len(args.output) == 0):
     outputs = ['images']

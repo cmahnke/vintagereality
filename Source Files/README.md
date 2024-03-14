@@ -49,11 +49,12 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
 
 # TODO
 * Finish theme
-  * Homepage and logo animation
+  * Homepage and logo animation see [scroll-timeline](https://github.com/flackr/scroll-timeline)
   * CSS
     * see `grep -r TODO assets/scss/`
-  * Fix header menu, see [scroll-timeline](https://github.com/flackr/scroll-timeline)
+  * Check why 3D isn't working on the server
 * Add translation
+* Preview Images
 
 ## Scripts
 

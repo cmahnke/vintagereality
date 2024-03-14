@@ -1,0 +1,23 @@
+{
+    "left": {
+        "position": {
+            "x": 25,
+            "y": 8
+        },
+        "size": {
+            "x": 1816,
+            "y": 1892
+        }
+    },
+    "right": {
+        "position": {
+            "x": 1868,
+            "y": 14
+        },
+        "size": {
+            "x": 1808,
+            "y": 1898
+        }
+    },
+    "preprocess": [{"method": "auto_align", "args": [50]} ]
+}
