@@ -95,7 +95,25 @@
       {{- end }}
       {{ if (fileExists $ana) -}}
         <div class="panel" id="dreiD-ana-panel">
-          <img class="ana single" src="{{ $ana | relURL }}" />
+          {{- $anarg := path.Join $context (printf "%s-anaglyph-rg.jpg" $baseImageName) -}}
+          {{- if (fileExists $anarg) -}}
+            {{- $images := slice ($ana | relURL) ($anarg | relURL) -}}
+            <img class="ana single" src="{{ $ana | relURL }}" data-images="{{ $images | jsonify }}" data-position="0" />
+            <script>
+              var img = document.querySelector('#dreiD-ana-panel .ana.single');
+              img.addEventListener('click', () => {
+                var images = JSON.parse(img.dataset.images);
+                var pos = Number(img.dataset.position) + 1;
+                if (pos > images.length - 1) {
+                  pos = 0;
+                }
+                img.src = images[pos];
+                img.dataset.position = pos;
+              });
+            </script>
+          {{- else -}}
+            <img class="ana single" src="{{ $ana | relURL }}" />
+          {{- end -}}
           <div class="description">
             {{ i18n "anaglyph_desc" | safeHTML }} <a class="newTab" href="{{ $ana | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>

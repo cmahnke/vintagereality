@@ -383,7 +383,9 @@ if ('jps' in outputs):
     crossed_eyed(left, right, ceFileName)
 if ('jpg' in outputs):
     anagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph.jpg')
-    stereoscopy.create_anaglyph((left, right), method="gray").save(anagFileName)
+    stereoscopy.create_anaglyph((left.copy(), right.copy()), method="gray").save(anagFileName)
+    rgAnagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph-rg.jpg')
+    stereoscopy.create_anaglyph((left, right), color_scheme="red-green", method="gray").save(rgAnagFileName)
 if ('depthmap' in outputs):
     ceFileName = args.image.parent.joinpath(args.image.stem + '-depthmap.jpg')
     depth_map(left, right, ceFileName)

@@ -34,6 +34,8 @@ content/**/*.jps
 content/**/*.mpo
 content/**/*-anaglyph.jpg
 content/**/*-anaglyph.jpeg
+content/**/*-anaglyph-rg.jpg
+content/**/*-anaglyph-rg.jpeg
 content/**/*-depthmap.jpg
 content/**/*-white_balance.jpg
 content/**/*-white_balance.jpeg
