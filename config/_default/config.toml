@@ -8,5 +8,5 @@
     iiifCanvasWidth = 300
     headerImage = "images/logo/logo.svg"
     disableScale = true
-    favicon = "images/favicon-32.png"
+    favicon = "/images/favicon-32.png"
     debug = true
