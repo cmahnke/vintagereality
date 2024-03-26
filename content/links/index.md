@@ -32,7 +32,7 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 
 * [3d html5 canvas viewer](https://github.com/moul/3d-stereo-html5) {{< flag "en" >}}
 * [Three.js: StereoCamera](https://threejs.org/docs/#api/en/cameras/StereoCamera) {{< flag "en" >}}
-* [Fake 3d Image - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW) {{< flag "en" >}}
+* [Fake 3d Image by Chris Johnson - Three.js](https://codepen.io/chrisjdesigner/pen/yLzopXW) {{< flag "en" >}}
 * [GitHub topic 'stereoscopy'](https://github.com/topics/stereoscopy) {{< flag "en" >}}
 * [HTML5-Stereo-Viewer](https://github.com/urix/HTML5-Stereo-Viewer) {{< flag "en" >}}
 * [`<stereo-img>`](https://github.com/steren/stereo-img) {{< flag "en" >}}

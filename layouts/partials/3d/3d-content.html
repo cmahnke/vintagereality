@@ -87,7 +87,7 @@
       {{- end }}
       {{ if (fileExists $gif) -}}
         <div class="panel" id="dreiD-gif-panel">
-          <img class="gif single" src="{{ $gif | relURL }}" />
+          <img loading="lazy" class="gif single" src="{{ $gif | relURL }}" />
           <div class="description">
             {{ i18n "wigglegram_desc" | safeHTML }} <a class="newTab" href="{{ $gif | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -98,7 +98,7 @@
           {{- $anarg := path.Join $context (printf "%s-anaglyph-rg.jpg" $baseImageName) -}}
           {{- if (fileExists $anarg) -}}
             {{- $images := slice ($ana | relURL) ($anarg | relURL) -}}
-            <img class="ana single" src="{{ $ana | relURL }}" data-images="{{ $images | jsonify }}" data-position="0" />
+            <img loading="lazy" class="ana single" src="{{ $ana | relURL }}" data-images="{{ $images | jsonify }}" data-position="0" />
             <script>
               var img = document.querySelector('#dreiD-ana-panel .ana.single');
               img.addEventListener('click', () => {
@@ -112,7 +112,7 @@
               });
             </script>
           {{- else -}}
-            <img class="ana single" src="{{ $ana | relURL }}" />
+            <img loading="lazy" class="ana single" src="{{ $ana | relURL }}" />
           {{- end -}}
           <div class="description">
             {{ i18n "anaglyph_desc" | safeHTML }} <a class="newTab" href="{{ $ana | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
@@ -121,7 +121,7 @@
       {{- end }}
       {{ if (fileExists $mpo) -}}
         <div class="panel" id="dreiD-mpo-panel">
-          <img class="mpo single" src="{{ $mpo | relURL }}" />
+          <img loading="lazy" loading="lazy" class="mpo single" src="{{ $mpo | relURL }}" />
           <div class="description">
             {{ i18n "mpo_desc" | safeHTML }} <a class="newTab" href="{{ $mpo | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -129,7 +129,7 @@
       {{- end }}
       {{- if and (fileExists $depth) (or (eq .Params.depthmap nil) (ne .Params.depthmap false)) -}}
         <div class="panel" id="dreiD-depth-panel">
-          <img class="depth single" src="{{ $depth | relURL }}" />
+          <img loading="lazy" class="depth single" src="{{ $depth | relURL }}" />
           <div class="description">
             {{ i18n "depthmap_desc" | safeHTML }} <a class="newTab" href="{{ $depth | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
@@ -145,7 +145,7 @@
           <div class="description">
             {{ i18n "left_image" | safeHTML }} <a class="newTab" href="{{ $singleL | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
-          <img class="singleR single" src="{{ $singleR | relURL }}" />
+          <img loading="lazy" class="singleR single" src="{{ $singleR | relURL }}" />
           <div class="description">
             {{ i18n "right_image" | safeHTML }} <a class="newTab" href="{{ $singleR | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>
