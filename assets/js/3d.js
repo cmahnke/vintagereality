@@ -270,15 +270,17 @@ function addDepthMap(canvas, image, map) {
   }
 
   // Sizes
-  const sizes = {
+  var sizes = {
     width: image.width,
     height: image.height
   }
+
   image.onload = () => {
     sizes.width = image.width;
     sizes.height = image.height;
     resize();
   }
+
   const sizeObserver = new ResizeObserver(entries => {
     sizes.width = image.width;
     sizes.height = image.height;
@@ -438,6 +440,8 @@ function addDepthMap(canvas, image, map) {
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
+
+
 
   window.addEventListener('resize', () => {
     resize()
