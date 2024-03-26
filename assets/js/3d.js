@@ -274,11 +274,9 @@ function addDepthMap(canvas, image, map) {
     width: image.width,
     height: image.height
   }
-  //canvas.style.aspectRatio = `${image.naturalWidth} / ${image.naturalHeight}`;
   image.onload = () => {
     sizes.width = image.width;
     sizes.height = image.height;
-    //image.style.visibility = 'hidden';
     resize();
   }
   const sizeObserver = new ResizeObserver(entries => {
@@ -444,6 +442,16 @@ function addDepthMap(canvas, image, map) {
   window.addEventListener('resize', () => {
     resize()
   });
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      const isIntersecting = entry.isIntersecting;
+      if (isIntersecting) {
+        resize();
+      }
+    })
+  })
+  observer.observe(canvas);
 
   /**
    * Cursor
