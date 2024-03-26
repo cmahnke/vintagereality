@@ -8,15 +8,6 @@ window.initMap = initMap;
 require('./3d.js');
 require('./header.js');
 
-import stickybits from 'stickybits'
-window.stickybits = stickybits;
-
-let mql = window.matchMedia('(max-width: 35em)');
-
-//if (!mql.matches) {
-  var sticky = stickybits('#header:not(.home)', { useStickyClasses: true, stuckClass: "sticky-top"});
-//}
-
 window.addEventListener("mouseover", turnGlases);
 
 function turnGlases(event){
@@ -39,12 +30,10 @@ function turnGlases(event){
 
 const resizeIFrame = (mutationList, observer) => {
   for (const mutation of mutationList) {
-      mutation.target.style.height = '50vh';
     if (mutation.type === "childList") {
       mutation.addedNodes.forEach((node) => {
-        if (node instanceof HTMLIFrameElement) {
-          const iframe = node;
-          node.height = node.parentElement.offsetHeight
+        if (node.classList && node.classList.contains('map-wrapper')) {
+          node.parentElement.style.height = node.getBoundingClientRect().height;
         }
       });
     }
