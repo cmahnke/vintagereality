@@ -403,10 +403,8 @@ function addDepthMap(canvas, image, map) {
     originalImageDetails.width = tex.image.width;
     originalImageDetails.height = tex.image.height;
     originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
-    textureLoader.loadAsync(settings.depthImagePath).then(texture => {
-      depthImage = texture;
-    });
   });
+  depthImage = textureLoader.load(settings.depthImagePath, function(tex) { });
 
   const transparentBg = (canvas) => {
     var ctx = canvas.getContext("2d");
