@@ -329,22 +329,23 @@ function addDepthMap(canvas, image, map) {
   */
   const textureLoader = new THREE.TextureLoader()
 
-  const loadImages = () => {
+  function loadImages () {
 
     if (originalImage !== null || depthImage !== null) {
       originalImage.dispose()
       depthImage.dispose()
     }
-    textureLoader.loadAsync(settings.depthImagePath).then(texture => depthImage = texture);
 
     originalImage = textureLoader.load( settings.originalImagePath, function ( tex ) {
       originalImageDetails.width = tex.image.width;
       originalImageDetails.height = tex.image.height;
       originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
-
-      create3dImage();
-      resize();
-    } );
+      textureLoader.loadAsync(settings.depthImagePath).then(texture => {
+        depthImage = texture
+        create3dImage();
+        resize();
+      });
+    });
 
   }
 
@@ -441,8 +442,6 @@ function addDepthMap(canvas, image, map) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
-
-
   window.addEventListener('resize', () => {
     resize()
   });
@@ -488,6 +487,13 @@ function addDepthMap(canvas, image, map) {
   });
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+  // TODO: Remove this, if it's not triggered anymore
+  // This shouldn't be null window.depthmap.scene.children[1].material.uniforms.depthTexture
+  if (scene.children[1].material.uniforms.depthTexture == null) {
+    console.warn("Depth texture is null!");
+  }
+
 
   window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image, 'resize': resize, 'camera': camera, 'scene': scene}
 
