@@ -258,6 +258,11 @@ function addDepthMap(canvas, image, map) {
   }
 
   /**
+   * Loading manager
+   */
+  const manager = new THREE.LoadingManager();
+
+  /**
    * Variables
    */
 
@@ -284,7 +289,9 @@ function addDepthMap(canvas, image, map) {
   const sizeObserver = new ResizeObserver(entries => {
     sizes.width = image.width;
     sizes.height = image.height;
-    resize();
+    if (plane != null) {
+      resize(plane);
+    }
   });
   sizeObserver.observe(image);
 
@@ -325,36 +332,9 @@ function addDepthMap(canvas, image, map) {
   let fovY = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
 
   /**
-  * Images
-  */
-  const textureLoader = new THREE.TextureLoader()
-
-  function loadImages () {
-
-    if (originalImage !== null || depthImage !== null) {
-      originalImage.dispose()
-      depthImage.dispose()
-    }
-
-    originalImage = textureLoader.load( settings.originalImagePath, function ( tex ) {
-      originalImageDetails.width = tex.image.width;
-      originalImageDetails.height = tex.image.height;
-      originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
-      textureLoader.loadAsync(settings.depthImagePath).then(texture => {
-        depthImage = texture
-        create3dImage();
-        resize();
-      });
-    });
-
-  }
-
-  loadImages()
-
-  /**
    * Create 3D Image
    */
-  const create3dImage = () => {
+  function create3dImage(image, depth) {
 
     // Cleanup Geometry for GUI
     if(plane !== null) {
@@ -367,8 +347,8 @@ function addDepthMap(canvas, image, map) {
 
     planeMaterial = new THREE.ShaderMaterial({
       uniforms: {
-        originalTexture: { value: originalImage },
-        depthTexture: { value: depthImage },
+        originalTexture: { value: image },
+        depthTexture: { value: depth },
         uMouse: { value: new THREE.Vector2(0, 0) },
         uThreshold: { value: new THREE.Vector2(settings.xThreshold, settings.yThreshold) },
       },
@@ -408,8 +388,28 @@ function addDepthMap(canvas, image, map) {
     plane = new THREE.Mesh(planeGeometry, planeMaterial);
 
     scene.add(plane);
+    return [plane, planeMaterial];
   }
-  create3dImage();
+
+  /**
+  * Images
+  */
+  const textureLoader = new THREE.TextureLoader(manager)
+  if (originalImage !== null || depthImage !== null) {
+    originalImage.dispose()
+    depthImage.dispose()
+  }
+  originalImage = textureLoader.load( settings.originalImagePath, function ( tex ) {
+    originalImageDetails.width = tex.image.width;
+    originalImageDetails.height = tex.image.height;
+    originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
+    textureLoader.loadAsync(settings.depthImagePath).then(texture => {
+      depthImage = texture;
+      [plane, planeMaterial] = create3dImage(originalImage, depthImage);
+      resize(plane);
+      tick();
+    });
+  });
 
   const transparentBg = (canvas) => {
     var ctx = canvas.getContext("2d");
@@ -421,7 +421,7 @@ function addDepthMap(canvas, image, map) {
   /**
    * Resize
    */
-  const resize = () => {
+  const resize = (plane) => {
     // Update sizes
     sizes.width = image.width;
     sizes.height = image.height;
@@ -443,14 +443,14 @@ function addDepthMap(canvas, image, map) {
   }
 
   window.addEventListener('resize', () => {
-    resize()
+    resize(plane)
   });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const isIntersecting = entry.isIntersecting;
       if (isIntersecting) {
-        resize();
+        resize(plane);
       }
     })
   })
@@ -490,10 +490,11 @@ function addDepthMap(canvas, image, map) {
 
   // TODO: Remove this, if it's not triggered anymore
   // This shouldn't be null window.depthmap.scene.children[1].material.uniforms.depthTexture
+  /*
   if (scene.children[1].material.uniforms.depthTexture == null) {
     console.warn("Depth texture is null!");
   }
-
+  */
 
   window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image, 'resize': resize, 'camera': camera, 'scene': scene}
 
@@ -525,7 +526,7 @@ function addDepthMap(canvas, image, map) {
     window.requestAnimationFrame(tick)
   }
 
-  tick();
+  //tick();
 }
 
 window.addFullScreen = addFullScreen;
