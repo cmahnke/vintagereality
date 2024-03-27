@@ -489,7 +489,7 @@ function addDepthMap(canvas, image, map) {
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-  window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image, 'resize': resize, 'camera': camera}
+  window.depthmap = {'renderer': renderer, 'canvas': canvas, 'image': image, 'resize': resize, 'camera': camera, 'scene': scene}
 
   /**
    * Animate
