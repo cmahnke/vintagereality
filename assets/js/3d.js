@@ -258,11 +258,6 @@ function addDepthMap(canvas, image, map) {
   }
 
   /**
-   * Loading manager
-   */
-  const manager = new THREE.LoadingManager();
-
-  /**
    * Variables
    */
 
@@ -283,17 +278,13 @@ function addDepthMap(canvas, image, map) {
   image.onload = () => {
     sizes.width = image.width;
     sizes.height = image.height;
-    if (plane != null) {
-      resize(plane);
-    }
+    resize();
   }
 
   const sizeObserver = new ResizeObserver(entries => {
     sizes.width = image.width;
     sizes.height = image.height;
-    if (plane != null) {
-      resize(plane);
-    }
+    resize();
   });
   sizeObserver.observe(image);
 
@@ -310,6 +301,13 @@ function addDepthMap(canvas, image, map) {
   let planeGeometry = null
   let planeMaterial = null
   let plane = null
+
+  // Loading manager
+  const manager = new THREE.LoadingManager(() => {
+    [plane, planeMaterial] = create3dImage(originalImage, depthImage);
+    resize();
+    tick();
+  });
 
   // Cursor Settings
   const cursor = {
@@ -407,9 +405,6 @@ function addDepthMap(canvas, image, map) {
     originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
     textureLoader.loadAsync(settings.depthImagePath).then(texture => {
       depthImage = texture;
-      [plane, planeMaterial] = create3dImage(originalImage, depthImage);
-      resize(plane);
-      tick();
     });
   });
 
@@ -423,7 +418,10 @@ function addDepthMap(canvas, image, map) {
   /**
    * Resize
    */
-  const resize = (plane) => {
+  const resize = () => {
+    if (plane == null) {
+      return;
+    }
     // Update sizes
     sizes.width = image.width;
     sizes.height = image.height;
@@ -445,18 +443,14 @@ function addDepthMap(canvas, image, map) {
   }
 
   window.addEventListener('resize', () => {
-    if (plane != null) {
-      resize(plane);
-    }
+    resize();
   });
 
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const isIntersecting = entry.isIntersecting;
       if (isIntersecting) {
-        if (plane != null) {
-          resize(plane);
-        }
+        resize();
       }
     })
   })
