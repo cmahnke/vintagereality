@@ -335,7 +335,7 @@ function addDepthMap(canvas, image, map) {
       originalImage.dispose()
       depthImage.dispose()
     }
-    depthImage = textureLoader.load(settings.depthImagePath)
+    textureLoader.loadAsync(settings.depthImagePath).then(texture => depthImage = texture);
 
     originalImage = textureLoader.load( settings.originalImagePath, function ( tex ) {
       originalImageDetails.width = tex.image.width;
