@@ -129,7 +129,7 @@
       {{- end }}
       {{- if and (fileExists $depth) (or (eq .Params.depthmap nil) (ne .Params.depthmap false)) -}}
         <div class="panel" id="dreiD-depth-panel">
-          <img loading="lazy" class="depth single" src="{{ $depth | relURL }}" />
+          <img class="depth single" src="{{ $depth | relURL }}" />
           <div class="description">
             {{ i18n "depthmap_desc" | safeHTML }} <a class="newTab" href="{{ $depth | relURL }}" target="_blank">{{ i18n "full_resolution_new_tab" }}</a>.
           </div>

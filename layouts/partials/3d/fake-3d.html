@@ -37,6 +37,7 @@
   document.addEventListener("DOMContentLoaded", function () {
     var {{ $canvasName | safeJS }}_canvas = document.getElementById("{{ $canvasName }}");
     var {{ $canvasName | safeJS }}_img = {{ $canvasName | safeJS }}_canvas.parentElement.querySelector("{{ $image | safeJS }}");
-    {{ $canvasName | safeJS }} = addDepthMap({{ $canvasName | safeJS }}_canvas, {{ $canvasName | safeJS }}_img, '{{ printf "/%s" $depthmap }}');
+    var {{ $canvasName | safeJS }}_map = document.querySelector("#dreiD-depth-panel .depth.single");
+    {{ $canvasName | safeJS }} = addDepthMap({{ $canvasName | safeJS }}_canvas, {{ $canvasName | safeJS }}_img, {{ $canvasName | safeJS }}_map);
   });
 </script>

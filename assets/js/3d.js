@@ -302,13 +302,6 @@ function addDepthMap(canvas, image, map) {
   let planeMaterial = null
   let plane = null
 
-  // Loading manager
-  const manager = new THREE.LoadingManager(() => {
-    [plane, planeMaterial] = create3dImage(originalImage, depthImage);
-    resize();
-    tick();
-  });
-
   // Cursor Settings
   const cursor = {
     x: 0,
@@ -332,9 +325,18 @@ function addDepthMap(canvas, image, map) {
   let fovY = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
 
   /**
+   * Renderer
+   */
+  const renderer = new THREE.WebGLRenderer({
+    canvas: canvas
+  });
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+  /**
    * Create 3D Image
    */
-  function create3dImage(image, depth) {
+  const create3dImage = () => {
 
     // Cleanup Geometry for GUI
     if(plane !== null) {
@@ -347,8 +349,8 @@ function addDepthMap(canvas, image, map) {
 
     planeMaterial = new THREE.ShaderMaterial({
       uniforms: {
-        originalTexture: { value: image },
-        depthTexture: { value: depth },
+        originalTexture: { value: originalImage },
+        depthTexture: { value: depthImage },
         uMouse: { value: new THREE.Vector2(0, 0) },
         uThreshold: { value: new THREE.Vector2(settings.xThreshold, settings.yThreshold) },
       },
@@ -392,28 +394,6 @@ function addDepthMap(canvas, image, map) {
   }
 
   /**
-  * Images
-  */
-  const textureLoader = new THREE.TextureLoader(manager)
-  if (originalImage !== null || depthImage !== null) {
-    originalImage.dispose()
-    depthImage.dispose()
-  }
-  originalImage = textureLoader.load( settings.originalImagePath, function ( tex ) {
-    originalImageDetails.width = tex.image.width;
-    originalImageDetails.height = tex.image.height;
-    originalImageDetails.aspectRatio = tex.image.height / tex.image.width;
-  });
-  depthImage = textureLoader.load(settings.depthImagePath, function(tex) { });
-
-  const transparentBg = (canvas) => {
-    var ctx = canvas.getContext("2d");
-    ctx.globalCompositeOperation = 'destination-over'
-    ctx.fillStyle = "transparent";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-  }
-
-  /**
    * Resize
    */
   const resize = () => {
@@ -438,6 +418,50 @@ function addDepthMap(canvas, image, map) {
     // Update renderer
     renderer.setSize(sizes.width, sizes.height);
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  }
+
+  /**
+  * Images
+  */
+  if (originalImage !== null || depthImage !== null) {
+    originalImage.dispose()
+    depthImage.dispose()
+  }
+
+  if (!image.complete) {
+    console.warn("Image not loaded!");
+  }
+  originalImage = new THREE.Texture(image);
+  originalImage.needsUpdate = true;
+  originalImageDetails.width = image.naturalWidth;
+  originalImageDetails.height = image.naturalHeight;
+  originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
+
+  if (map instanceof HTMLImageElement) {
+    if (!map.complete) {
+      console.warn("Depth map image not loaded!");
+    }
+    depthImage = new THREE.Texture(map);
+    depthImage.needsUpdate = true;
+    create3dImage();
+    resize();
+  } else {
+    // Loading manager
+    const manager = new THREE.LoadingManager(() => {
+      create3dImage();
+      resize();
+      console.log(originalImage, depthImage);
+      tick();
+    });
+    const textureLoader = new THREE.TextureLoader(manager)
+    depthImage = textureLoader.load(settings.depthImagePath, function(tex) { });
+  }
+
+  const transparentBg = (canvas) => {
+    var ctx = canvas.getContext("2d");
+    ctx.globalCompositeOperation = 'destination-over'
+    ctx.fillStyle = "transparent";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
   }
 
   window.addEventListener('resize', () => {
@@ -477,15 +501,6 @@ function addDepthMap(canvas, image, map) {
     cursor.y = 0
   });
 
-  /**
-   * Renderer
-   */
-  const renderer = new THREE.WebGLRenderer({
-    canvas: canvas
-  });
-  renderer.setSize(sizes.width, sizes.height)
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
-
   // TODO: Remove this, if it's not triggered anymore
   // This shouldn't be null window.depthmap.scene.children[1].material.uniforms.depthTexture
   /*
@@ -524,7 +539,7 @@ function addDepthMap(canvas, image, map) {
     window.requestAnimationFrame(tick)
   }
 
-  //tick();
+  tick();
 }
 
 window.addFullScreen = addFullScreen;

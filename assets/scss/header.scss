@@ -311,7 +311,7 @@
       &.home {
         position: fixed;
         top: 0;
-        animation: home-header linear both;
+        animation: home-header linear forwards;
         animation-timeline: scroll();
         animation-range: 0 90vh;
 
@@ -329,7 +329,7 @@
           height: calc(100vh - 4rem);
           transition: unset;
           position: relative;
-          animation: home-logo linear both;
+          animation: home-logo linear forwards;
           animation-timeline: scroll();
           animation-range: 0 90vh;
 
@@ -337,7 +337,7 @@
             height: calc(50vh - 4rem);
             transition: unset;
             position: absolute;
-            animation: home-vintage linear both;
+            animation: home-vintage linear forwards;
             animation-timeline: scroll();
             animation-range: 0 90vh;
           }
@@ -347,7 +347,7 @@
             top: calc(50vh - 4rem);
             transition: unset;
             position: absolute;
-            animation: home-reality linear both;
+            animation: home-reality linear forwards;
             animation-timeline: scroll();
             animation-range: 0 90vh;
           }
@@ -363,7 +363,7 @@
             mask-image: url($clipmask);
             mask-size: 100% 100%;
             mask-clip: border-box;
-            animation: home-glasses linear both;
+            animation: home-glasses linear forwards;
             animation-timeline: scroll();
             animation-range: 0 90vh;
 
@@ -377,7 +377,7 @@
 
         .header-menu {
           transition: all 500ms linear;
-          animation: home-menu linear both;
+          animation: home-menu linear forwards;
           animation-timeline: scroll();
           animation-range: 0 90vh;
         }
