@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Edinburgh on Vintage Reality</title>
+    <link>https://vintagereality.projektemacher.org/tags/Edinburgh/</link>
+    <description>Recent content in Edinburgh on Vintage Reality</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 22 Mar 2024 17:15:07 +0200</lastBuildDate>
+    <atom:link href="https://vintagereality.projektemacher.org/tags/Edinburgh/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Calton Jail Edinburgh</title>
+      <link>https://vintagereality.projektemacher.org/post/edinburgh/</link>
+      <pubDate>Fri, 22 Mar 2024 17:15:07 +0200</pubDate>
+      <guid>https://vintagereality.projektemacher.org/post/edinburgh/</guid>
+      <description>Das Calton Jail in Edinburgh, die Reste sind heute als Governor&amp;rsquo;s House bekannt.</description>
+    </item>
+  </channel>
+</rss>
