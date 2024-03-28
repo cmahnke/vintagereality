@@ -251,6 +251,16 @@ function addFullScreen(element, left, right) {
 
 // See https://codepen.io/chrisjdesigner/pen/yLzopXW
 function addDepthMap(canvas, image, map) {
+  function imagePromise(img) {
+    return new Promise(resolve => {
+      if (img.complete) {
+        return resolve();
+      }
+      img.onload = () => resolve();
+      img.onerror = () => resolve();
+    });
+  }
+  
   if (!isWebGLSupported()) {
     console.log("WebGL isn't supported!");
     canvas.style.display = 'none';
@@ -327,36 +337,7 @@ function addDepthMap(canvas, image, map) {
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-  const initImage = () => {
-    sizes.width = image.width;
-    sizes.height = image.height;
-    originalImage = new THREE.Texture(image);
-    originalImage.needsUpdate = true;
-    originalImageDetails.width = image.naturalWidth;
-    originalImageDetails.height = image.naturalHeight;
-    originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
-  }
-
-  if (image.complete) {
-    initImage();
-  } else {
-    image.onload = function() {
-      initImage();
-    }
-  }
-
-  const initMap = () => {
-    depthImage = new THREE.Texture(map);
-    depthImage.needsUpdate = true;
-  }
-
-  if (map.complete) {
-    initMap();
-  } else {
-    map.onload = function() {
-      initMap();
-    }
-  }
+  const promises = [image, map].map((img) => imagePromise(img));
 
   /**
    * Create 3D Image
@@ -365,7 +346,6 @@ function addDepthMap(canvas, image, map) {
     if (originalImage == null || depthImage == null) {
       console.warn("source null")
     }
-
 
     // Cleanup Geometry for GUI
     if(plane !== null) {
@@ -449,50 +429,20 @@ function addDepthMap(canvas, image, map) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
   }
 
-  /**
-  * Images
-  */
-  /*
-  if (originalImage !== null || depthImage !== null) {
-    originalImage.dispose()
-    depthImage.dispose()
-  }
-  */
-
-  if (!image.complete) {
-    console.warn("Image not loaded!");
-  }
-
-  if (!map.complete) {
-    console.warn("Depth map image not loaded!");
-  }
-  /*
-  originalImage = new THREE.Texture(image);
-  originalImage.needsUpdate = true;
-  originalImageDetails.width = image.naturalWidth;
-  originalImageDetails.height = image.naturalHeight;
-  originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
-
-  if (map instanceof HTMLImageElement) {
-
+  Promise.all(promises).then(() => {
+    sizes.width = image.width;
+    sizes.height = image.height;
+    originalImage = new THREE.Texture(image);
+    originalImage.needsUpdate = true;
+    originalImageDetails.width = image.naturalWidth;
+    originalImageDetails.height = image.naturalHeight;
+    originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
     depthImage = new THREE.Texture(map);
     depthImage.needsUpdate = true;
     create3dImage();
     resize();
-  } else {
-    // Loading manager
-    const manager = new THREE.LoadingManager(() => {
-      create3dImage();
-      resize();
-      console.log(originalImage, depthImage);
-      tick();
-    });
-    const textureLoader = new THREE.TextureLoader(manager)
-    depthImage = textureLoader.load(settings.depthImagePath, function(tex) { });
-  }
-  */
-  create3dImage();
-  resize();
+    tick();
+  });
 
   const transparentBg = (canvas) => {
     var ctx = canvas.getContext("2d");
@@ -576,7 +526,7 @@ function addDepthMap(canvas, image, map) {
     window.requestAnimationFrame(tick)
   }
 
-  tick();
+  //tick();
 }
 
 window.addFullScreen = addFullScreen;
