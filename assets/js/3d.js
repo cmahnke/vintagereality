@@ -260,7 +260,7 @@ function addDepthMap(canvas, image, map) {
       img.onerror = () => resolve();
     });
   }
-  
+
   if (!isWebGLSupported()) {
     console.log("WebGL isn't supported!");
     canvas.style.display = 'none';
@@ -295,6 +295,10 @@ function addDepthMap(canvas, image, map) {
   // Image Details
   let originalImage = null
   let depthImage = null
+  // Camera
+  let camera = null;
+  let fovY = null;
+
   const originalImageDetails = {
     width: 0,
     height: 0,
@@ -320,13 +324,13 @@ function addDepthMap(canvas, image, map) {
   /**
    * Camera
    */
-  const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
-  camera.position.x = 0
-  camera.position.y = 0
-  camera.position.z = 0.7
-  scene.add(camera)
-
-  let fovY = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
+   function initCamera(sizes) {
+    var camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+    camera.position.x = 0;
+    camera.position.y = 0;
+    camera.position.z = 0.7;
+    return camera;
+  }
 
   /**
    * Renderer
@@ -407,8 +411,16 @@ function addDepthMap(canvas, image, map) {
    */
   const resize = () => {
     if (plane == null) {
+      console.warn("Plane is null!");
       return;
     }
+    /*
+    if (camera == null) {
+      console.warn("Camera is null!");
+      return;
+    }
+    */
+
     // Update sizes
     sizes.width = image.width;
     sizes.height = image.height;
@@ -439,6 +451,9 @@ function addDepthMap(canvas, image, map) {
     originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
     depthImage = new THREE.Texture(map);
     depthImage.needsUpdate = true;
+    camera = initCamera(sizes);
+    scene.add(camera);
+    fovY = camera.position.z * camera.getFilmHeight() / camera.getFocalLength();
     create3dImage();
     resize();
     tick();
@@ -455,6 +470,7 @@ function addDepthMap(canvas, image, map) {
     resize();
   });
 
+  /*
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       const isIntersecting = entry.isIntersecting;
@@ -464,6 +480,7 @@ function addDepthMap(canvas, image, map) {
     })
   })
   observer.observe(canvas);
+  */
 
   /**
    * Cursor
