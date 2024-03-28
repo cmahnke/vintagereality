@@ -275,12 +275,6 @@ function addDepthMap(canvas, image, map) {
     height: image.height
   }
 
-  image.onload = () => {
-    sizes.width = image.width;
-    sizes.height = image.height;
-    resize();
-  }
-
   const sizeObserver = new ResizeObserver(entries => {
     sizes.width = image.width;
     sizes.height = image.height;
@@ -333,10 +327,45 @@ function addDepthMap(canvas, image, map) {
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
+  const initImage = () => {
+    sizes.width = image.width;
+    sizes.height = image.height;
+    originalImage = new THREE.Texture(image);
+    originalImage.needsUpdate = true;
+    originalImageDetails.width = image.naturalWidth;
+    originalImageDetails.height = image.naturalHeight;
+    originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
+  }
+
+  if (image.complete) {
+    initImage();
+  } else {
+    image.onload = function() {
+      initImage();
+    }
+  }
+
+  const initMap = () => {
+    depthImage = new THREE.Texture(map);
+    depthImage.needsUpdate = true;
+  }
+
+  if (map.complete) {
+    initMap();
+  } else {
+    map.onload = function() {
+      initMap();
+    }
+  }
+
   /**
    * Create 3D Image
    */
   const create3dImage = () => {
+    if (originalImage == null || depthImage == null) {
+      console.warn("source null")
+    }
+
 
     // Cleanup Geometry for GUI
     if(plane !== null) {
@@ -423,14 +452,21 @@ function addDepthMap(canvas, image, map) {
   /**
   * Images
   */
+  /*
   if (originalImage !== null || depthImage !== null) {
     originalImage.dispose()
     depthImage.dispose()
   }
+  */
 
   if (!image.complete) {
     console.warn("Image not loaded!");
   }
+
+  if (!map.complete) {
+    console.warn("Depth map image not loaded!");
+  }
+  /*
   originalImage = new THREE.Texture(image);
   originalImage.needsUpdate = true;
   originalImageDetails.width = image.naturalWidth;
@@ -438,9 +474,7 @@ function addDepthMap(canvas, image, map) {
   originalImageDetails.aspectRatio = image.naturalHeight / image.naturalWidth;
 
   if (map instanceof HTMLImageElement) {
-    if (!map.complete) {
-      console.warn("Depth map image not loaded!");
-    }
+
     depthImage = new THREE.Texture(map);
     depthImage.needsUpdate = true;
     create3dImage();
@@ -456,6 +490,9 @@ function addDepthMap(canvas, image, map) {
     const textureLoader = new THREE.TextureLoader(manager)
     depthImage = textureLoader.load(settings.depthImagePath, function(tex) { });
   }
+  */
+  create3dImage();
+  resize();
 
   const transparentBg = (canvas) => {
     var ctx = canvas.getContext("2d");
