@@ -32,11 +32,13 @@ $frame-bg-color: var(--base01);
 $color-body-text: var(white);
 $fullscreen-color: var(--base07);
 @import "menu";
-@import "header";
 
 /* Site includes */
+$clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath';
+@import "header";
 @import "nav";
 @import "page";
+@import "404";
 
 :root {
   --cyan: $cyan;
@@ -300,11 +302,11 @@ body {
           margin: .6em 0;
           color: darken($magenta, 20%);
           text-shadow: 0 0 1.5px darken($magenta, 20%);
-          transition: all all 500ms ease-out;
+          transition: all 500ms ease-out;
 
           &:hover {
             text-shadow: 0 0 4px darken($magenta, 20%);
-            transition: all all 500ms ease-out;
+            transition: all 500ms ease-out;
           }
         }
 

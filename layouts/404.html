@@ -11,14 +11,12 @@
   {{- else -}}
     {{- $title = .Title -}}
   {{- end -}}
-
   {{ $title }} · {{ .Site.Title }}
 {{ end }}
 
 {{ define "content" }}
   <div class="container error404">
-      <main role="main" class="article">
-        {{ partial "404.html" . }}
-      </main>
+    {{- partialCached "glasses-svg.html" . -}}
+    {{- partial "404.html" . -}}
   </div>
 {{- end -}}
