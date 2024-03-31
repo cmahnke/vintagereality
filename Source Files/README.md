@@ -18,6 +18,10 @@
 
 Glass black and either neon or magenta cyan
 
+
+### Scroll animations
+* https://www.sliderrevolution.com/resources/css-animations-on-scroll/
+
 ## Colors
 Color from 3D glasses, see https://en.wikipedia.org/wiki/Anaglyph_3D, see 'magenta-cyan'
 * Cyan 00ffffff
@@ -48,13 +52,9 @@ https://fonts.google.com/specimen/Tektur?vfonly=true
 
 
 # TODO
-* Finish theme
-  * Homepage and logo animation see [scroll-timeline](https://github.com/flackr/scroll-timeline)
-  * CSS
-    * see `grep -r TODO assets/scss/`
-  * Check why 3D isn't working on the server
+* Check why 3D isn't working on the server in Safaris
 * Add translation
-* Preview Images
+* Open Graph Preview Images
 
 ## Scripts
 
