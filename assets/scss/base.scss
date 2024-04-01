@@ -423,7 +423,7 @@ body {
       transition: all 200ms linear;
 
       &:visited {
-        color: darken($magenta, 15%);
+        /* color: darken($magenta, 15%); */
         transition: all 200ms linear;
       }
 
