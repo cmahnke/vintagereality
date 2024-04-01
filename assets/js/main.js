@@ -6,7 +6,6 @@ window.addConsent = addConsent;
 window.initMap = initMap;
 
 require('./3d.js');
-require('./header.js');
 
 window.addEventListener("mouseover", turnGlases);
 
