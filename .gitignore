@@ -53,3 +53,4 @@ static/images/svgs
 assets/css
 **/vips-properties.xml
 assets/jsconfig.json
+data/stats.json
