@@ -96,3 +96,6 @@ paginate = 7
   [[module.mounts]]
     source = "static"
     target = "static"
+
+[build]
+  writeStats = true
