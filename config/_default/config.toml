@@ -10,3 +10,6 @@
     disableScale = true
     favicon = "/images/favicon-32.png"
     debug = true
+
+#    [params.footer]
+#      privacy = true

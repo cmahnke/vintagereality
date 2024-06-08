@@ -57,3 +57,7 @@ Die Seite wird von [GitHub](https://github.com/) gehosted.
 "Vintage Reality" ist ein [Projekt](https://projektemacher.org) von **[Christian Mahnke](https://christianmahnke.de/)**.
 
 Kontakt ist via [E-Mail](mailto:vintagereality@projektemacher.org) möglich.
+
+# Datenschutzerklärung
+
+Die Datenschutzerklärung ist [hier](/privacy) verfügbar.
