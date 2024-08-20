@@ -15,6 +15,7 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 * [Stereoscopy.com - The World of 3D-Imaging](https://www.stereoscopy.com/) {{< flag "en" >}}
 * [Mathematische Basteleien: Stereogramm](https://www.mathematische-basteleien.de/stereogramm.htm) {{< flag "de" >}}
 * [The Stereoscopy Blog](https://stereoscopy.blog/) {{< flag "en" >}}
+* [Exploring Stereo Photos with IIIF](https://stereograph.davidnewbury.com/)
 
 ## Quellen
 
