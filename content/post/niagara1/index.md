@@ -3,6 +3,9 @@ title: "General View, Niagara Falls, N.Y., U.S.A."
 date: 2024-05-31T22:15:07+02:00
 type: 3d
 subtype: stereoscopic
+outputs:
+  - iiif-manifest
+  - html
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D

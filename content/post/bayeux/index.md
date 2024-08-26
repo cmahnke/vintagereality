@@ -10,6 +10,9 @@ tags:
 - photo
 - Bayeux
 - france
+outputs:
+  - iiif-manifest
+  - html
 geojson:
   coordinates:
   - -0.7042948865940065

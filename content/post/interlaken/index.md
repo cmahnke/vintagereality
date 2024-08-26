@@ -2,6 +2,9 @@
 title: "Vue d'Interlaken et de la Jungfrau"
 date: 2025-02-01T22:15:07+02:00
 type: 3d
+outputs:
+  - iiif-manifest
+  - html
 subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:

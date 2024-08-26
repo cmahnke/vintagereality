@@ -10,6 +10,9 @@ tags:
 - photo
 - Baden Baden
 - germany
+outputs:
+  - iiif-manifest
+  - html
 geojson:
   coordinates:
   - 8.2368503

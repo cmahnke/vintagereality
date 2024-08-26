@@ -3,6 +3,9 @@ title: "Potsdam Babelsberg"
 date: 2025-01-24T17:15:07+02:00
 type: 3d
 subtype: stereoscopic
+outputs:
+  - iiif-manifest
+  - html
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D

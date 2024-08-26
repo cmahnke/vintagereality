@@ -10,6 +10,9 @@ tags:
 - photo
 - Beauvais
 - france
+outputs:
+  - iiif-manifest
+  - html
 geojson:
   coordinates:
   - 2.080874978937397

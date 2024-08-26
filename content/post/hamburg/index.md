@@ -2,6 +2,9 @@
 title: "Neue Elbbrücke Hamburg"
 date: 2024-02-23T17:15:07+02:00
 type: 3d
+outputs:
+  - iiif-manifest
+  - html
 subtype: stereoscopic
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:

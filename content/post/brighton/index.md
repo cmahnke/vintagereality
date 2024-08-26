@@ -10,6 +10,9 @@ tags:
 - photo
 - Brighton
 - uk
+outputs:
+  - iiif-manifest
+  - html
 geojson:
   coordinates:
   - -0.153248

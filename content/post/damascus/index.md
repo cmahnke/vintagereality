@@ -3,6 +3,9 @@ title: "Salon in the harem of a Mohammedan Pasha, Damascus"
 date: 2024-03-29T22:15:07+02:00
 type: 3d
 subtype: stereoscopic
+outputs:
+  - iiif-manifest
+  - html
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
