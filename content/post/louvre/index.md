@@ -14,7 +14,7 @@ geojson:
 tags:
 - 3D
 - Museum
-- stereoscopic_image
+- stereoscopicimage
 - photo
 - Paris
 - Louvre

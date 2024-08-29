@@ -9,7 +9,7 @@ outputs:
 iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
-- stereoscopic_image
+- stereoscopicimage
 - photo
 - Pilatus
 - switzerland

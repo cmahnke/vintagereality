@@ -6,6 +6,9 @@ other = "3D"
 [stereoscopic_image]
 other = "Stereoskopisches Foto"
 
+[stereoscopicimage]
+other = "Stereoskopisches Foto"
+
 [anaglyph]
 other = "Anaglyph"
 

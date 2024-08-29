@@ -13,7 +13,7 @@ geojson:
   - 60.835248
 tags:
 - 3D
-- stereoscopic_image
+- stereoscopicimage
 - photo
 - Stalheim
 - norway
