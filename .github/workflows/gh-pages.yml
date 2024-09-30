@@ -62,7 +62,9 @@ jobs:
         run: hugo --printI18nWarnings --printUnusedTemplates
 
       - name: Cleanup post build
-        run: find docs/ -name 3d-images.json -exec rm {} \;
+        run: |
+          find docs/ -name 3d-images.json -exec rm {} \;
+          find docs -type f -name 'ogPreview-tmp*.jpg' -print -exec rm {} \;
 
       - name: Puppeteer
         run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh

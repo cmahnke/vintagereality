@@ -15,6 +15,9 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
+# Generate Previews
+./themes/projektemacher-base/scripts/preview.sh
+
 set -e -o pipefail
 
 PYTHON=`./themes/projektemacher-base/scripts/find-python3.sh` ./scripts/3d.sh

@@ -23,6 +23,7 @@ content/post/*/*/img*/
 content/post/**/back/
 static/images/logo.png
 content/**/ogPreview.*g
+content/**/ogPreview-tmp*.*g
 content/**/ogPreview/
 content/**/ogPreview.en/
 content/post/meyers-jugendlexikon/glasses/

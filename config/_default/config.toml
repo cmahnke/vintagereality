@@ -9,7 +9,21 @@
     headerImage = "images/logo/logo.svg"
     disableScale = true
     favicon = "/images/favicon-32.png"
-    debug = true
+    debug = false
+
+    [params.preview]
+        outputPrefix = "ogPreview"
+        outputSuffix = ".jpg"
+        format =  "svg"
+        image = "front.jpg"
+        source = "post"
+        [params.preview.size]
+            height = 630
+            width = 1200
+        [params.preview.svg]
+            template = "./Source Files/Other/preview-template.svg"
+            scale = "width"
+            removeMissing = true
 
 #    [params.footer]
 #      privacy = true
