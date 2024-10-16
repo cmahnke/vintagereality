@@ -24,6 +24,7 @@
       <img alt="{{ .Title }} {{ i18n "preview" }}" src="{{- $image.RelPermalink -}}" class="preview-img">
     {{- end -}}
     <div class="link">
-        <a href="{{ .RelPermalink }}">{{ i18n "readmore" }}</a>
+      {{- $currentPage := .OutputFormats.Get "html" -}}
+      <a href="{{ $currentPage.RelPermalink }}">{{ i18n "readmore" }}</a>
     </div>
 </div>
