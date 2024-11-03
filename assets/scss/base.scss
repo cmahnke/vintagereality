@@ -156,10 +156,10 @@ body {
 
     a {
       text-decoration: none;
-      color: darken($cyan, 10%);
+      color: color.adjust($cyan, $lightness: -10%);
 
       &:visited {
-        color: darken($cyan, 20%);
+        color: color.adjust($cyan, $lightness: -20%);
       }
 
       &:hover {
@@ -300,12 +300,12 @@ body {
         a.readmore {
           text-align: right;
           margin: .6em 0;
-          color: darken($magenta, 20%);
-          text-shadow: 0 0 1.5px darken($magenta, 20%);
+          color: color.adjust($magenta, $lightness: -20%);
+          text-shadow: 0 0 1.5px color.adjust($magenta, $lightness: -20%);
           transition: all 500ms ease-out;
 
           &:hover {
-            text-shadow: 0 0 4px darken($magenta, 20%);
+            text-shadow: 0 0 4px color.adjust($magenta, $lightness: -20%);
             transition: all 500ms ease-out;
           }
         }
@@ -329,7 +329,7 @@ body {
             width: 100%;
 
             path {
-              fill: darken(#373f43, 7%);
+              fill: color.adjust(#373f43, $lightness: -7%);
               stroke: rgba(255,255,255,.3);
               stroke-width: 1px;
               transition: all 500ms ease-out;

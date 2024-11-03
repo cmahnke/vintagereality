@@ -1,3 +1,5 @@
+@use "sass:color";
+
 .dreiD-images {
   width: 100%;
   margin-top: 1em;
@@ -149,9 +151,9 @@
     #dreiD-single:checked ~ .tabs #dreiD-single-tab,
     #dreiD-vr:checked ~ .tabs #dreiD-vr-tab {
       /*background: #fc6;*/
-      background: lighten($magenta, 25%);
+      background: color.adjust($magenta, $lightness: 25%);
       color: #000;
-      border-top: 3px solid lighten($magenta, 10%);
+      border-top: 3px solid color.adjust($magenta, $lightness: 10%);
     }
   }
 
