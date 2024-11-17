@@ -18,6 +18,7 @@ concurrency:
 
 env:
   HUGO_VERSION: 0.138.0
+  DEPENDENCY_MANAGER: yarn
 
 jobs:
   deploy:
