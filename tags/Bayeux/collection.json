@@ -1,0 +1,33 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/bayeux/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/bayeux/front_hu652770663691977330.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 149,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/bayeux/front.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2063,
+        "width": 4149,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/bayeux/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Kathedrale von Bayeux"
+          ]}
+      }]
+}
