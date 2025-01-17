@@ -1,0 +1,33 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/cologne/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default_hu9599540310086846611.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 206,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2360,
+        "width": 3444,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/cologne/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Kölner Dom"
+          ]}
+      }]
+}
