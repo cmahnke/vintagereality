@@ -1,0 +1,56 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx2/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/sphinx2/front/full/full/0/default_hu_29d56913c2a8cdc5.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx2/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2103,
+        "width": 4211,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/sphinx2/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Der große Sphinx von Gizeh. Ägypten"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx1/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/sphinx1/front/full/full/0/default_hu_9675e23db79d7cae.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx1/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2101,
+        "width": 4215,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/sphinx1/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen"
+          ]}
+      }]
+}

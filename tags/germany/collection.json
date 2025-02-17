@@ -1,0 +1,172 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/potsdam/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/potsdam/front/full/full/0/default_hu_bfd00c4f5269d94e.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 144,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/potsdam/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2001,
+        "width": 4157,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/potsdam/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Potsdam Babelsberg"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/koenigssee/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/koenigssee/front/full/full/0/default_hu_c6be4af0bb70d6f4.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 146,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/koenigssee/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2012,
+        "width": 4131,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/koenigssee/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Königssee"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/baden-baden/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/baden-baden/front/full/full/0/default_hu_b4e0ca230e6fcf53.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 148,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/baden-baden/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2077,
+        "width": 4224,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/baden-baden/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Trinkhalle Baden-Baden"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/cologne/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default_hu_c4357d0d0f836b98.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 206,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2360,
+        "width": 3444,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/cologne/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Kölner Dom"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default_hu_67591264e5721ae3.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 300,
+    "width": 300
+  }],"label": {
+          "de": [
+            "Kodak Weihnachts-Märchenbuch"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover/full/full/0/default_hu_ce75fa7c146d8fd6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 426,
+    "width": 300
+  }],"label": {
+          "de": [
+            "Mayers Jugendlexikon"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/hamburg/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/hamburg/front_hu_b8bda84925383b13.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 147,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/hamburg/front.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2050,
+        "width": 4185,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/hamburg/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Neue Elbbrücke Hamburg"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/neues-museum/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default_hu_d84705ce686ad2cc.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 157,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2030,
+        "width": 3868,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/neues-museum/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Neues Museum - Gruppe des farnesischen Stiers"
+          ]}
+      }]
+}
