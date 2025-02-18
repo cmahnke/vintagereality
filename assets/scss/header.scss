@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 #head {
   position: fixed;
   top: 0;
@@ -53,7 +55,8 @@
       color: $cyan;
 
       &:visited {
-        color: darken($cyan, 10%);
+        /*color: darken($cyan, 10%);*/
+        color: color.adjust($cyan, $lightness: -10%)
       }
 
       &:hover {
@@ -359,7 +362,8 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(2.5) rotate(25deg);
             opacity: .7;
-            background: linear-gradient(90deg, darken($cyan, 20%) 50%, darken($magenta, 20%) 50%);
+            /*background: linear-gradient(90deg, darken($cyan, 20%) 50%, darken($magenta, 20%) 50%);*/
+            background: linear-gradient(90deg, color.adjust($cyan, $lightness: -20%) 50%, color.adjust($magenta, $lightness: -20%) 50%);
             mask-image: url($clipmask);
             mask-size: 100% 100%;
             mask-clip: border-box;

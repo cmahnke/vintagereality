@@ -1,3 +1,5 @@
+@use 'sass:color';
+
 .main .article-single,
 .main .section-single {
   color: $text-color;
@@ -13,14 +15,16 @@
 
   h2 {
     mix-blend-mode: unset;
-    background-image: linear-gradient(90deg, darken($magenta, 15%), darken($cyan, 15%));
+    /*background-image: linear-gradient(90deg, darken($magenta, 15%), darken($cyan, 15%));*/
+    background-image: linear-gradient(90deg, color.adjust($magenta, $lightness: -15%), color.adjust($cyan, $lightness: -15%));
     background-clip: text;
     color: transparent;
   }
 
   h3 {
     mix-blend-mode: unset;
-    background-image: linear-gradient(90deg, darken($magenta, 30%), darken($cyan, 30%));
+    /*background-image: linear-gradient(90deg, darken($magenta, 30%), darken($cyan, 30%));*/
+    background-image: linear-gradient(90deg, color.adjust($magenta, $lightness: -30%), color.adjust($cyan, $lightness: -30%));
     background-clip: text;
     color: transparent;
   }
