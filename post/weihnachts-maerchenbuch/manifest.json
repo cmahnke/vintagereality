@@ -1,0 +1,255 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/manifest.json",
+"viewingDirection": "left-to-right","behavior":["paged"],
+"summary": {
+    "de": [
+      "\"Kodak Weihnachts-Märchenbuch\" herausgegeben von Kodak ca. 1970. \u003ca class=\"worldcat\" href=\"https://search.worldcat.org/de/title/844989609\"\u003e\u0026nbsp;\u003c/a\u003e"
+    ]}
+,"requiredStatement": {
+  "label": { "en": [ "Attribution" ],
+    "de": [ "Namensnennung" ]
+  },
+  "value": {"de": ["Bereitgestellt von Projektemacher"]}
+}
+,"thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default_hu_67591264e5721ae3.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 300,
+    "width": 300
+  }],"provider": [
+  {
+    "id": "https://projektemacher.org/",
+    "type": "Agent",
+    "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+    "homepage": [
+      {
+        "id": "https://projektemacher.org/",
+        "type": "Text",
+        "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+        "format": "text/html"
+    }
+  ],
+  "logo": [
+    {"id": "https://projektemacher.org/images/logo.png",
+        "type": "Image",
+        "format": "image/png",
+        "height": 1024,
+        "width": 1024}
+  ],
+  "seeAlso": [
+    {
+      "id": "https://projektemacher.org/projektemacher.json",
+      "type": "Dataset",
+      "format": "application/ld+json",
+      "profile": "https://schema.org/"
+    }
+  ]
+  }
+]
+,
+
+"homepage": [
+  {
+    "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/manifest.json",
+    "type": "Text",
+    "format": "text/html",
+
+    "label": {
+        "de": [
+          "Vintage Reality: Kodak Weihnachts-Märchenbuch"
+        ]}
+  }
+],"label": {
+    "de": [
+      "Kodak Weihnachts-Märchenbuch"
+    ]}
+,"items": [{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/canvas/page",
+          "type": "Canvas","label": {"de":["Vorderansicht"],"en":["Front"]},"height": 4709,
+            "width": 4702,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default_hu_67591264e5721ae3.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 300,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4709,
+                  "width": 4702,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/canvas/page",
+          "type": "Canvas","label": {"none":["page001"]},"height": 4717,
+            "width": 4722,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/page001/full/full/0/default_hu_4a6c273f6d2f291d.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 300,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/annotation/page001",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/annotation/page001/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/page001/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4717,
+                  "width": 4722,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/page001",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/1/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/canvas/page",
+          "type": "Canvas","label": {"none":["page003"]},"height": 4708,
+            "width": 4689,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/page003/full/full/0/default_hu_4cbbb510b6bd147b.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 301,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/annotation/page003",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/annotation/page003/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/page003/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4708,
+                  "width": 4689,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/page003",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/3/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/canvas/page",
+          "type": "Canvas","label": {"none":["page006"]},"height": 4716,
+            "width": 4654,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/page006/full/full/0/default_hu_3877832da66efdaa.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 304,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/annotation/page006",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/annotation/page006/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/page006/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4716,
+                  "width": 4654,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/page006",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/6/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/canvas/page",
+          "type": "Canvas","label": {"none":["page009"]},"height": 4707,
+            "width": 4645,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/page009/full/full/0/default_hu_d33d2cf5d6914dcd.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 304,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/annotation/page009",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/annotation/page009/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/page009/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4707,
+                  "width": 4645,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/page009",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/9/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/canvas/page",
+          "type": "Canvas","label": {"none":["page010"]},"height": 4710,
+            "width": 4661,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/page010/full/full/0/default_hu_affcd0a22e1f4b5f.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 303,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/annotation/page010",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/annotation/page010/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/page010/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 4710,
+                  "width": 4661,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/page010",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/10/canvas/page"
+            }]
+          }]
+       }]
+}
