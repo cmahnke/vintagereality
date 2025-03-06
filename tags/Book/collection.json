@@ -1,0 +1,34 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/weihnachts-maerchenbuch/front/full/full/0/default_hu_7182101de08dfd5.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 300,
+    "width": 300
+  }],"label": {
+          "de": [
+            "Kodak Weihnachts-Märchenbuch"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover/full/full/0/default_hu_3c52f0ddc84f540b.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 426,
+    "width": 300
+  }],"label": {
+          "de": [
+            "Mayers Jugendlexikon"
+          ]}
+      }]
+}
