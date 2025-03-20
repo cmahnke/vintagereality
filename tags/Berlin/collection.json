@@ -1,0 +1,33 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/neues-museum/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default_hu_e9ce68b360b2f5a6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 157,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2030,
+        "width": 3868,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/neues-museum/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Neues Museum - Gruppe des farnesischen Stiers"
+          ]}
+      }]
+}
