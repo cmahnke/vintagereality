@@ -1,0 +1,33 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/hamburg/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/hamburg/front_hu_b8bda84925383b13.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 147,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/hamburg/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2050,
+        "width": 4185,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/hamburg/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Neue Elbbrücke Hamburg"
+          ]}
+      }]
+}

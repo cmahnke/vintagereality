@@ -1,0 +1,125 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/mont-blanc/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/mont-blanc/front/full/full/0/default_hu_d0b0b789247761ba.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/mont-blanc/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4192,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/mont-blanc/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/beauvais/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/beauvais/front_hu_6bf26ef77df8d3f9.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/beauvais/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2039,
+        "width": 4055,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/beauvais/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Bischofspalast Beauvais"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/bayeux/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/bayeux/front_hu_a4caa6e8a3ea05fe.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 149,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/bayeux/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2063,
+        "width": 4149,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/bayeux/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Kathedrale von Bayeux"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/louvre/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/louvre/front_hu_64d4316ad71ff38e.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 155,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/louvre/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2106,
+        "width": 4074,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/louvre/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Louvre Paris"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/trouville/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/trouville/front_hu_29230be951c7230c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 148,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/trouville/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2047,
+        "width": 4159,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/trouville/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Trouville-sur-Mer"
+          ]}
+      }]
+}
