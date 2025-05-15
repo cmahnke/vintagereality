@@ -1,0 +1,56 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/stalheim/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default_hu_f558d4b5c6e6fdcd.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2111,
+        "width": 4210,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/stalheim/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Stalheims Hotel und das herrliche Naerödal. Norwegen"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/stalheim/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default_hu_f558d4b5c6e6fdcd.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2111,
+        "width": 4210,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/stalheim/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Stalheims Hotel und das herrliche Naerödal. Norwegen"
+          ]}
+      }]
+}
