@@ -17,6 +17,7 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 * [The Stereoscopy Blog](https://stereoscopy.blog/) {{< flag "en" >}}
 * [Exploring Stereo Photos with IIIF](https://stereograph.davidnewbury.com/) {{< flag "en" >}}
 * [YouTube: Magic Eye: The optical illusion, explained](https://www.youtube.com/watch?v=v8O8Em_RPNg) {{< flag "en" >}}
+* [YouTube: How 1990s Magic Eye 3D Images Were Made](https://www.youtube.com/watch?v=uvXY99HysrU) {{< flag "en" >}}
 
 ## Quellen
 
