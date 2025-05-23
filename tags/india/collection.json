@@ -1,0 +1,102 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/india/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default_hu_bfd6f86b014249ec.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4212,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/india/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Ausladen von Armee-Elephanten in Indien"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/india/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default_hu_bfd6f86b014249ec.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4212,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/india/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Ausladen von Armee-Elephanten in Indien"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/calcutta/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default_hu_ec3d26a7e619726c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2110,
+        "width": 4205,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/calcutta/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Empfangssaal des Maharajah von Tangore in Calcutta, Indien"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/calcutta/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default_hu_ec3d26a7e619726c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2110,
+        "width": 4205,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/calcutta/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Empfangssaal des Maharajah von Tangore in Calcutta, Indien"
+          ]}
+      }]
+}
