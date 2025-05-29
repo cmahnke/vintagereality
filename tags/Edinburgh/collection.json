@@ -1,0 +1,56 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/edinburgh/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/edinburgh/front_hu_b2f0cfa60c36e59.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/edinburgh/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2079,
+        "width": 4134,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/edinburgh/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Calton Jail Edinburgh"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/edinburgh/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/edinburgh/front_hu_b2f0cfa60c36e59.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/edinburgh/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2079,
+        "width": 4134,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/edinburgh/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Calton Jail Edinburgh"
+          ]}
+      }]
+}
