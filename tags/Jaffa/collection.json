@@ -1,0 +1,56 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://vintagereality.projektemacher.org/collection.json",
+  "type": "Collection",
+  "label": {
+      "de": [
+        "Vintage Reality"
+      ]},
+  "items": [{
+        "id": "https://vintagereality.projektemacher.org/post/jaffa/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default_hu_3dfbe30ab2eae14.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2107,
+        "width": 4213,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/jaffa/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Eine Karawane von Kamelen bei Jaffa, Palästina"
+          ]}
+      },{
+        "id": "https://vintagereality.projektemacher.org/post/jaffa/manifest.json",
+        "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default_hu_3dfbe30ab2eae14.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2107,
+        "width": 4213,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/jaffa/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+          "de": [
+            "Eine Karawane von Kamelen bei Jaffa, Palästina"
+          ]}
+      }]
+}
