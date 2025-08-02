@@ -1,29 +1,32 @@
 [params]
-    author = "Christian Mahnke"
-    keywords = ""
-    description = "'Virtuelle Realität' im späten 19. und frühen 20. Jahrhundert"
-    copyrightYears = "2024-2025"
-    cc = false
-    iiifCanvasHeight = 400
-    iiifCanvasWidth = 300
-    headerImage = "images/logo/logo.svg"
-    disableScale = true
-    favicon = "/images/favicon-32.png"
-    debug = false
+  author = "Christian Mahnke"
+  keywords = ""
+  description = "'Virtuelle Realität' im späten 19. und frühen 20. Jahrhundert"
+  copyrightYears = "2024-2025"
+  cc = false
+  iiifCanvasHeight = 400
+  iiifCanvasWidth = 300
+  headerImage = "images/logo/logo.svg"
+  disableScale = true
+  favicon = "/images/favicon-32.png"
+  wikidata = true
+  debug = true
 
-    [params.preview]
-        outputPrefix = "ogPreview"
-        outputSuffix = ".jpg"
-        format =  "svg"
-        image = "front.jpg"
-        source = "post"
-        [params.preview.size]
-            height = 630
-            width = 1200
-        [params.preview.svg]
-            template = "./Source Files/Other/preview-template.svg"
-            scale = "width"
-            removeMissing = true
+  [params.preview]
+    outputPrefix = "ogPreview"
+    outputSuffix = ".jpg"
+    format =  "svg"
+    image = "front.jpg"
+    source = "post"
+
+    [params.preview.size]
+      height = 630
+      width = 1200
+
+    [params.preview.svg]
+      template = "./Source Files/Other/preview-template.svg"
+      scale = "width"
+      removeMissing = true
 
 #    [params.footer]
 #      privacy = true
