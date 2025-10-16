@@ -1,7 +1,7 @@
-numpy<2
+numpy
 opencv-python
 opencv-contrib-python-headless
 stereoscopy[auto_align]
-Pillow
+Pillow<12
 packaging
 #pystereogram
