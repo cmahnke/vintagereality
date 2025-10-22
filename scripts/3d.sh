@@ -7,6 +7,16 @@ IMG_NAME_PREFIX=front
 IMG_METADATA=3d-images.json
 SCRIPT=`dirname $0`/./image-splitter.py
 
+MKTEMP=mktemp
+OS="`uname`"
+case "$OS" in
+  'Darwin')
+    MKTEMP=gmktemp
+    ;;
+  'Linux')
+    MKTEMP=mktemp
+    ;;
+esac
 
 if [ -z "$PYTHON" ] ; then
   PYTHON=python3
@@ -27,7 +37,7 @@ if [ -z "$CORES" ] ; then
     CORES=$(getconf _NPROCESSORS_ONLN)
   fi
 fi
-JOBFILE=$(mktemp) # The GNU version of the tool is a step backwards, on BSD this works as well: -t 3D_JOBS
+JOBFILE=$($MKTEMP) # The GNU version of the tool is a step backwards, on BSD this works as well: -t 3D_JOBS
 mkdir -p ~/.parallel
 touch ~/.parallel/will-cite
 
