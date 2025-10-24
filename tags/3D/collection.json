@@ -1,0 +1,677 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://vintagereality.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Vintage Reality"
+        ]},
+    "items": [{
+          "id": "https://vintagereality.projektemacher.org/post/interlaken/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/interlaken/front/full/full/0/default_hu_6b5235cdf54185b.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 167,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/interlaken/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2061,
+        "width": 3708,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/interlaken/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Vue d'Interlaken et de la Jungfrau"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/potsdam/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/potsdam/front/full/full/0/default_hu_bfd00c4f5269d94e.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 144,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/potsdam/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2001,
+        "width": 4157,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/potsdam/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Potsdam Babelsberg"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/koenigssee/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/koenigssee/front/full/full/0/default_hu_c6be4af0bb70d6f4.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 146,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/koenigssee/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2012,
+        "width": 4131,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/koenigssee/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Königssee"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/baden-baden/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/baden-baden/front/full/full/0/default_hu_b4e0ca230e6fcf53.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 148,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/baden-baden/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2077,
+        "width": 4224,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/baden-baden/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Trinkhalle Baden-Baden"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/cologne/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default_hu_c4357d0d0f836b98.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 206,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/cologne/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2360,
+        "width": 3444,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/cologne/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kölner Dom"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/niagara2/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/niagara2/front/full/full/0/default_hu_fb1b1ddb569694f6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/niagara2/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2108,
+        "width": 4211,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/niagara2/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Unterhalb des Niagara-Falles mitten im Winter V. St. v. N.-A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/kameido/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/kameido/front/full/full/0/default_hu_577358f7d84fd848.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/kameido/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2110,
+        "width": 4214,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/kameido/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Eine alte Brücke, Kameido, Japan"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/sphinx2/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/sphinx2/front/full/full/0/default_hu_29d56913c2a8cdc5.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx2/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2103,
+        "width": 4211,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/sphinx2/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Der große Sphinx von Gizeh. Ägypten"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/pilatus/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/pilatus/front/full/full/0/default_hu_da95cd563e620410.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/pilatus/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2102,
+        "width": 4212,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/pilatus/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Eisenbahnzug den Pilatus hinaufkletternd. Schweiz"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/india/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default_hu_85ee41165291799a.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/india/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4212,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/india/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Ausladen von Armee-Elephanten in Indien"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/jaffa/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default_hu_9f18a56db3288b0.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/jaffa/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2107,
+        "width": 4213,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/jaffa/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Eine Karawane von Kamelen bei Jaffa, Palästina"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/mont-blanc/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/mont-blanc/front/full/full/0/default_hu_2b0a6d644d4875a.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/mont-blanc/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4192,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/mont-blanc/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/niagara1/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/niagara1/front/full/full/0/default_hu_399dbe9f44760e57.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/niagara1/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2099,
+        "width": 4198,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/niagara1/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "General View, Niagara Falls, N.Y., U.S.A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/sphinx1/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/sphinx1/front/full/full/0/default_hu_9675e23db79d7cae.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/sphinx1/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2101,
+        "width": 4215,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/sphinx1/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/milan/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/milan/front/full/full/0/default_hu_bc5e86913b4355d6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/milan/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4209,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/milan/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Milan from its Cathedral Spires, Italy"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/calcutta/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default_hu_5c4d978b22747cad.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/calcutta/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2110,
+        "width": 4205,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/calcutta/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Empfangssaal des Maharajah von Tangore in Calcutta, Indien"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/florida/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/florida/front/full/full/0/default_hu_dff94ed5be014df5.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/florida/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2107,
+        "width": 4224,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/florida/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Wie Kokospalmen im Sande von Florida gedeihen. V. St. v. N.-A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/osaka/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/osaka/front/full/full/0/default_hu_acce1183a24d1dbc.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/osaka/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2102,
+        "width": 4208,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/osaka/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Eine Straße japanischer Theater, Osaka, Japan"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/stalheim/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default_hu_62f1eb45bc5900f3.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/stalheim/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2111,
+        "width": 4210,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/stalheim/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Stalheims Hotel und das herrliche Naerödal. Norwegen"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/brighton/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/brighton/front/full/full/0/default_hu_dac69c36f6a9028d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/brighton/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4190,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/brighton/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Ein Sommertag am Strade von Brighton. England"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/damascus/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/damascus/front/full/full/0/default_hu_de800a3a482fb5d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/damascus/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2102,
+        "width": 4212,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/damascus/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Salon in the harem of a Mohammedan Pasha, Damascus"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/edinburgh/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/edinburgh/front_hu_b2f0cfa60c36e59.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/edinburgh/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2079,
+        "width": 4134,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/edinburgh/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Calton Jail Edinburgh"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/colorado/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/colorado/front_hu_4c80ce87acbd2e8e.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/colorado/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2119,
+        "width": 4204,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/colorado/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Georgetown Loop Railroad - Colorado"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/beauvais/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/beauvais/front_hu_6bf26ef77df8d3f9.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/beauvais/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2039,
+        "width": 4055,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/beauvais/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Bischofspalast Beauvais"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/bayeux/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/bayeux/front_hu_a4caa6e8a3ea05fe.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 149,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/bayeux/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2063,
+        "width": 4149,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/bayeux/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Kathedrale von Bayeux"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/hamburg/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/hamburg/front_hu_b8bda84925383b13.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 147,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/hamburg/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2050,
+        "width": 4185,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/hamburg/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Neue Elbbrücke Hamburg"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/louvre/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/louvre/front_hu_64d4316ad71ff38e.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 155,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/louvre/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2106,
+        "width": 4074,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/louvre/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Louvre Paris"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/neues-museum/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default_hu_d84705ce686ad2cc.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 157,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/neues-museum/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2030,
+        "width": 3868,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/neues-museum/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Neues Museum - Gruppe des farnesischen Stiers"
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/trouville/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/trouville/front_hu_29230be951c7230c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 148,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/trouville/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2047,
+        "width": 4159,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/trouville/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Trouville-sur-Mer"
+            ]}
+        }]
+  }
