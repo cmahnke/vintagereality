@@ -1,0 +1,33 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://vintagereality.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Vintage Reality"
+        ]},
+    "items": [{
+          "id": "https://vintagereality.projektemacher.org/post/brighton/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/brighton/front/full/full/0/default_hu_dac69c36f6a9028d.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/brighton/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2105,
+        "width": 4190,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/brighton/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Ein Sommertag am Strade von Brighton. England"
+            ]}
+        }]
+  }
