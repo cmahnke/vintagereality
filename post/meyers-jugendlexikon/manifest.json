@@ -1,0 +1,875 @@
+{"@context": "http://iiif.io/api/presentation/3/context.json",
+"type": "Manifest",
+"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/manifest.json",
+"viewingDirection": "left-to-right","behavior":["paged"],
+"summary": {
+    "de": [
+      "3. Auflage Leipzig 1973"
+    ]}
+,"requiredStatement": {
+  "label": { "en": [ "Attribution" ],
+    "de": [ "Namensnennung" ]
+  },
+  "value": {"de": ["Bereitgestellt von Projektemacher"]}
+}
+,"thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover/full/full/0/default_hu_ce75fa7c146d8fd6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 426,
+    "width": 300
+  }],"provider": [
+  {
+    "id": "https://projektemacher.org/",
+    "type": "Agent",
+    "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+    "homepage": [
+      {
+        "id": "https://projektemacher.org/",
+        "type": "Text",
+        "label": { "en": [ "Projektemacher" ], "de": [ "Projektemacher" ] },
+        "format": "text/html"
+    }
+  ],
+  "logo": [
+    {"id": "https://projektemacher.org/images/logo.png",
+        "type": "Image",
+        "format": "image/png",
+        "height": 1024,
+        "width": 1024}
+  ],
+  "seeAlso": [
+    {
+      "id": "https://projektemacher.org/projektemacher.json",
+      "type": "Dataset",
+      "format": "application/ld+json",
+      "profile": "https://schema.org/"
+    }
+  ]
+  }
+]
+,
+
+"homepage": [
+  {
+    "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/manifest.json",
+    "type": "Text",
+    "format": "text/html",
+
+    "label": {
+        "de": [
+          "Vintage Reality: Mayers Jugendlexikon"
+        ]}
+  }
+],"label": {
+    "de": [
+      "Mayers Jugendlexikon"
+    ]}
+,"items": [{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page",
+          "type": "Canvas","label": {"de":["Deckblatt"],"en":["Cover"]},"height": 5504,
+            "width": 3876,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover/full/full/0/default_hu_ce75fa7c146d8fd6.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 426,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/cover",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/cover/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5504,
+                  "width": 3876,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/cover",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page",
+          "type": "Canvas","label": {"de":["Vorderansicht"],"en":["Front"]},"height": 5529,
+            "width": 3831,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/front/full/full/0/default_hu_989926fe142b31c.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 433,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/front",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/front/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/front/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5529,
+                  "width": 3831,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/front",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page",
+          "type": "Canvas","label": {"de":["Titelseite"],"en":["Title"]},"height": 5369,
+            "width": 3816,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/title/full/full/0/default_hu_6cf16bf7bd23ebe7.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 422,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/title",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/title/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/title/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5369,
+                  "width": 3816,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/title",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page",
+          "type": "Canvas","label": {"de":["ungezählt"],"en":["uncounted"]},"height": 1171,
+            "width": 3089,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/glasses/full/full/0/default_hu_a858307ff5a262e1.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 114,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/glasses",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/annotation/glasses/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/glasses/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 1171,
+                  "width": 3089,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/glasses",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/canvas/page",
+          "type": "Canvas","label": {"none":["page023"]},"height": 5360,
+            "width": 3832,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/page023/full/full/0/default_hu_18c54f3cbcc8a2d9.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 420,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/annotation/page023",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/annotation/page023/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/page023/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5360,
+                  "width": 3832,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/page023",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/023/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/canvas/page",
+          "type": "Canvas","label": {"none":["page073"]},"height": 5338,
+            "width": 3784,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/page073/full/full/0/default_hu_5cad80fe0e927f2b.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/annotation/page073",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/annotation/page073/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/page073/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5338,
+                  "width": 3784,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/page073",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/073/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/canvas/page",
+          "type": "Canvas","label": {"none":["page106"]},"height": 5342,
+            "width": 3812,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/page106/full/full/0/default_hu_cfabb4c6860abed9.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 420,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/annotation/page106",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/annotation/page106/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/page106/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5342,
+                  "width": 3812,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/page106",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/106/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/canvas/page",
+          "type": "Canvas","label": {"none":["page132"]},"height": 5360,
+            "width": 3828,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/page132/full/full/0/default_hu_17eb61ee7e2dbec1.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 420,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/annotation/page132",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/annotation/page132/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/page132/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5360,
+                  "width": 3828,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/page132",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/132/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/canvas/page",
+          "type": "Canvas","label": {"none":["page134"]},"height": 5357,
+            "width": 3835,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/page134/full/full/0/default_hu_b8e43e82b3a84e93.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 419,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/annotation/page134",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/annotation/page134/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/page134/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5357,
+                  "width": 3835,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/page134",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/134/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/canvas/page",
+          "type": "Canvas","label": {"none":["page143"]},"height": 5361,
+            "width": 3823,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/page143/full/full/0/default_hu_9e31d802c2b4f386.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 421,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/annotation/page143",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/annotation/page143/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/page143/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5361,
+                  "width": 3823,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/page143",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/143/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/canvas/page",
+          "type": "Canvas","label": {"none":["page229"]},"height": 5363,
+            "width": 3789,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/page229/full/full/0/default_hu_50a6969a2cc02fd8.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 425,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/annotation/page229",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/annotation/page229/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/page229/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5363,
+                  "width": 3789,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/page229",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/229/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/canvas/page",
+          "type": "Canvas","label": {"none":["page250"]},"height": 5369,
+            "width": 3815,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/page250/full/full/0/default_hu_61eaba1405a43652.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 422,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/annotation/page250",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/annotation/page250/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/page250/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5369,
+                  "width": 3815,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/page250",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/250/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/canvas/page",
+          "type": "Canvas","label": {"none":["page335"]},"height": 5365,
+            "width": 3805,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/page335/full/full/0/default_hu_2a471c8cf6e01305.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/annotation/page335",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/annotation/page335/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/page335/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5365,
+                  "width": 3805,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/page335",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/335/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/canvas/page",
+          "type": "Canvas","label": {"none":["page345"]},"height": 5365,
+            "width": 3787,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/page345/full/full/0/default_hu_8cebc79e04b7ed5a.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 425,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/annotation/page345",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/annotation/page345/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/page345/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5365,
+                  "width": 3787,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/page345",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/345/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/canvas/page",
+          "type": "Canvas","label": {"none":["page346"]},"height": 5358,
+            "width": 3791,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/page346/full/full/0/default_hu_4059bc972ec2b090.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 424,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/annotation/page346",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/annotation/page346/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/page346/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5358,
+                  "width": 3791,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/page346",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/346/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/canvas/page",
+          "type": "Canvas","label": {"none":["page373"]},"height": 5362,
+            "width": 3801,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/page373/full/full/0/default_hu_f17161e11cc390cd.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/annotation/page373",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/annotation/page373/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/page373/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5362,
+                  "width": 3801,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/page373",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/373/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/canvas/page",
+          "type": "Canvas","label": {"none":["page374"]},"height": 5350,
+            "width": 3766,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/page374/full/full/0/default_hu_f4df32b4d981a99b.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 426,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/annotation/page374",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/annotation/page374/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/page374/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5350,
+                  "width": 3766,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/page374",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/374/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/canvas/page",
+          "type": "Canvas","label": {"none":["page376"]},"height": 5375,
+            "width": 3773,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/page376/full/full/0/default_hu_9616582de3a594b5.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 427,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/annotation/page376",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/annotation/page376/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/page376/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5375,
+                  "width": 3773,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/page376",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/376/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/canvas/page",
+          "type": "Canvas","label": {"none":["page387"]},"height": 5358,
+            "width": 3800,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/page387/full/full/0/default_hu_13cfd2785b911dd4.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/annotation/page387",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/annotation/page387/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/page387/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5358,
+                  "width": 3800,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/page387",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/387/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/canvas/page",
+          "type": "Canvas","label": {"none":["page422"]},"height": 5364,
+            "width": 3813,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/page422/full/full/0/default_hu_8a896ec81cd41fad.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 422,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/annotation/page422",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/annotation/page422/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/page422/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5364,
+                  "width": 3813,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/page422",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/422/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/canvas/page",
+          "type": "Canvas","label": {"none":["page472"]},"height": 5359,
+            "width": 3817,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/page472/full/full/0/default_hu_e369ceba393f0ded.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 421,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/annotation/page472",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/annotation/page472/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/page472/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5359,
+                  "width": 3817,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/page472",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/472/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/canvas/page",
+          "type": "Canvas","label": {"none":["page523"]},"height": 5356,
+            "width": 3811,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/page523/full/full/0/default_hu_1cbd9e602d9badb9.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 422,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/annotation/page523",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/annotation/page523/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/page523/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5356,
+                  "width": 3811,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/page523",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/523/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/canvas/page",
+          "type": "Canvas","label": {"none":["page566"]},"height": 5366,
+            "width": 3811,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/page566/full/full/0/default_hu_38a064bf19b76993.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 422,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/annotation/page566",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/annotation/page566/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/page566/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5366,
+                  "width": 3811,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/page566",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/566/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/canvas/page",
+          "type": "Canvas","label": {"none":["page578"]},"height": 5368,
+            "width": 3808,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/page578/full/full/0/default_hu_5ca6f0b40150b45d.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/annotation/page578",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/annotation/page578/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/page578/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5368,
+                  "width": 3808,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/page578",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/578/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/canvas/page",
+          "type": "Canvas","label": {"none":["page607"]},"height": 5332,
+            "width": 3752,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/page607/full/full/0/default_hu_a417fff8c733c30b.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 426,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/annotation/page607",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/annotation/page607/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/page607/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5332,
+                  "width": 3752,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/page607",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/607/canvas/page"
+            }]
+          }]
+       },{
+          "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/canvas/page",
+          "type": "Canvas","label": {"none":["page683"]},"height": 5363,
+            "width": 3806,
+            "thumbnail": [{
+                "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/page683/full/full/0/default_hu_ae6373d34c4fccc4.jpg",
+                "format": "image/jpeg",
+                "type":"Image",
+                "height": 423,
+                "width": 300
+              }
+            ],"items": [{
+            "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/annotation/page683",
+            "type": "AnnotationPage",
+            "items":[{
+              "id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/annotation/page683/image",
+              "type": "Annotation",
+              "motivation":"painting",
+              "body":{"id": "https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/page683/full/full/0/default.jpg",
+                  "type": "Image",
+                  "format": "image/jpeg",
+                  "height": 5363,
+                  "width": 3806,
+                  "service": [{
+                    "id":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/page683",
+                    "type": "ImageService2",
+                    "profile":"level0"
+                  }]},
+              "target":"https://vintagereality.projektemacher.org/post/meyers-jugendlexikon/683/canvas/page"
+            }]
+          }]
+       }]
+}
