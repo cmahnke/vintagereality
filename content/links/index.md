@@ -24,6 +24,9 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 ### Allgemein
 
 * [DigitaltMuseum](https://digitaltmuseum.org/search/?aq=topic%3A%22stereobild%22) {{< flag "en" >}}
+* [New York Public Library: Robert N. Dennis collection of stereoscopic views](https://digitalcollections.nypl.org/collections/5261fd50-c52e-012f-85ec-58d385a7bc34)
+* [Tennessee Virtual Archive: Stereograph Collection](https://teva.contentdm.oclc.org/digital/search/searchterm/Stereographs/field/format/mode/exact/conn/and/order/nosort/ad/asc)
+* [The Huntington: Stereograph collection](https://www.huntington.org/collections/lib-photst)
 
 ### Spezielle Themen / Gegenden
 
@@ -49,3 +52,5 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 ## Sonstige
 
 * [sView](https://www.sview.ru/en/) {{< flag "en" >}}
+* [New York Public Library's Stereogranimator](https://stereo.nypl.org/) {{< flag "en" >}}
+* [Stereographs: Exploring Stereo Photos with IIIF](https://stereograph.davidnewbury.com/) {{< flag "en" >}}

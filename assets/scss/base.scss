@@ -43,6 +43,10 @@ $clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath';
 :root {
   --cyan: $cyan;
   --magenta: $magenta;
+  /*
+  --cyan: #{$cyan};
+  --magenta: #{$magenta};
+  */
 }
 
 a {
