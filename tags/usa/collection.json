@@ -1,0 +1,102 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://vintagereality.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Vintage Reality"
+        ]},
+    "items": [{
+          "id": "https://vintagereality.projektemacher.org/post/niagara2/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/niagara2/front/full/full/0/default_hu_4793e2870a392cb.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/niagara2/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2108,
+        "width": 4211,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/niagara2/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Unterhalb des Niagara-Falles mitten im Winter V. St. v. N.-A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/niagara1/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/niagara1/front/full/full/0/default_hu_355a41fd6f9650b6.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/niagara1/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2099,
+        "width": 4198,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/niagara1/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "General View, Niagara Falls, N.Y., U.S.A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/florida/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/florida/front/full/full/0/default_hu_3642fff4312d1eb3.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 150,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/florida/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2107,
+        "width": 4224,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/florida/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Wie Kokospalmen im Sande von Florida gedeihen. V. St. v. N.-A."
+            ]}
+        },{
+          "id": "https://vintagereality.projektemacher.org/post/colorado/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/colorado/front_hu_e9609c8d48b1970c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/colorado/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2119,
+        "width": 4204,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/colorado/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Georgetown Loop Railroad - Colorado"
+            ]}
+        }]
+  }
