@@ -1,0 +1,33 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://vintagereality.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Vintage Reality"
+        ]},
+    "items": [{
+          "id": "https://vintagereality.projektemacher.org/post/trouville/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/trouville/front_hu_3f968b3440ce5d34.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 148,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/trouville/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2047,
+        "width": 4159,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/trouville/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Trouville-sur-Mer"
+            ]}
+        }]
+  }

@@ -1,0 +1,33 @@
+{
+    "@context": "http://iiif.io/api/presentation/3/context.json",
+    "id": "https://vintagereality.projektemacher.org/collection.json",
+    "type": "Collection",
+    "label": {
+        "de": [
+          "Vintage Reality"
+        ]},
+    "items": [{
+          "id": "https://vintagereality.projektemacher.org/post/colorado/manifest.json",
+          "type": "Manifest","thumbnail": [{
+    "id": "https://vintagereality.projektemacher.org/post/colorado/front_hu_e9609c8d48b1970c.jpg",
+    "format": "image/jpeg",
+    "type":"Image",
+    "height": 151,
+    "width": 300
+  },{
+        "id": "https://vintagereality.projektemacher.org/post/colorado/front/full/full/0/default.jpg",
+        "format": "image/jpeg",
+        "type":"Image",
+        "height": 2119,
+        "width": 4204,
+        "service": [{
+          "id":"https://vintagereality.projektemacher.org/post/colorado/front",
+          "type": "ImageService2",
+          "profile":"level0"
+        }]
+      }],"label": {
+            "de": [
+              "Georgetown Loop Railroad - Colorado"
+            ]}
+        }]
+  }
