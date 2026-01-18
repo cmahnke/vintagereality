@@ -55,3 +55,5 @@ assets/css
 **/vips-properties.xml
 assets/jsconfig.json
 data/stats.json
+assets/scss/flags/flags.scss
+assets/scss/npm-fonts
