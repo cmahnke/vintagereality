@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Louvre on Vintage Reality</title>
+    <link>https://vintagereality.projektemacher.org/tags/Louvre/</link>
+    <description>Recent content in Louvre on Vintage Reality</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <lastBuildDate>Thu, 12 Feb 2026 10:53:54 +0100</lastBuildDate>
+    <atom:link href="https://vintagereality.projektemacher.org/tags/Louvre/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Louvre Paris</title>
+      <link>https://vintagereality.projektemacher.org/post/louvre/manifest.json</link>
+      <pubDate>Fri, 16 Feb 2024 17:15:07 +0200</pubDate>
+      <guid>https://vintagereality.projektemacher.org/post/louvre/manifest.json</guid>
+      <description>&lt;p&gt;Die Galerie d’Apollon im &#xA;        &#xA;          &#xA;        &lt;a data-wikidata-entity=&#34;Q19675&#34; href=&#34;https://de.wikipedia.org/wiki/Louvre&#34; target=&#34;_blank&#34;&gt;Louvre&lt;/a&gt; in Paris. &#xA;        &#xA;          &#xA;        &lt;a data-wikidata-entity=&#34;Q3094627&#34; href=&#34;https://en.wikipedia.org/wiki/Galerie_d%27Apollon&#34; target=&#34;_blank&#34;&gt;In der englischen Wikipedia&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
