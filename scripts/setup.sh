@@ -22,7 +22,8 @@ done
 
 set -e -o pipefail
 
-PYTHON=`./themes/projektemacher-base/scripts/find-python3.sh` ./scripts/3d.sh
+#PYTHON=`./themes/projektemacher-base/scripts/find-python3.sh` ./scripts/3d.sh
+PYTHON=`which python` ./scripts/3d.sh
 ./scripts/svgo.sh
 
 SOURCE="static/images/svgs/favicon.svg" OPTIONS="-fuzz 5% -transparent white" ./themes/projektemacher-base/scripts/favicon.sh

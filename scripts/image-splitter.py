@@ -4,12 +4,48 @@ from PIL import Image, ImageDraw
 import argparse, pathlib, json, sys, math
 from packaging import version
 from termcolor import cprint
+import stereoscopy
 
 # Duration for Wigglegrams im ms
 defaultDuration = 100
 
 # How many iterations for autoalignment, 20 is mostly sufficient, 50 improve results
 auto_align_iterations = 75
+
+_DEFAULT_AG_CS = "red-cyan"
+_DEFAULT_AG_LUMA = stereoscopy.ANAGLYPH_LUMA_REC709
+
+
+def create_anaglyph(images, method="wimmer", color_scheme=_DEFAULT_AG_CS, luma_coding=_DEFAULT_AG_LUMA):
+    left = images[0].convert("RGB")
+    right = images[1].convert("RGB")
+
+    black = Image.new("L", left.size, 0)
+
+    if method == "gray":
+        l_lum = left.convert("L")
+        r_lum = right.convert("L")
+
+        if color_scheme == "red-green":
+            return Image.merge("RGB", (l_lum, r_lum, black))
+        elif color_scheme == "red-cyan":
+            return Image.merge("RGB", (l_lum, r_lum, r_lum))
+        else:
+            raise ValueError(f"Unknown color scheme '{color_scheme}'")
+
+    elif method == "wimmer" or method == "color":
+        lr, lg, lb = left.split()
+        rr, rg, rb = right.split()
+
+        if color_scheme == "red-green":
+            return Image.merge("RGB", (lr, rg, black))
+        elif color_scheme == "red-cyan":
+            return Image.merge("RGB", (lr, rg, rb))
+        else:
+            raise ValueError(f"Unknown color scheme '{color_scheme}'")
+    else:
+        raise ValueError(f"Unknown method: '{method}'")
+
 
 # See http://www.sview.ru/en/help/input/
 # See https://note.nkmk.me/en/python-pillow-concat-images/
@@ -383,9 +419,9 @@ if ('jps' in outputs):
     crossed_eyed(left, right, ceFileName)
 if ('jpg' in outputs):
     anagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph.jpg')
-    stereoscopy.create_anaglyph((left.copy(), right.copy()), method="gray").save(anagFileName)
+    create_anaglyph((left.copy(), right.copy()), method="gray").save(anagFileName)
     rgAnagFileName = args.image.parent.joinpath(args.image.stem + '-anaglyph-rg.jpg')
-    stereoscopy.create_anaglyph((left, right), color_scheme="red-green", method="gray").save(rgAnagFileName)
+    create_anaglyph((left, right), color_scheme="red-green", method="gray").save(rgAnagFileName)
 if ('depthmap' in outputs):
     ceFileName = args.image.parent.joinpath(args.image.stem + '-depthmap.jpg')
     depth_map(left, right, ceFileName)
