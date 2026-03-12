@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Halle on Vintage Reality</title>
+    <link>https://vintagereality.projektemacher.org/tags/Halle/</link>
+    <description>Recent content in Halle on Vintage Reality</description>
+    <generator>Hugo</generator>
+    <language>de</language>
+    <managingEditor>mail@christianmahnke.de (Christian Mahnke)</managingEditor>
+    <webMaster>mail@christianmahnke.de (Christian Mahnke)</webMaster>
+    <lastBuildDate>Thu, 12 Mar 2026 12:32:26 +0100</lastBuildDate>
+    <atom:link href="https://vintagereality.projektemacher.org/tags/Halle/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vorderseite</title>
+      <link>https://vintagereality.projektemacher.org/post/halle/front/</link>
+      <pubDate>Thu, 26 Feb 2026 12:15:07 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://vintagereality.projektemacher.org/post/halle/front/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innenseite Verso</title>
+      <link>https://vintagereality.projektemacher.org/post/halle/001/</link>
+      <pubDate>Thu, 05 Mar 2026 12:15:07 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://vintagereality.projektemacher.org/post/halle/001/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Innenseite Recto</title>
+      <link>https://vintagereality.projektemacher.org/post/halle/002/</link>
+      <pubDate>Thu, 12 Mar 2026 12:15:07 +0200</pubDate><author>mail@christianmahnke.de (Christian Mahnke)</author>
+      <guid>https://vintagereality.projektemacher.org/post/halle/002/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>
