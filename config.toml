@@ -11,6 +11,7 @@ ignoreErrors = ["error-disable-taxonomy"]
 theme = ["projektemacher-base"]
 #paginate = 7
 enableGitInfo = true
+timeout = "120s"
 
 [pagination]
   pagerSize = 7
