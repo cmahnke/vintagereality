@@ -10,6 +10,7 @@
   favicon = "/images/favicon-32.png"
   wikidata = true
   debug = true
+  useragent = "HugoBot/1.0 (https://vintagereality.projektemacher.org/; User:CMahnke)"
 
   [params.preview]
     outputPrefix = "ogPreview"
