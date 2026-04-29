@@ -80,6 +80,13 @@ jobs:
       - name: Build Hugo site
         run: hugo --printI18nWarnings --printUnusedTemplates
 
+      - name: Always Save Hugo cache
+        if: always()
+        uses: actions/cache/save@v5
+        with:
+          key: hugo-cache-${{ runner.os }}-${{ github.run_id }}
+          path: resources
+
       - name: Cleanup post build
         run: |
           find docs/ -name 3d-images.json -exec rm {} \;
