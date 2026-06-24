@@ -39,7 +39,7 @@ jobs:
           version: 9
 
       - name: Set up Python
-        uses: actions/setup-python@v6.2.0
+        uses: actions/setup-python@v6.3.0
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
@@ -59,7 +59,7 @@ jobs:
 
       - name: Get Hugo cache
         id: cache-hugo-restore
-        uses: actions/cache/restore@v5
+        uses: actions/cache/restore@v6
         with:
           key: ${{ runner.os }}-hugo-cache
           path: resources
@@ -82,7 +82,7 @@ jobs:
 
       - name: Always Save Hugo cache
         if: always() && steps.cache-hugo-restore.outputs.cache-hit != 'true'
-        uses: actions/cache/save@v5
+        uses: actions/cache/save@v6
         with:
           key: ${{ runner.os }}-hugo-cache
           path: resources
