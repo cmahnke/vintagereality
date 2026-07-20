@@ -104,3 +104,8 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./docs
           force_orphan: true
+
+  archive:
+    needs: deploy
+    uses: ./.github/workflows/archive.yml
+    secrets: inherit
