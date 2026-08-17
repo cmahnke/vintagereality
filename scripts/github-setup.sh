@@ -11,3 +11,5 @@ $CTX_PATH/../themes/projektemacher-base/scripts/github/docker-images.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/setup-inkscape.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/setup-xslt.sh
 $CTX_PATH/../themes/projektemacher-base/scripts/github/dart-sass.sh
+
+sudo chmod go+w /etc/ImageMagick-6/policy.xml
