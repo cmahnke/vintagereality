@@ -26,10 +26,13 @@ set -e -o pipefail
 PYTHON=`which python` ./scripts/3d.sh
 ./scripts/svgo.sh
 
+echo "Generating favicons"
 SOURCE="static/images/svgs/favicon.svg" OPTIONS="-fuzz 5% -transparent white" ./themes/projektemacher-base/scripts/favicon.sh
 
+echo "Creating clip path"
 ./themes/projektemacher-base/scripts/saxon.sh -s:Source\ Files/svgs/glasses_background.svg -xsl:themes/projektemacher-base/scripts/xslt/svg-clippath.xsl -o:static/images/svgs/glasses_background-clippath.svg
 
+echo "Compressing Gifs"
 ./scripts/compress-gif.sh
 
 if [ -d ./scripts/post-build ] ; then
