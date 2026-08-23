@@ -18,7 +18,7 @@ timeout = "180s"
 
 [languages]
   [languages.de]
-    languagename = "Deutsch"
+    label = "Deutsch"
 
     [languages.de.params]
 
