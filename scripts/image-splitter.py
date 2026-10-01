@@ -5,6 +5,8 @@ import argparse, pathlib, json, sys, math
 from packaging import version
 from termcolor import cprint
 import stereoscopy
+import numpy as np
+import pyvips
 
 # Duration for Wigglegrams im ms
 defaultDuration = 100
@@ -14,6 +16,56 @@ auto_align_iterations = 75
 
 _DEFAULT_AG_CS = "red-cyan"
 _DEFAULT_AG_LUMA = stereoscopy.ANAGLYPH_LUMA_REC709
+
+# Mapping of pyvips band-format names to numpy dtypes, needed for the
+# zero-copy conversion from a pyvips.Image to a numpy array / PIL.Image.
+_VIPS_FORMAT_TO_DTYPE = {
+    'uchar': np.uint8,
+    'char': np.int8,
+    'ushort': np.uint16,
+    'short': np.int16,
+    'uint': np.uint32,
+    'int': np.int32,
+    'float': np.float32,
+    'double': np.float64,
+    'complex': np.complex64,
+    'dpcomplex': np.complex128,
+}
+
+
+def vips_to_pil(vips_image):
+    """Convert a pyvips.Image into a PIL.Image, entirely in memory (no tmp files)."""
+    mem_img = vips_image.write_to_memory()
+    dtype = _VIPS_FORMAT_TO_DTYPE[vips_image.format]
+    arr = np.ndarray(
+        buffer=mem_img,
+        dtype=dtype,
+        shape=(vips_image.height, vips_image.width, vips_image.bands),
+    )
+
+    if vips_image.bands == 1:
+        arr = arr[:, :, 0]
+        mode = "L"
+    elif vips_image.bands == 3:
+        mode = "RGB"
+    elif vips_image.bands == 4:
+        mode = "RGBA"
+    else:
+        raise ValueError(f"Unsupported number of bands: {vips_image.bands}")
+
+    return Image.fromarray(arr, mode)
+
+
+def load_image(path):
+    """Load an image (JXL or anything else libvips understands) via pyvips,
+    without ever touching disk for intermediate/tmp files."""
+    vips_image = pyvips.Image.new_from_file(str(path), access="sequential")
+
+    # Normalize odd band counts (e.g. CMYK) down to something we can hand to PIL.
+    if vips_image.bands not in (1, 3, 4):
+        vips_image = vips_image.colourspace("srgb")
+
+    return vips_to_pil(vips_image)
 
 
 def create_anaglyph(images, method="wimmer", color_scheme=_DEFAULT_AG_CS, luma_coding=_DEFAULT_AG_LUMA):
@@ -250,13 +302,12 @@ def debug_processor(im, file):
 
 # See https://mattmaulion.medium.com/white-balancing-an-enhancement-technique-in-image-processing-8dd773c69f6
 def white_balance(im, coords = None, file = None, opts = None):
-    import numpy
     mode = "mean"
     def single(im, opts):
         if im.mode == "RGBA":
             im = im.convert('RGB')
-        image = numpy.asarray(im)
-        image_patch = numpy.asarray(get_patch(im))
+        image = np.asarray(im)
+        image_patch = np.asarray(get_patch(im))
         if mode == 'mean':
             image_gt = ((image * (image_patch.mean() / image.mean(axis=(0, 1)))).clip(0, 255).astype(int))
         elif mode == 'max':
@@ -267,7 +318,7 @@ def white_balance(im, coords = None, file = None, opts = None):
         return Image.fromarray(image_gt.astype('uint8'))
 
     if isinstance(im, tuple):
-        retIm = (single(im[0], opts), single(im[1]. opts))
+        retIm = (single(im[0], opts), single(im[1], opts))
     else:
         retIm = single(im, opts)
 
@@ -283,7 +334,7 @@ def blank_out(im, coords = None, file = None, opts = None):
         return im
 
     if isinstance(im, tuple):
-        retIm = (single(im[0], opts), single(im[1]. opts))
+        retIm = (single(im[0], opts), single(im[1], opts))
     else:
         retIm = single(im, opts)
 
@@ -291,7 +342,6 @@ def blank_out(im, coords = None, file = None, opts = None):
     return retIm
 
 def normalize(im, coords = None, file = None, opts = None):
-    import numpy as np
     import cv2 as cv
     def single(im):
         cvAr = cv.cvtColor(np.array(im), cv.COLOR_RGB2GRAY)
@@ -331,21 +381,32 @@ parser.add_argument('--coords', type=pathlib.Path, help='File containing coordin
 parser.add_argument('--output', choices=['gif', 'jps', 'images', 'jpg', 'mpo', 'depthmap'], action='append', nargs='+', help='Output format', default=[])
 parser.add_argument('--samesize', '-s', help='Force same size (implies advanced)', default=False, action='store_true')
 parser.add_argument('--advanced', '-a', help='Use advanced features provided by StereoscoPy', default=False, action='store_true')
-parser.add_argument('--debug', '-d', help='Print information about JXL bindings', default=False, action='store_true')
+parser.add_argument('--debug', '-d', help='Print information about pyvips bindings', default=False, action='store_true')
 
 args = parser.parse_args()
 
 images_suffix = args.image.suffix
 
 if args.debug:
-    import jxlpy
-    print("jxlpy: {}, libjxl: {}, pillow: {}".format(jxlpy.__version__, jxlpy._jxl_version, Image.__version__))
+    import importlib.metadata
+    try:
+        pv_version = importlib.metadata.version('pyvips')
+    except importlib.metadata.PackageNotFoundError:
+        pv_version = 'unknown'
+    print("pyvips: {}, libvips: {}.{}.{}, pillow: {}".format(
+        pv_version,
+        pyvips.version(0), pyvips.version(1), pyvips.version(2),
+        Image.__version__,
+    ))
 
+# We no longer rely on PIL's own decoders (or jxlpy) to open the source
+# image. pyvips decodes JXL (and virtually everything else) natively and
+# we convert straight to a PIL.Image in memory, so no tmp files are ever
+# written for this step.
 if str(args.image).endswith('.jxl'):
-    from jxlpy import JXLImagePlugin
     images_suffix = '.jpg'
 
-im = Image.open(args.image)
+im = load_image(args.image)
 
 try:
     coords = json.load(args.coords.open())
@@ -383,7 +444,6 @@ if args.advanced and not advanced:
 
 if advanced:
     import stereoscopy
-    import numpy as np
     import cv2 as cv
 
 leftFileName = args.image.parent.joinpath(args.image.stem + '-left' + images_suffix)
