@@ -17,7 +17,7 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
-pip uninstall -y opencv-python
+pip install -y stereoscopy[auto_align] --nopeps
 
 # Generate Previews
 ./themes/projektemacher-base/scripts/preview.sh
