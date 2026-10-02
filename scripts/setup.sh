@@ -17,7 +17,7 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
-pip install -y stereoscopy[auto_align] --nopeps
+pip install stereoscopy[auto_align] --nopeps
 
 # Generate Previews
 ./themes/projektemacher-base/scripts/preview.sh
