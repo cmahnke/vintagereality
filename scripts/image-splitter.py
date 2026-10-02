@@ -33,6 +33,24 @@ _VIPS_FORMAT_TO_DTYPE = {
 }
 
 
+def _ensure_cv_term_criteria_aliases(cv_module):
+    """Restore legacy cv2.TERM_CRITERIA_* aliases removed in OpenCV 5.
+
+    OpenCV 4 exposes both cv2.TERM_CRITERIA_EPS/COUNT/MAX_ITER and the new
+    cv2.TermCriteria_EPS/COUNT/MAX_ITER. OpenCV 5 only exposes the latter,
+    which breaks callers such as stereoscopy.find_alignments() that still
+    use the legacy names. Patching the module object fixes all importers
+    since sys.modules is shared.
+    """
+    if not hasattr(cv_module, 'TERM_CRITERIA_EPS') and hasattr(cv_module, 'TermCriteria_EPS'):
+        cv_module.TERM_CRITERIA_EPS = cv_module.TermCriteria_EPS
+    if not hasattr(cv_module, 'TERM_CRITERIA_COUNT') and hasattr(cv_module, 'TermCriteria_COUNT'):
+        cv_module.TERM_CRITERIA_COUNT = cv_module.TermCriteria_COUNT
+    if not hasattr(cv_module, 'TERM_CRITERIA_MAX_ITER') and hasattr(cv_module, 'TermCriteria_MAX_ITER'):
+        cv_module.TERM_CRITERIA_MAX_ITER = cv_module.TermCriteria_MAX_ITER
+    return cv_module
+
+
 def vips_to_pil(vips_image):
     """Convert a pyvips.Image into a PIL.Image, entirely in memory (no tmp files)."""
     mem_img = vips_image.write_to_memory()
@@ -343,6 +361,7 @@ def blank_out(im, coords = None, file = None, opts = None):
 
 def normalize(im, coords = None, file = None, opts = None):
     import cv2 as cv
+    _ensure_cv_term_criteria_aliases(cv)
     def single(im):
         cvAr = cv.cvtColor(np.array(im), cv.COLOR_RGB2GRAY)
         normalized = cv.normalize(cvAr, None, beta=0, alpha=255, norm_type=cv.NORM_MINMAX)
@@ -393,10 +412,17 @@ if args.debug:
         pv_version = importlib.metadata.version('pyvips')
     except importlib.metadata.PackageNotFoundError:
         pv_version = 'unknown'
-    print("pyvips: {}, libvips: {}.{}.{}, pillow: {}".format(
+    try:
+        import cv2 as cv
+        _ensure_cv_term_criteria_aliases(cv)
+        cv_version = cv.__version__
+    except ImportError:
+        cv_version = 'unknown'
+    print("pyvips: {}, libvips: {}.{}.{}, pillow: {}, opencv: {}".format(
         pv_version,
         pyvips.version(0), pyvips.version(1), pyvips.version(2),
         Image.__version__,
+        cv_version,
     ))
 
 # We no longer rely on PIL's own decoders (or jxlpy) to open the source
@@ -445,6 +471,7 @@ if args.advanced and not advanced:
 if advanced:
     import stereoscopy
     import cv2 as cv
+    _ensure_cv_term_criteria_aliases(cv)
 
 leftFileName = args.image.parent.joinpath(args.image.stem + '-left' + images_suffix)
 rightFileName = args.image.parent.joinpath(args.image.stem + '-right' + images_suffix)
