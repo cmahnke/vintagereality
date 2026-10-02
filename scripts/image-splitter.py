@@ -34,20 +34,29 @@ _VIPS_FORMAT_TO_DTYPE = {
 
 
 def _ensure_cv_term_criteria_aliases(cv_module):
-    """Restore legacy cv2.TERM_CRITERIA_* aliases removed in OpenCV 5.
+    """Restore legacy cv2.TERM_CRITERIA_* aliases missing in some OpenCV 5 builds.
 
     OpenCV 4 exposes both cv2.TERM_CRITERIA_EPS/COUNT/MAX_ITER and the new
-    cv2.TermCriteria_EPS/COUNT/MAX_ITER. OpenCV 5 only exposes the latter,
-    which breaks callers such as stereoscopy.find_alignments() that still
-    use the legacy names. Patching the module object fixes all importers
-    since sys.modules is shared.
+    cv2.TermCriteria_EPS/COUNT/MAX_ITER. Some OpenCV 5 builds (e.g. CI
+    5.0.0.93, which even lacks cv2.__version__) expose neither, which breaks
+    callers such as stereoscopy.find_alignments() that still use the legacy
+    names. Patching the module object fixes all importers since sys.modules
+    is shared. Values COUNT=MAX_ITER=1, EPS=2 are stable since OpenCV 1.x
+    (CV_TERMCRIT_ITER/CV_TERMCRIT_EPS), so they are a safe last resort.
     """
-    if not hasattr(cv_module, 'TERM_CRITERIA_EPS') and hasattr(cv_module, 'TermCriteria_EPS'):
-        cv_module.TERM_CRITERIA_EPS = cv_module.TermCriteria_EPS
-    if not hasattr(cv_module, 'TERM_CRITERIA_COUNT') and hasattr(cv_module, 'TermCriteria_COUNT'):
-        cv_module.TERM_CRITERIA_COUNT = cv_module.TermCriteria_COUNT
-    if not hasattr(cv_module, 'TERM_CRITERIA_MAX_ITER') and hasattr(cv_module, 'TermCriteria_MAX_ITER'):
-        cv_module.TERM_CRITERIA_MAX_ITER = cv_module.TermCriteria_MAX_ITER
+    def _resolve(*names, fallback):
+        for name in names:
+            try:
+                return getattr(cv_module, name)
+            except AttributeError:
+                continue
+        return fallback
+    if not hasattr(cv_module, 'TERM_CRITERIA_EPS'):
+        cv_module.TERM_CRITERIA_EPS = _resolve('TermCriteria_EPS', fallback=2)
+    if not hasattr(cv_module, 'TERM_CRITERIA_COUNT'):
+        cv_module.TERM_CRITERIA_COUNT = _resolve('TermCriteria_COUNT', fallback=1)
+    if not hasattr(cv_module, 'TERM_CRITERIA_MAX_ITER'):
+        cv_module.TERM_CRITERIA_MAX_ITER = _resolve('TermCriteria_MAX_ITER', fallback=1)
     return cv_module
 
 
