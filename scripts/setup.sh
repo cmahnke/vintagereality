@@ -17,6 +17,8 @@ for SCRIPT in $PWD/themes/projektemacher-base/scripts/init/*.sh ; do
     fi
 done
 
+pip uninstall opencv-python
+
 # Generate Previews
 ./themes/projektemacher-base/scripts/preview.sh
 
