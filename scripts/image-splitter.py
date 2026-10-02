@@ -415,8 +415,19 @@ if args.debug:
     try:
         import cv2 as cv
         _ensure_cv_term_criteria_aliases(cv)
-        cv_version = cv.__version__
-    except ImportError:
+        cv_version = getattr(cv, '__version__', None)
+        if not cv_version:
+            for dist in ('opencv-contrib-python-headless',
+                         'opencv-contrib-python',
+                         'opencv-python-headless',
+                         'opencv-python'):
+                try:
+                    cv_version = importlib.metadata.version(dist)
+                    break
+                except importlib.metadata.PackageNotFoundError:
+                    continue
+        cv_version = cv_version or 'unknown'
+    except Exception:
         cv_version = 'unknown'
     print("pyvips: {}, libvips: {}.{}.{}, pillow: {}, opencv: {}".format(
         pv_version,
