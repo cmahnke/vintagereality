@@ -1,5 +1,5 @@
 numpy
-stereoscopy[auto_align] --no-deps
+stereoscopy[auto_align]
 opencv-contrib-python-headless
 Pillow
 packaging
