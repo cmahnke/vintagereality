@@ -134,8 +134,12 @@ timeout = "180s"
 
 [security]
   [security.http]
-    mediaTypes = ['^application/json$', '^application/json;\s?charset=[uU][tT][fF]-8$', '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$']
-    urls = ['^https://query\.wikidata\.org/.*', '^https://www\.wikidata\.org/.*', '^https://(en|de)\.wikipedia\.org/.*']
+  mediaTypes = ['^application/json$',
+                '^application/json;\s?charset=[uU][tT][fF]-8$',
+                '^application/ld\+json;charset=[uU][tT][fF]-8$',
+                '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$',
+                '^application/sparql-results\+json$']
+    urls = ['^https://query.wikidata.org/.*', 'https://www.wikidata.org', '^https://(en|de)\.wikipedia\.org/.*', '^https://christianmahnke.de/*']
 
 [caches]
   [caches.assets]
