@@ -11,6 +11,7 @@
   wikidata = true
   debug = true
   useragent = "HugoBot/1.0 (https://vintagereality.projektemacher.org/; User:CMahnke)"
+  schemaPerson = "https://christianmahnke.de/person.jsonld"
 
   [params.preview]
     outputPrefix = "ogPreview"
