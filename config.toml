@@ -112,6 +112,9 @@ timeout = "180s"
     baseName = "collection"
     notAlternative = true
 
+[outputs]
+  home = ["html", "rss", "iiif-collection"]
+
 [sitemap]
   changeFreq = 'weekly'
 

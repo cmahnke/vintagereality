@@ -3,8 +3,6 @@
   description = "'Virtuelle Realität' im späten 19. und frühen 20. Jahrhundert"
   copyrightYears = "2024 - 2026"
   cc = false
-  iiifCanvasHeight = 400
-  iiifCanvasWidth = 300
   headerImage = "images/logo/logo.svg"
   disableScale = true
   favicon = "/images/favicon-32.png"
