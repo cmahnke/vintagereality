@@ -1,4 +1,5 @@
 {
+  "ignoreFiles": ["assets/scss/npm-fonts/**", "assets/scss/flags/**"],
   "extends": ["stylelint-config-standard-scss"],
   "plugins": [
     "stylelint-scss",

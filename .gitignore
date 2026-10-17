@@ -50,6 +50,7 @@ content/**/*-post-*.jpg
 scripts/*.bak.sh
 # Generated files
 static/fonts
+static/map-styles
 static/images/svgs
 assets/css
 **/vips-properties.xml

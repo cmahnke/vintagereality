@@ -9,17 +9,11 @@ other = "Stereoscopic image"
 [stereoscopicimage]
 other = "Stereoscopic image"
 
-[anaglyph]
-other = "Anaglyph"
-
 [photo]
 other = "Photo"
 
 [drawing]
 other = "Drawing"
-
-[book]
-other = "Book"
 
 # Places
 [usa]

@@ -11,12 +11,14 @@ Eine weitere Form von Sterobildern sind Autosteregramme, eine gute Übersicht un
 
 Autostereogramme sind besonders bekannt geworden, durch die Buchserie ["Das magische Auge"](https://de.wikipedia.org/wiki/Das_Magische_Auge), die Anfang der 90er Jahre erschien und einige Jahre sehr poplär war. Da sie dadurch noch dem Urheberschutz unterstehen, können hier keine Originale aus der Zeit gezeigt werden.
 
-
 ## Python Bibliotheken für Autostereogramme:
+
 # Erstellen
- * [MagicPy](https://github.com/synesthesiam/magicpy)
- * [pystereogram](https://github.com/yxiao1996/pystereogram)
- * [Making Your Own Autostereograms using Python](https://flothesof.github.io/making-stereograms-Python.html)
+
+* [MagicPy](https://github.com/synesthesiam/magicpy)
+* [pystereogram](https://github.com/yxiao1996/pystereogram)
+* [Making Your Own Autostereograms using Python](https://flothesof.github.io/making-stereograms-Python.html)
 
 # Interpretieren
- * [Neural Magic Eye](https://github.com/jiupinjia/neural-magic-eye)
+
+* [Neural Magic Eye](https://github.com/jiupinjia/neural-magic-eye)

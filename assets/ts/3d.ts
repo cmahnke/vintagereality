@@ -1,20 +1,20 @@
 import * as THREE from 'three';
 import { VRButton } from 'three/examples/jsm/webxr/VRButton.js';
-import { OrbitControls  } from 'three/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Check for WebGL support, see https://stackoverflow.com/a/77480016
-function isWebGLSupported() {
+function isWebGLSupported(): boolean {
   try {
-    var canvas = document.createElement('canvas');
-      return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
-  } catch (e) {
+    const canvas = document.createElement('canvas');
+    return !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+  } catch {
     return false;
   }
 }
 
 // Inspired by https://github.com/steren/stereo-img/blob/main/stereo-img.js
 
-function angleOfViewFocalLengthIn35mmFormat(focalLengthIn35mmFormat, width, height) {
+function angleOfViewFocalLengthIn35mmFormat(focalLengthIn35mmFormat: number, width: number, height: number): {diagonalAngle: number, horizontalAngle: number, verticalAngle: number} {
   // https://en.wikipedia.org/wiki/Angle_of_view#Common_lens_angles_of_view
   // https://en.wikipedia.org/wiki/35_mm_equivalent_focal_length
   // angle of view on the diagonal (35mm is 24 mm (vertically) × 36 mm (horizontal), giving a diagonal of about 43.3 mm)
@@ -25,7 +25,7 @@ function angleOfViewFocalLengthIn35mmFormat(focalLengthIn35mmFormat, width, heig
   const diagonal = Math.sqrt(Math.pow(physicalWidth, 2) + Math.pow(physicalHeight, 2));
   console.log(`Physical size is ${physicalWidth}mm x ${physicalHeight}mm, diagonal ${diagonal}mm`);
 
-  const diagonalAngle = 2 * Math.atan(diagonal.toFixed(2) / (2 * focalLengthIn35mmFormat));
+  const diagonalAngle = 2 * Math.atan(Number(diagonal.toFixed(2)) / (2 * focalLengthIn35mmFormat));
   //const diagonalAngle = 2 * Math.atan(43.3 / (2 * focalLengthIn35mmFormat));
   // Pi / 4 for a square.
   const halfAngle = Math.atan(height / (width / 2));
@@ -35,27 +35,42 @@ function angleOfViewFocalLengthIn35mmFormat(focalLengthIn35mmFormat, width, heig
   return {diagonalAngle, horizontalAngle, verticalAngle};
 }
 
-async function init3DViewer (left, right) {
+interface StereoData {
+  phiLength: number;
+  thetaStart: number;
+  thetaLength: number;
+  roll?: number;
+  pitch?: number;
+}
+
+interface Eye {
+  texture: THREE.Texture;
+  material?: THREE.MeshBasicMaterial;
+  geometry?: THREE.SphereGeometry;
+  mesh?: THREE.Mesh;
+}
+
+async function init3DViewer(left: string, right: string): Promise<THREE.Scene> {
   const assumeFocalLengthIn35mmFormat = 27;
-  var angle, stereoData;
   const loader = new THREE.TextureLoader();
-  var eyes = [{}, {}];
-  var scene = new THREE.Scene();
+  const eyes: Eye[] = [{} as Eye, {} as Eye];
+  const scene = new THREE.Scene();
   scene.background = new THREE.Color( 0x101010 );
   const radius = 10;
 
   eyes[0].texture = await loader.loadAsync(left);
   eyes[1].texture = await loader.loadAsync(right);
 
-  var width = eyes[0].texture.image.width;
-  var height = eyes[0].texture.image.height;
+  const image = eyes[0].texture.image as HTMLImageElement;
+  const width = image.width;
+  const height = image.height;
   //var textureDimensions = {};
-  angle = angleOfViewFocalLengthIn35mmFormat(assumeFocalLengthIn35mmFormat, width, height);
+  const angle = angleOfViewFocalLengthIn35mmFormat(assumeFocalLengthIn35mmFormat, width, height);
   const phiLength = angle.horizontalAngle;
   const thetaLength = angle.verticalAngle;
   const thetaStart = Math.PI / 2 - thetaLength / 2;
 
-  stereoData = {
+  const stereoData: StereoData = {
     phiLength: phiLength,
     thetaStart: thetaStart,
     thetaLength: thetaLength
@@ -78,12 +93,11 @@ async function init3DViewer (left, right) {
   return scene;
 }
 
-function createCanvas(element, width, height) {
-  var id = element.getAttribute('id');
-  var stereoCanvas = document.createElement('canvas');
+function createCanvas(element: HTMLElement): HTMLCanvasElement {
+  const id = element.getAttribute('id');
+  const stereoCanvas = document.createElement('canvas');
   stereoCanvas.setAttribute('id', id + '-canvas');
   stereoCanvas.setAttribute('class', 'stereo-canvas');
-  var bbox = element.getBoundingClientRect();
 
   //TODO: Sizes aren't working since the element isn't visible on initial setup
   element.appendChild(stereoCanvas);
@@ -107,27 +121,31 @@ function createCanvas(element, width, height) {
   return stereoCanvas;
 }
 
-async function add3DViewer (element, left, right) {
-  var scene = await init3DViewer(left, right);
-  var width = scene.children[0].material.map.image.width;
-  var height = scene.children[0].material.map.image.height;
+async function add3DViewer (element: HTMLElement, left: string, right: string): Promise<THREE.WebGLRenderer> {
+  const scene = await init3DViewer(left, right);
+  const mesh = scene.children[0] as THREE.Mesh;
+  const image = (mesh.material as THREE.MeshBasicMaterial).map!.image as HTMLImageElement;
+  const width = image.width;
+  const height = image.height;
   //element.dataset.width = width;
   //element.dataset.height = height;
 
   //var stereoCanvas = createCanvas(element, width, height);
-  var stereoCanvas = createCanvas(element);
+  const stereoCanvas = createCanvas(element);
 
+  let elementWidth: number;
+  let elementHeight: number;
   const visibilityObserver = new IntersectionObserver(() => {
     if (element.clientWidth) {
-      var multiplier = element.clientWidth / width;
+      const multiplier = element.clientWidth / width;
       elementHeight = Math.floor(height * multiplier);
       elementWidth = element.clientWidth;
-      element.dataset.width = elementWidth;
-      element.dataset.height = elementHeight;
+      element.dataset.width = String(elementWidth);
+      element.dataset.height = String(elementHeight);
       element.style["height"] = elementHeight + "px";
-      var canvas = element.querySelector('canvas');
-      canvas.setAttribute('width', elementWidth);
-      canvas.setAttribute('height', elementHeight);
+      const canvas = element.querySelector('canvas')!;
+      canvas.setAttribute('width', String(elementWidth));
+      canvas.setAttribute('height', String(elementHeight));
       canvas.style["height"] = elementHeight + "px";
 
       console.log(`Tab activated, Element size is ${elementWidth} ${elementHeight}`);
@@ -135,13 +153,12 @@ async function add3DViewer (element, left, right) {
   });
   visibilityObserver.observe(element);
 
-  var renderer = new THREE.WebGLRenderer({canvas: stereoCanvas, antialias: true});
+  const renderer = new THREE.WebGLRenderer({canvas: stereoCanvas, antialias: true});
   renderer.setPixelRatio(window.devicePixelRatio);
   renderer.xr.enabled = true;
-  var as = (width * 2) / height
   //Aspect ratio is about .9:1
-  var aspectRatio = height / width;
-  var initialHeight = element.clientWidth * aspectRatio;
+  const aspectRatio = height / width;
+  const initialHeight = element.clientWidth * aspectRatio;
 
   console.log("Height: " + height + ", width: " + width + ", canvas height: " + initialHeight + " client width: " + element.clientWidth);
 
@@ -149,34 +166,35 @@ async function add3DViewer (element, left, right) {
   renderer.setSize(stereoCanvas.clientWidth, initialHeight, false);
 
   // TODO: Should we use component size instead?
-  var camera = new THREE.PerspectiveCamera( 70, element.clientWidth / element.clientHeight, 1, 2000 );
+  const camera = new THREE.PerspectiveCamera( 70, element.clientWidth / element.clientHeight, 1, 2000 );
   camera.layers.enable( 1 );
 
   const controls = new OrbitControls(camera, renderer.domElement);
   camera.position.set(0, 0, 0.1);
   controls.update();
 
-  var button = VRButton.createButton(renderer);
+  const button = VRButton.createButton(renderer);
   button.style.bottom = '30px';
   button.style.opacity = '.85';
-  button.addEventListener("click", function(event) {
-    var state;
-    if (event.target.dataset.state) {
-      state = event.target.dataset.state;
+  button.addEventListener("click", function(event: Event) {
+    let state: string | boolean | undefined;
+    const target = event.target as HTMLElement;
+    if (target.dataset.state) {
+      state = target.dataset.state;
     } else {
       state = false;
     }
     if (!state) {
       renderer.setSize(window.innerWidth, window.innerHeight);
       window.scrollTo(0, 0);
-      button.style.zIndex = 10000;
+      button.style.zIndex = '10000';
       button.style.position = "fixed";
       button.style.opacity = '.85';
-      event.target.dataset.state = true;
+      target.dataset.state = 'true';
     } else {
       button.style.opacity = '.85';
       button.style.position = "absolute";
-      event.target.dataset.state = false;
+      target.dataset.state = 'false';
     }
   });
   element.appendChild(button);
@@ -195,9 +213,9 @@ async function add3DViewer (element, left, right) {
   return renderer;
 }
 
-function addFullScreen(element, left, right) {
-  function toggleScroll() {
-    var body = document.querySelector("body");
+function addFullScreen(element: HTMLElement, left: string, right: string): void {
+  function toggleScroll(): void {
+    const body = document.querySelector("body")!;
     if (body.style["overflow"] === 'hidden') {
       body.style["overflow"] = "unset";
     } else {
@@ -205,19 +223,19 @@ function addFullScreen(element, left, right) {
     }
   }
 
-  function addButton(element, inactiveInner, activeInner) {
-    var id = element.getAttribute('id');
-    var button = document.createElement('button');
+  function addButton(element: HTMLElement, inactiveInner: string, activeInner: string): HTMLButtonElement {
+    const id = element.getAttribute('id');
+    const button = document.createElement('button');
     button.innerHTML = inactiveInner;
     button.classList.add("fullscreen-button");
     button.setAttribute('id', id + '-button');
-    button.addEventListener("click", function(event) {
+    button.addEventListener("click", function() {
       if (!element.classList.contains("active")) {
         button.innerHTML = activeInner;
         element.classList.add("active");
         toggleScroll();
         window.scrollTo(0, 0);
-        button.style.zIndex = 10000;
+        button.style.zIndex = '10000';
         button.style.position = "fixed";
       } else {
         button.innerHTML = inactiveInner;
@@ -230,12 +248,12 @@ function addFullScreen(element, left, right) {
     return button;
   }
 
-  function init(element, left, right) {
-    leftImg = document.createElement('img');
+  function init(element: HTMLElement, left: string, right: string): void {
+    const leftImg = document.createElement('img');
     leftImg.src = left;
     leftImg.classList.add("left-img");
     leftImg.classList.add("fullscreen-viewer-image");
-    rightImg = document.createElement('img');
+    const rightImg = document.createElement('img');
     rightImg.src = right;
     rightImg.classList.add("right-img");
     rightImg.classList.add("fullscreen-viewer-image");
@@ -245,13 +263,12 @@ function addFullScreen(element, left, right) {
 
   init(element, left, right);
   element.classList.add("fullscreen-viewer");
-  var button = addButton(element, 'Vollbild', 'Vollbild beenden');
-
+  addButton(element, 'Vollbild', 'Vollbild beenden');
 }
 
 // See https://codepen.io/chrisjdesigner/pen/yLzopXW
-function addDepthMap(canvas, image, map) {
-  function imagePromise(img) {
+function addDepthMap(canvas: HTMLCanvasElement, image: HTMLImageElement, map: HTMLImageElement): void {
+  function imagePromise(img: HTMLImageElement): Promise<void> {
     return new Promise(resolve => {
       if (img.complete) {
         return resolve();
@@ -280,12 +297,12 @@ function addDepthMap(canvas, image, map) {
   }
 
   // Sizes
-  var sizes = {
+  const sizes = {
     width: image.width,
     height: image.height
   }
 
-  const sizeObserver = new ResizeObserver(entries => {
+  const sizeObserver = new ResizeObserver(() => {
     sizes.width = image.width;
     sizes.height = image.height;
     resize();
@@ -293,11 +310,11 @@ function addDepthMap(canvas, image, map) {
   sizeObserver.observe(image);
 
   // Image Details
-  let originalImage = null
-  let depthImage = null
+  let originalImage: THREE.Texture | null = null
+  let depthImage: THREE.Texture | null = null
   // Camera
-  let camera = null;
-  let fovY = null;
+  let camera: THREE.PerspectiveCamera | null = null;
+  let fovY: number | null = null;
 
   const originalImageDetails = {
     width: 0,
@@ -306,9 +323,9 @@ function addDepthMap(canvas, image, map) {
   }
 
   // Geometries and Material
-  let planeGeometry = null
-  let planeMaterial = null
-  let plane = null
+  let planeGeometry: THREE.PlaneGeometry | null = null
+  let planeMaterial: THREE.ShaderMaterial | null = null
+  let plane: THREE.Mesh | null = null
 
   // Cursor Settings
   const cursor = {
@@ -324,8 +341,8 @@ function addDepthMap(canvas, image, map) {
   /**
    * Camera
    */
-   function initCamera(sizes) {
-    var camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
+  function initCamera(sizes: {width: number, height: number}): THREE.PerspectiveCamera {
+    const camera = new THREE.PerspectiveCamera(75, sizes.width / sizes.height, 0.1, 100)
     camera.position.x = 0;
     camera.position.y = 0;
     camera.position.z = 0.7;
@@ -347,15 +364,15 @@ function addDepthMap(canvas, image, map) {
    * Create 3D Image
    */
   const create3dImage = () => {
-    if (originalImage == null || depthImage == null) {
+    if (originalImage == null || depthImage == null) {
       console.warn("source null")
     }
 
     // Cleanup Geometry for GUI
     if(plane !== null) {
-        planeGeometry.dispose();
-        planeMaterial.dispose();
-        scene.remove(plane);
+      planeGeometry!.dispose();
+      planeMaterial!.dispose();
+      scene.remove(plane);
     }
 
     planeGeometry = new THREE.PlaneGeometry(1, 1);
@@ -426,14 +443,14 @@ function addDepthMap(canvas, image, map) {
     sizes.height = image.height;
 
     // Update camera
-    camera.aspect = sizes.width / sizes.height
-    camera.updateProjectionMatrix();
+    camera!.aspect = sizes.width / sizes.height
+    camera!.updateProjectionMatrix();
 
     // Update Image Size
     if (sizes.height/sizes.width < originalImageDetails.aspectRatio) {
-      plane.scale.set( (fovY * camera.aspect), ((sizes.width / sizes.height) * originalImageDetails.aspectRatio), 1 );
+      plane.scale.set( (fovY! * camera!.aspect), ((sizes.width / sizes.height) * originalImageDetails.aspectRatio), 1 );
     } else {
-      plane.scale.set( (fovY / originalImageDetails.aspectRatio), fovY, 1 );
+      plane.scale.set( (fovY! / originalImageDetails.aspectRatio), fovY!, 1 );
     }
 
     // Update renderer
@@ -459,8 +476,8 @@ function addDepthMap(canvas, image, map) {
     tick();
   });
 
-  const transparentBg = (canvas) => {
-    var ctx = canvas.getContext("2d");
+  const _transparentBg = (canvas: HTMLCanvasElement) => {
+    const ctx = canvas.getContext("2d")!;
     ctx.globalCompositeOperation = 'destination-over'
     ctx.fillStyle = "transparent";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -490,7 +507,7 @@ function addDepthMap(canvas, image, map) {
     cursor.y = event.clientY / sizes.height - 0.5
   });
 
-  window.addEventListener('mouseout', (event) => {
+  window.addEventListener('mouseout', () => {
     cursor.x = 0
     cursor.y = 0
   });
@@ -500,7 +517,7 @@ function addDepthMap(canvas, image, map) {
     cursor.y = touch.pageY / sizes.height - 0.5;
   });
 
-  window.addEventListener('touchend', (event) => {
+  window.addEventListener('touchend', () => {
     cursor.x = 0
     cursor.y = 0
   });
@@ -534,10 +551,10 @@ function addDepthMap(canvas, image, map) {
     cursor.lerpY += (parallaxY - cursor.lerpY) * 5 * deltaTime;
 
     // Mouse Positioning Uniform Values
-    planeMaterial.uniforms.uMouse.value = new THREE.Vector2(cursor.lerpX , cursor.lerpY)
+    planeMaterial!.uniforms.uMouse.value = new THREE.Vector2(cursor.lerpX , cursor.lerpY)
 
     // Render
-    renderer.render(scene, camera)
+    renderer.render(scene, camera!)
 
     // Call tick again on the next frame
     window.requestAnimationFrame(tick)
@@ -546,6 +563,24 @@ function addDepthMap(canvas, image, map) {
   //tick();
 }
 
+declare global {
+  interface Window {
+    depthmap: {
+      renderer: THREE.WebGLRenderer;
+      canvas: HTMLCanvasElement;
+      image: HTMLImageElement;
+      resize: () => void;
+      camera: THREE.PerspectiveCamera | null;
+      scene: THREE.Scene;
+    };
+    addFullScreen: typeof addFullScreen;
+    add3DViewer: typeof add3DViewer;
+    addDepthMap: typeof addDepthMap;
+  }
+}
+
 window.addFullScreen = addFullScreen;
 window.add3DViewer = add3DViewer;
 window.addDepthMap = addDepthMap;
+
+export {};

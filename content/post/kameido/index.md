@@ -32,6 +32,7 @@ Dieses Bild zeigt die Trommelbrücke am [Kameido-Schrein](https://de.wikipedia.o
 <!--more-->
 
 Es gibt auch Farbholzschnitte, die die Brücke zeigen:
+
 * [, ca. 1830](https://www.metmuseum.org/art/collection/search/53792) von [Katsushika Hokusai](https://de.wikipedia.org/wiki/Katsushika_Hokusai).
 * [100 berühmte Ansichten von Edo, Nr. 065](https://de.wikipedia.org/wiki/Kameido-Schrein#/media/Datei:100_views_edo_057.jpg) von [Utagawa Hiroshige](https://de.wikipedia.org/wiki/Utagawa_Hiroshige)
   * Die ganze Serie kann in der Wikipedia [betrachtet werden](https://de.wikipedia.org/wiki/100_ber%C3%BChmte_Ansichten_von_Edo).

@@ -60,10 +60,10 @@
       flex-direction: column;
       justify-content: center;
       max-width: 56rem;
-      background: rgba(255, 255, 255, .2);
+      background: rgb(255, 255, 255, .2);
       border-radius: 16px;
       backdrop-filter: blur(5px);
-      box-shadow: 12px 12px 16px 0 rgba(0,0,0,.25), -8px -8px 12px 0 rgba(255,255,255,.3);
+      box-shadow: 12px 12px 16px 0 rgb(0,0,0,.25), -8px -8px 12px 0 rgb(255,255,255,.3);
       padding: 1em;
       text-align: center;
       align-items: center;
@@ -77,7 +77,7 @@
         mix-blend-mode: unset;
         background-image: linear-gradient(90deg, rgb(255, 0, 255), rgb(0, 255, 255));
         background-clip: text;
-        color: rgba(0, 0, 0, 0);
+        color: rgb(0, 0, 0, 0);
         width: fit-content;
         margin-bottom: 0.2em;
       }
@@ -89,7 +89,7 @@
       }
 
       p {
-        color: rgba(255, 255, 255, .8);
+        color: rgb(255, 255, 255, .8);
         font-size: 1.4em;
       }
     }

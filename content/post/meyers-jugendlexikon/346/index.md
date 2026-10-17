@@ -19,5 +19,6 @@ resources:
 ---
 
 Seite 346:
+
 * Kegelschnitte, Abb. 3: Hyperbel (ß ist der Winkel zwischen der Schnittebene und der Kegelachse)
 * Kegelstumpf, Abb. 1: h= Höhe, n = großer Radius, r2 = kleiner Radius

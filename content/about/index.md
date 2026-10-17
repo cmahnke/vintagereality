@@ -9,6 +9,7 @@ displayinlist: false
 Dieses Blog zeigt meine Sammlung an dreidimensionalen Inhalten, wie Stereo-Fotographien aus dem späten 18. / frühen 19. Jahrhundert und perspektivisch auch Stereogrammen, .
 
 Jeder Eintrag mit stereoskopischen Bildern beinhaltet die Möglichkeit verschiedene Ansichten anzeigen zu lassen:
+
 * Beide Bilder als animiertes Gif mit schnellem Wechsel (Wackelbild, eng. [Wigglegram](https://en.wikipedia.org/wiki/Wiggle_stereoscopy)).
 * Beide Bilder im JPS (JPEG Stereoscopic) Format (vertauscht - "cross-eyed"). Kann mit [sView](http://www.sview.ru/en/) betrachtet werden.
 * Beide Bilder als [Anaglyphe](https://de.wikipedia.org/wiki/Anaglyph_3D).
@@ -28,6 +29,7 @@ Diese Seite wurde mit [Hugo](https://gohugo.io/) generiert.
 Als Schriftarten kommen [Oxanium](https://github.com/sevmeyer/oxanium), [Fredoka](https://github.com/hafontia-zz/Fredoka-One) und [Tektur](https://github.com/hyvyys/Tektur) zum Einsatz.
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
+
 * [jQuery](https://jquery.com/)
 * [normalize.css](https://necolas.github.io/normalize.css/)
 * [Stickybits](https://dollarshaveclub.github.io/stickybits/)
@@ -38,6 +40,7 @@ Die folgenden JavaScript und CSS Frameworks werden benutzt:
 Die Nachbearbeitung der Digitalisate wurde mit [ScanTailor Advanced](https://github.com/4lex4/scantailor-advanced) durchgeführt.
 
 Für die Nachbearbeitung und Präsentation der Stereobilder wurden die folgenden Bibliotheken / Beispielimplementierungen eingesetzt:
+
 * [OpenCV](https://opencv.org/)
 * [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
 * [JXLPy](https://github.com/olokelo/jxlpy)

@@ -19,6 +19,7 @@ resources:
 ---
 
 Seite 345:
+
 * Kegel, Abb. 1: Gerader Kreiskegel
 * Kegelschnitte, Abb. 1: Kreis und Ellipse
 * Kegel, Abb. 3: Schiefer Kreiskegel

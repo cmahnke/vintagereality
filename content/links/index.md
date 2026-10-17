@@ -9,6 +9,7 @@ Die verlinken Seiten sind hauptsächlich in englischer Sprache.
 # Historische Stereobilder
 
 ## Allgemeine Information
+
 * [St John's College Cambridge: Early 3D images](https://www.joh.cam.ac.uk/library/Early_3D_images) {{< flag "en" >}}
 * [STEREOPI BLOG](https://stereopi.com/blog/art-stereoscopic-photo) {{< flag "en" >}}
 * [Wikipedia: Underwood & Underwood](https://de.wikipedia.org/wiki/Underwood_%26_Underwood) {{< flag "de" >}}

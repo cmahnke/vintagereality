@@ -11,14 +11,13 @@ $red2: rgb(248,229,216);
 
 $heading-font: 'Oxanium Variable', sans-serif;
 $text-font: 'Fredoka Variable', sans-serif;
-$text-color: rgba(255,255,255,.8);
+$text-color: rgb(255,255,255,.8);
 $special-font: 'Tektur Variable';
 @import "npm-fonts/oxanium";
 @import "npm-fonts/fredoka";
 @import "npm-fonts/tektur";
 @import "normalize";
 @import "icons";
-@import "mirador";
 @import "ol-iiif";
 @import "share";
 @import "3d";
@@ -39,8 +38,8 @@ $clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath';
 @import "404";
 
 :root {
-  --cyan: $cyan;
-  --magenta: $magenta;
+  --cyan: #{$cyan};
+  --magenta: #{$magenta};
   /*
   --cyan: #{$cyan};
   --magenta: #{$magenta};
@@ -174,7 +173,7 @@ body {
       font-size: .8em;
 
       .date {
-        color: rgba(255,255,255,.6);
+        color: rgb(255,255,255,.6);
         white-space: nowrap;
 
         @media (max-width: 30em) {
@@ -187,7 +186,7 @@ body {
 
   .section-single {
     .section-content {
-      color: rgba(255,255,255,.6);
+      color: rgb(255,255,255,.6);
     }
 
     .section-content-list {
@@ -215,15 +214,15 @@ body {
 
   .article-list {
     .list-item {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgb(255, 255, 255, 0.2);
       border-radius: 16px;
       /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);*/
       backdrop-filter: blur(5px);
       /* -webkit-backdrop-filter: blur(5px); */
       /*border: 1px solid rgba(255, 255, 255, 0.3);*/
       box-shadow:
-        12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-        -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+        12px 12px 16px 0 rgb(0, 0, 0, 0.25),
+        -8px -8px 12px 0 rgb(255, 255, 255, 0.3);
       flex-direction: column;
       padding: 1em;
       margin-bottom: 2.8em;
@@ -266,7 +265,7 @@ body {
           text-align: end;
           font-size: small;
           margin: .8em 0 1.4em;
-          color: rgba(255,255,255,.6);
+          color: rgb(255,255,255,.6);
         }
       }
 
@@ -332,13 +331,13 @@ body {
 
             path {
               fill: color.adjust(#373f43, $lightness: -7%);
-              stroke: rgba(255,255,255,.3);
+              stroke: rgb(255,255,255,.3);
               stroke-width: 1px;
               transition: all 500ms ease-out;
             }
 
             &:hover path {
-              stroke: rgba(255,255,255,.6);
+              stroke: rgb(255,255,255,.6);
               transition: all 500ms ease-out;
             }
           }

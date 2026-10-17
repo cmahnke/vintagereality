@@ -27,6 +27,5 @@ resources:
 
 Das Bild zeigt einen Abguss einer Gruppe aus den [Farnesische Sammlungen](https://de.wikipedia.org/wiki/Farnesische_Sammlungen) im Apollosaal des [Neuen Museum Berlin](https://de.wikipedia.org/wiki/Neues_Museum_(Berlin)).
 
-
 <!--more-->
 <div class="source">Gefunden im <a href="https://www.facebook.com/vintagebythesea">Vintage Wonderland Hannover</a></div>
