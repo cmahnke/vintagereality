@@ -4,18 +4,18 @@
   </div>
   <div class="header-container">
     <div class="header-logo">
-      <a href="/" title="{{ .Site.Title }}" class="header-link">
-        <img class="header-logo-first logo-part" alt="{{ .Site.Title }}" src="/images/svgs/vintage.svg"/>
+      <a href="/" title="{{ site.Title }}" class="header-link">
+        <img class="header-logo-first logo-part" alt="{{ site.Title }}" src="/images/svgs/vintage.svg"/>
       </a>
       {{- partialCached "glasses-svg.html" . -}}
-      <a href="/" title="{{ .Site.Title }}" class="header-link">
-        <img class="header-logo-second logo-part" alt="{{ .Site.Title }}" src="/images/svgs/reality.svg"/>
+      <a href="/" title="{{ site.Title }}" class="header-link">
+        <img class="header-logo-second logo-part" alt="{{ site.Title }}" src="/images/svgs/reality.svg"/>
       </a>
     </div>
 
     <div class="header-menu lazy-wrap">
       <ul class="header-menu-list">
-        {{- with .Site.Menus.main -}}
+        {{- with site.Menus.main -}}
           {{- range sort . -}}
             {{- if ne (path.Base .URL) "/" -}}
               <li class='menu-item {{ if eq ("/") (.URL) }}menu-item-type-custom menu-item-object-custom{{ else }}menu-item-type-post_type menu-item-object-page{{ end }}'>

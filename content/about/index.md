@@ -30,12 +30,9 @@ Als Schriftarten kommen [Oxanium](https://github.com/sevmeyer/oxanium), [Fredoka
 
 Die folgenden JavaScript und CSS Frameworks werden benutzt:
 
-* [jQuery](https://jquery.com/)
 * [normalize.css](https://necolas.github.io/normalize.css/)
-* [Stickybits](https://dollarshaveclub.github.io/stickybits/)
 * [JS-Cookie](https://github.com/js-cookie/js-cookie)
 * [`three.js`](https://threejs.org/)
-* [`scroll-timeline`](https://github.com/flackr/scroll-timeline)
 
 Die Nachbearbeitung der Digitalisate wurde mit [ScanTailor Advanced](https://github.com/4lex4/scantailor-advanced) durchgeführt.
 
@@ -43,7 +40,7 @@ Für die Nachbearbeitung und Präsentation der Stereobilder wurden die folgenden
 
 * [OpenCV](https://opencv.org/)
 * [Pillow](https://pillow.readthedocs.io/en/stable/index.html)
-* [JXLPy](https://github.com/olokelo/jxlpy)
+* [pyvips](https://libvips.github.io/pyvips/)
 * [PyStereogram](https://github.com/yxiao1996/pystereogram)
 * [StereoscoPy](https://github.com/2sh/StereoscoPy)
 * [`stereo2depth`](https://github.com/pairote/stereo2depth)

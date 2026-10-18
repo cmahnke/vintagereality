@@ -25,6 +25,6 @@
     {{- end -}}
     <div class="link">
       {{- $currentPage := .OutputFormats.Get "html" -}}
-      <a href="{{ $currentPage.RelPermalink }}">{{ i18n "readmore" }}</a>
+      <a href="{{ $currentPage.RelPermalink }}" aria-label="{{ i18n "readmore" }}: {{ .Title }}">{{ i18n "readmore" }}</a>
     </div>
 </div>

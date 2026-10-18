@@ -8,7 +8,7 @@
     {{- range $pages -}}
       <li class="section-content-item"><a title="{{ .Title }}" href="{{ .RelPermalink }}">{{ .Title }}</a></li>
       {{/*
-        {{ range where .Site.Pages "Section" .Section }}
+        {{ range where site.Pages "Section" .Section }}
           {{ partial "list-item.html" . }}
         {{ end }}
       */}}
