@@ -4,7 +4,6 @@
   copyrightYears = "2024 - 2026"
   cc = false
   headerImage = "images/logo/logo.svg"
-  disableScale = true
   favicon = "/images/favicon-32.png"
   wikidata = true
   debug = true
