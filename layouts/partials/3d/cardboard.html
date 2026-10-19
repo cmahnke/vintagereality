@@ -24,6 +24,8 @@
 
 </div>
 <script type="text/javascript">
-  {{ $divName | safeJS }}_Div = document.getElementById("{{ $divName }}");
-  {{ $divName | safeJS }} = addFullScreen({{ $divName | safeJS }}_Div, '{{ printf "/%s" $left }}', '{{ printf "/%s" $right }}');
+  document.addEventListener('DOMContentLoaded', function() {
+    {{ $divName | safeJS }}_Div = document.getElementById("{{ $divName }}");
+    {{ $divName | safeJS }} = addFullScreen({{ $divName | safeJS }}_Div, '{{ printf "/%s" $left }}', '{{ printf "/%s" $right }}');
+  });
 </script>
