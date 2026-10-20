@@ -17,25 +17,25 @@ $special-font: 'Tektur Variable';
 @use "npm-fonts/fredoka";
 @use "npm-fonts/tektur";
 @use "normalize";
-@import "icons";
-@import "ol-iiif";
-@import "share";
-@import "3d";
-@import "tagcloud";
-@import "footer";
+@use "icons";
+@use "ol-iiif";
+@use "share";
+@use "3d" as d3 with ($magenta: $magenta);
+@use "tagcloud" with ($cyan: $cyan);
+@use "footer" with ($special-font: $special-font, $magenta: $magenta, $cyan: $cyan, $magenta-filter: $magenta-filter, $blue: $blue);
 $font-color-body: $text-color;
 $secondary-icon-color: #69c;
 $frame-bg-color: var(--base01);
 $color-body-text: var(white);
 $fullscreen-color: var(--base07);
-@import "menu";
+@use "menu" with ($font-color-body: $font-color-body, $secondary-icon-color: $secondary-icon-color, $frame-bg-color: $frame-bg-color);
 
 /* Site includes */
 $clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath';
-@import "header";
-@import "nav";
-@import "page";
-@import "404";
+@use "header" with ($cyan: $cyan, $magenta: $magenta, $special-font: $special-font, $clipmask: $clipmask);
+@use "nav" with ($special-font: $special-font, $cyan: $cyan, $magenta: $magenta);
+@use "page" with ($text-color: $text-color, $magenta: $magenta, $cyan: $cyan);
+@use "404" as nf with ($heading-font: $heading-font, $magenta: $magenta, $cyan: $cyan, $clipmask: $clipmask);
 
 :root {
   --cyan: #{$cyan};

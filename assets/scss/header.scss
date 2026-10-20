@@ -1,5 +1,10 @@
 @use 'sass:color';
 
+$cyan: rgb(0,255,255) !default;
+$magenta: rgb(255,0,255) !default;
+$special-font: 'Tektur Variable' !default;
+$clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath' !default;
+
 #head {
   position: fixed;
   top: 0;

@@ -1,3 +1,8 @@
+$heading-font: 'Oxanium Variable', sans-serif !default;
+$magenta: rgb(255,0,255) !default;
+$cyan: rgb(0,255,255) !default;
+$clipmask: '/images/svgs/glasses_background-clippath.svg#clipPath' !default;
+
 @keyframes error-glasses {
   0% {
     opacity: .7;

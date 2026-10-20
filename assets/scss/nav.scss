@@ -1,3 +1,9 @@
+@use 'sass:color';
+
+$special-font: 'Tektur Variable' !default;
+$magenta: rgb(255,0,255) !default;
+$cyan: rgb(0,255,255) !default;
+
 /* Pagination */
 nav.paginator {
   font-size: 1.6em;

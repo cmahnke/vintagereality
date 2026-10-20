@@ -1,3 +1,9 @@
+$special-font: 'Tektur Variable' !default;
+$magenta-filter: invert(19%) sepia(100%) saturate(2161%) hue-rotate(285deg) brightness(124%) contrast(147%) !default;
+$magenta: rgb(255,0,255) !default;
+$cyan: rgb(0,255,255) !default;
+$blue: rgb(132,255,255) !default;
+
 .footer {
   font-family: $special-font, sans-serif;
 
