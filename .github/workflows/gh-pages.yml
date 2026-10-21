@@ -87,7 +87,7 @@ jobs:
           find docs -type f -name 'ogPreview-tmp*.jpg' -print -exec rm {} \;
 
       - name: Puppeteer
-        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh
+        run: ./themes/projektemacher-base/scripts/github/check-js-errors.sh -i
 
       - name: Archive links
         run: python ./themes/projektemacher-base/scripts/archive.py -d docs/ -e vintagereality.projektemacher.org,projektemacher.org
