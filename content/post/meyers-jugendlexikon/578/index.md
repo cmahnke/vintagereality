@@ -3,10 +3,11 @@ title: "Seite 578"
 weight: 20
 date: 2024-12-13T12:15:07+02:00
 type: 3d
-subtype: anaglyph
-iiiFlass: page
-iiifContext: http://iiif.io/api/image/2/context.json
-depthmap: false
+params:
+  subtype: anaglyph
+  iiifContext: http://iiif.io/api/image/2/context.json
+  depthmap: false
+  iiiFlass: page
 tags:
 - 3D
 - anaglyph

@@ -1,7 +1,8 @@
 ---
 title: "Über diese Seite"
-metaPage: true
-displayinlist: false
+params:
+  metaPage: true
+  displayinlist: false
 ---
 
 3D Bilder sind keine neue Erfindung - bereits Ende des 19. Jahrhunderts gab es 3D Betrachter...

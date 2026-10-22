@@ -1,7 +1,7 @@
 baseURL = "https://vintagereality.projektemacher.org/"
 locale = "de"
 title = 'Vintage Reality'
-defaultcontentlanguage = "de"
+defaultContentLanguage = "de"
 publishDir = "docs"
 canonifyURLs = true
 disablePathToLower = true

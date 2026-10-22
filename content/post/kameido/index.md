@@ -2,21 +2,22 @@
 title: "Eine alte Brücke, Kameido, Japan"
 date: 2024-07-12T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 139.820750
+    - 35.702203
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Kameido
 - japan
-geojson:
-  coordinates:
-  - 139.820750
-  - 35.702203
 resources:
 - src: "front.jxl"
   name: front

@@ -5,18 +5,19 @@ type: 3d
 outputs:
   - iiif-manifest
   - html
-subtype: stereoscopic
-iiifContext: http://iiif.io/api/image/2/context.json
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 10.02659235098882
+    - 53.53347046375686
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Hamburg
 - germany
-geojson:
-  coordinates:
-  - 10.02659235098882
-  - 53.53347046375686
 resources:
 - src: "front.jpg"
   name: front

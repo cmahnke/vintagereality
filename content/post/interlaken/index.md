@@ -5,8 +5,9 @@ type: 3d
 outputs:
   - iiif-manifest
   - html
-subtype: stereoscopic
-iiifContext: http://iiif.io/api/image/2/context.json
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage

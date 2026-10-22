@@ -2,21 +2,22 @@
 title: "Eisenbahnzug den Pilatus hinaufkletternd. Schweiz"
 date: 2024-06-28T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 8.257711
+    - 46.977496
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Pilatus
 - switzerland
-geojson:
-  coordinates:
-  - 8.257711
-  - 46.977496
 resources:
 - src: "front.jxl"
   name: front

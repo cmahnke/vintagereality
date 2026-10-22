@@ -2,11 +2,16 @@
 title: "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen"
 date: 2024-05-10T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 31.137557
+    - 29.975316
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
@@ -14,10 +19,6 @@ tags:
 - Sphinx
 - giza
 - egypt
-geojson:
-  coordinates:
-  - 31.137557
-  - 29.975316
 resources:
 - src: "front.jxl"
   name: front

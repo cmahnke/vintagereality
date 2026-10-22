@@ -2,11 +2,12 @@
 title: "Eine Straße japanischer Theater, Osaka, Japan"
 date: 2024-04-17T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage

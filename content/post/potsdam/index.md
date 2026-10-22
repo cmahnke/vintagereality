@@ -2,21 +2,22 @@
 title: "Potsdam Babelsberg"
 date: 2025-01-24T17:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+      - 13.0932496
+      - 52.4081354
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Potsdam
 - germany
-geojson:
-  coordinates:
-    - 13.0932496
-    - 52.4081354
 resources:
 - src: "front.jxl"
   name: front

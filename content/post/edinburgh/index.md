@@ -2,21 +2,22 @@
 title: "Calton Jail Edinburgh"
 date: 2024-03-22T17:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - -3.1873873
+    - 55.9531559
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Edinburgh
 - uk
-geojson:
-  coordinates:
-  - -3.1873873
-  - 55.9531559
 resources:
 - src: "front.jpg"
   name: front

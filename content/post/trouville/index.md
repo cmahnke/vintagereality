@@ -2,21 +2,22 @@
 title: "Trouville-sur-Mer"
 date: 2024-02-02T17:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 0.08650350370885652
+    - 49.37426731751075
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Trouville-sur-Mer
 - france
-geojson:
-  coordinates:
-  - 0.08650350370885652
-  - 49.37426731751075
 resources:
 - src: "front.jpg"
   name: front

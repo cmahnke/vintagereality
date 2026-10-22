@@ -2,21 +2,22 @@
 title: "Die eisigen Höhen des Mont Blanc von Le Brévent aus gesehen"
 date: 2024-06-07T08:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 6.864325
+    - 45.832544
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - Mont Blanc
 - france
-geojson:
-  coordinates:
-  - 6.864325
-  - 45.832544
 resources:
 - src: "front.jxl"
   name: front

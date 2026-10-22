@@ -2,21 +2,22 @@
 title: "Empfangssaal des Maharajah von Tangore in Calcutta, Indien"
 date: 2024-04-26T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 88.360145
+    - 22.582290
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - calcutta
 - india
-geojson:
-  coordinates:
-  - 88.360145
-  - 22.582290
 resources:
 - src: "front.jxl"
   name: front

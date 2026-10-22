@@ -2,21 +2,22 @@
 title: "Salon in the harem of a Mohammedan Pasha, Damascus"
 date: 2024-03-29T22:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 36.307778
+    - 33.507500
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - stereoscopicimage
 - photo
 - damascus
 - syria
-geojson:
-  coordinates:
-  - 36.307778
-  - 33.507500
 resources:
 - src: "front.jxl"
   name: front

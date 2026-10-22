@@ -1,7 +1,8 @@
 ---
 title: "Autostereogramme"
 date: 2022-12-31T12:15:07+02:00
-subtype: autostereogram
+params:
+  subtype: autostereogram
 tags:
 - 3D
 draft: true

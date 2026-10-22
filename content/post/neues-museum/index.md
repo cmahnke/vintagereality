@@ -2,11 +2,16 @@
 title: "Neues Museum - Gruppe des farnesischen Stiers"
 date: 2024-02-09T17:15:07+02:00
 type: 3d
-subtype: stereoscopic
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - 13.3976604
+    - 52.5199828
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - 3D
 - Museum
@@ -14,10 +19,6 @@ tags:
 - photo
 - Berlin
 - Germany
-geojson:
-  coordinates:
-  - 13.3976604
-  - 52.5199828
 resources:
 - src: "front.jxl"
   name: front

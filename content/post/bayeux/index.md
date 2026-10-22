@@ -2,8 +2,13 @@
 title: "Kathedrale von Bayeux"
 date: 2024-03-01T17:15:07+02:00
 type: 3d
-subtype: stereoscopic
-iiifContext: http://iiif.io/api/image/2/context.json
+params:
+  subtype: stereoscopic
+  iiifContext: http://iiif.io/api/image/2/context.json
+  geojson:
+    coordinates:
+    - -0.7042948865940065
+    - 49.27527588969518
 tags:
 - 3D
 - stereoscopicimage
@@ -13,10 +18,6 @@ tags:
 outputs:
   - iiif-manifest
   - html
-geojson:
-  coordinates:
-  - -0.7042948865940065
-  - 49.27527588969518
 resources:
 - src: "front.jpg"
   name: front

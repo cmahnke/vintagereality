@@ -1,11 +1,12 @@
 ---
 title: 3D Postkate Halle / Saale
 date: 2026-02-26T12:15:00+02:00
-iiifClass: page
+params:
+  iiifClass: page
+  iiifContext: http://iiif.io/api/image/2/context.json
 outputs:
   - iiif-manifest
   - html
-iiifContext: http://iiif.io/api/image/2/context.json
 tags:
 - Postcard
 - germany
