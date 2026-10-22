@@ -12,6 +12,8 @@ theme = ["projektemacher-base"]
 enableGitInfo = true
 timeout = "180s"
 
+enableRobotsTXT = true
+
 [pagination]
   pagerSize = 7
 
@@ -145,7 +147,7 @@ timeout = "180s"
                 '^application/ld\+json;charset=[uU][tT][fF]-8$',
                 '^application/sparql-results\+json;\s?charset=[uU][tT][fF]-8$',
                 '^application/sparql-results\+json$']
-    urls = ['^https://query.wikidata.org/.*', 'https://www.wikidata.org', '^https://(en|de)\.wikipedia\.org/.*', '^https://christianmahnke.de/*']
+    urls = ['^https://query.wikidata.org/.*', 'https://www.wikidata.org', '^https://(en|de)\.wikipedia\.org/.*', '^https://christianmahnke.de/*', '^https://static\.projektemacher\.org/.*']
 
 [caches]
   [caches.assets]
@@ -157,3 +159,6 @@ timeout = "180s"
 
 [params.js]
   format = "esm"
+
+[params.robots]
+  llmsTXT = true
