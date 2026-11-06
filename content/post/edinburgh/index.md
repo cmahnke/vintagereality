@@ -1,7 +1,6 @@
 ---
 title: "Calton Jail Edinburgh"
 date: 2024-03-22T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - -3.1873873
     - 55.9531559
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

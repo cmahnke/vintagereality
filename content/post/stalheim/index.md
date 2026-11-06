@@ -1,7 +1,6 @@
 ---
 title: "Stalheims Hotel und das herrliche Naerödal. Norwegen"
 date: 2024-04-12T22:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 6.682095
     - 60.835248
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

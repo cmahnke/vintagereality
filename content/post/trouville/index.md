@@ -1,7 +1,6 @@
 ---
 title: "Trouville-sur-Mer"
 date: 2024-02-02T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 0.08650350370885652
     - 49.37426731751075
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

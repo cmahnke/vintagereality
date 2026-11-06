@@ -2,11 +2,11 @@
 title: "Seite 683"
 weight: 22
 date: 2024-12-27T12:15:07+02:00
-type: 3d
 params:
   subtype: anaglyph
   iiifClass: page
   iiifContext: http://iiif.io/api/image/2/context.json
+  itemType: 3d
 tags:
 - 3D
 - anaglyph

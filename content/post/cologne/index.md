@@ -1,7 +1,6 @@
 ---
 title: "Kölner Dom"
 date: 2025-01-03T22:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 6.961417
     - 50.9422754
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

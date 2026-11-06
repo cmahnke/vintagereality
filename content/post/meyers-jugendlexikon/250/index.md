@@ -2,11 +2,11 @@
 title: "Seite 250"
 weight: 8
 date: 2024-09-20T12:15:07+02:00
-type: 3d
 params:
   subtype: anaglyph
   iiifClass: page
   iiifContext: http://iiif.io/api/image/2/context.json
+  itemType: 3d
 tags:
 - 3D
 - anaglyph

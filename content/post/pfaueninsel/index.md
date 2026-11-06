@@ -1,7 +1,6 @@
 ---
 title: "Pfaueninsel"
 date: 2025-04-02T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 13.128029
     - 52.433951
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

@@ -2,12 +2,12 @@
 title: "Innenseite Verso"
 weight: 2
 date: 2026-03-05T12:15:07+02:00
-type: 3d
 params:
   subtype: anaglyph
   iiifClass: page
   iiifContext: http://iiif.io/api/image/2/context.json
   depthmap: false
+  itemType: 3d
 tags:
 - 3D
 - drawing

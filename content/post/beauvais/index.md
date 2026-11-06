@@ -1,7 +1,6 @@
 ---
 title: "Bischofspalast Beauvais"
 date: 2024-03-08T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 2.080874978937397
     - 49.43219880014176
+  itemType: 3d
 tags:
 - 3D
 - stereoscopicimage

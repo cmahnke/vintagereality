@@ -1,7 +1,6 @@
 ---
 title: "Louvre Paris"
 date: 2024-02-16T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 2.3346566
     - 48.8599137
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

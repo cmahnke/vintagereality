@@ -1,4 +1,4 @@
-{{ $class := .Params.type }}
+{{ $class := .Params.itemType }}
 {{- if eq $class "3d" -}}
   {{- $class = printf "_%s" $class -}}
 {{- end -}}

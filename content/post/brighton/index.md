@@ -1,7 +1,6 @@
 ---
 title: "Ein Sommertag am Strade von Brighton. England"
 date: 2024-04-05T08:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - -0.153248
     - 50.821254
+  itemType: 3d
 tags:
 - 3D
 - stereoscopicimage

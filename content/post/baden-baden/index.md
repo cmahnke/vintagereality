@@ -1,7 +1,6 @@
 ---
 title: "Trinkhalle Baden-Baden"
 date: 2025-01-10T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 8.2368503
     - 48.7623869
+  itemType: 3d
 tags:
 - 3D
 - stereoscopicimage

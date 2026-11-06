@@ -1,7 +1,6 @@
 ---
 title: "Eine alte Brücke, Kameido, Japan"
 date: 2024-07-12T22:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 139.820750
     - 35.702203
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

@@ -2,11 +2,11 @@
 title: "Seite 422"
 weight: 16
 date: 2024-11-15T12:15:07+02:00
-type: 3d
 params:
   subtype: anaglyph
   iiifClass: page
   iiifContext: http://iiif.io/api/image/2/context.json
+  itemType: 3d
 tags:
 - 3D
 - anaglyph

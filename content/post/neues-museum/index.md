@@ -1,7 +1,6 @@
 ---
 title: "Neues Museum - Gruppe des farnesischen Stiers"
 date: 2024-02-09T17:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 13.3976604
     - 52.5199828
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html

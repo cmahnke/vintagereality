@@ -1,7 +1,6 @@
 ---
 title: "Neue Elbbrücke Hamburg"
 date: 2024-02-23T17:15:07+02:00
-type: 3d
 outputs:
   - iiif-manifest
   - html
@@ -12,6 +11,7 @@ params:
     coordinates:
     - 10.02659235098882
     - 53.53347046375686
+  itemType: 3d
 tags:
 - 3D
 - stereoscopicimage

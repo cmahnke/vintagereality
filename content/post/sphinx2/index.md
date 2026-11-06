@@ -1,7 +1,6 @@
 ---
 title: "Der große Sphinx von Gizeh. Ägypten"
 date: 2024-07-05T22:15:07+02:00
-type: 3d
 params:
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
@@ -9,6 +8,7 @@ params:
     coordinates:
     - 31.137557
     - 29.975316
+  itemType: 3d
 outputs:
   - iiif-manifest
   - html
