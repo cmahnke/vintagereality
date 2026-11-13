@@ -2,6 +2,11 @@
 title: "Potsdam Babelsberg"
 date: 2025-01-24T17:15:07+02:00
 params:
+  place:
+  - Babelsberg
+  - Potsdam
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q797635
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

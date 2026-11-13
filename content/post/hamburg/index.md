@@ -5,6 +5,11 @@ outputs:
   - iiif-manifest
   - html
 params:
+  place:
+  - Neue Elbbrücke
+  - Hamburg
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q1572999
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

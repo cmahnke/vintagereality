@@ -2,6 +2,11 @@
 title: "Kathedrale von Bayeux"
 date: 2024-03-01T17:15:07+02:00
 params:
+  place:
+  - Kathedrale von Bayeux
+  - Bayeux
+  - Frankreich
+  wikidata: https://www.wikidata.org/wiki/Q1636244
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

@@ -2,6 +2,10 @@
 title: "General View, Niagara Falls, N.Y., U.S.A."
 date: 2024-05-31T22:15:07+02:00
 params:
+  place:
+  - Niagarafälle
+  - Vereinigte Staaten
+  wikidata: https://www.wikidata.org/wiki/Q34221
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

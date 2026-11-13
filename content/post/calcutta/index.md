@@ -2,6 +2,10 @@
 title: "Empfangssaal des Maharajah von Tangore in Calcutta, Indien"
 date: 2024-04-26T22:15:07+02:00
 params:
+  place:
+  - Kolkata (Calcutta)
+  - Indien
+  wikidata: https://www.wikidata.org/wiki/Q1348
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

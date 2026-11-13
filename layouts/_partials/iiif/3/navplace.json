@@ -1,0 +1,55 @@
+{{- /*
+  Site-local override of the theme's iiif/3/navplace.json: the navPlace
+  feature's empty `properties` object is filled with the page's most specific
+  place entity, read from `params.wikidata` (the theme's wiki URL form,
+  e.g. `https://www.wikidata.org/wiki/Q4176`, converted to the entity URI
+  form here). Everything else - kind and Presentation 3 checks, the
+  coordinates validation, the geometry and the generated ids - is identical
+  to the theme's version.
+
+  Expects a dict with the page ("page") and the manifest id ("id").
+*/ -}}
+{{- $page := .page -}}
+{{- if ne $page.Kind "page" -}}
+  {{- return nil -}}
+{{- end -}}
+{{- $version := partial "functions/iiif/presentation-version.html" $page -}}
+{{- if ne $version 3 -}}
+  {{- return nil -}}
+{{- end -}}
+{{- if not (reflect.IsMap $page.Params.geojson) -}}
+  {{- return nil -}}
+{{- end -}}
+{{- $geojson := $page.Params.geojson -}}
+{{- with index $geojson "coordinates" -}}
+{{- else -}}
+  {{- errorf "[iiif/3/navplace.json] params.geojson without coordinates for %s" $page.RelPermalink -}}
+{{- end -}}
+
+{{- $geometry := dict "type" "Point" -}}
+{{- with index $geojson "type" -}}
+  {{- $geometry = $geometry | merge (dict "type" .) -}}
+{{- end -}}
+{{- $geometry = $geometry | merge (dict "coordinates" (index $geojson "coordinates")) -}}
+
+{{- /* Most specific place entity from the theme's `params.wikidata` convention */ -}}
+{{- $properties := dict -}}
+{{- with $page.Params.wikidata -}}
+  {{- $entity := replaceRE `^https?://www\.wikidata\.org/wiki/` "" (printf "%v" .) -}}
+  {{- if $entity -}}
+    {{- $properties = dict "wikidata" (slice (printf "http://www.wikidata.org/entity/%s" $entity)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $manifestId := printf "%v" .id -}}
+{{- $featureCollection := dict
+  "id" (printf "%s#navplace" $manifestId)
+  "type" "FeatureCollection"
+  "features" (slice (dict
+    "id" (printf "%s#navplace-feature" $manifestId)
+    "type" "Feature"
+    "properties" $properties
+    "geometry" $geometry
+  ))
+-}}
+{{- return $featureCollection -}}

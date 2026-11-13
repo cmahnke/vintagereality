@@ -5,6 +5,10 @@ outputs:
   - iiif-manifest
   - html
 params:
+  place:
+  - Interlaken
+  - Schweiz
+  wikidata: https://www.wikidata.org/wiki/Q68103
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   itemType: 3d

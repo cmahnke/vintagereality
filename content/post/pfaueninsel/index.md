@@ -2,6 +2,11 @@
 title: "Pfaueninsel"
 date: 2025-04-02T17:15:07+02:00
 params:
+  place:
+  - Pfaueninsel
+  - Berlin
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q677973
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

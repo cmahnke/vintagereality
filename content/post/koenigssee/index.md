@@ -2,6 +2,10 @@
 title: "Königssee"
 date: 2025-01-17T17:15:07+02:00
 params:
+  place:
+  - Königssee
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q156715
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

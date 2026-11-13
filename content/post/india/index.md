@@ -5,6 +5,9 @@ outputs:
   - iiif-manifest
   - html
 params:
+  place:
+  - Indien
+  wikidata: https://www.wikidata.org/wiki/Q668
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   itemType: 3d

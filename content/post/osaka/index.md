@@ -2,6 +2,10 @@
 title: "Eine Straße japanischer Theater, Osaka, Japan"
 date: 2024-04-17T22:15:07+02:00
 params:
+  place:
+  - Osaka
+  - Japan
+  wikidata: https://www.wikidata.org/wiki/Q35765
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   itemType: 3d

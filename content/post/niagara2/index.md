@@ -2,6 +2,10 @@
 title: "Unterhalb des Niagara-Falles mitten im Winter V. St. v. N.-A."
 date: 2024-07-19T22:15:07+02:00
 params:
+  place:
+  - Niagarafälle
+  - Vereinigte Staaten
+  wikidata: https://www.wikidata.org/wiki/Q34221
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

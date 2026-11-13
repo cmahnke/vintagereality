@@ -2,6 +2,11 @@
 title: "Calton Jail Edinburgh"
 date: 2024-03-22T17:15:07+02:00
 params:
+  place:
+  - Calton Jail
+  - Edinburgh
+  - Vereinigtes Königreich
+  wikidata: https://www.wikidata.org/wiki/Q136763249
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

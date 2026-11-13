@@ -2,6 +2,11 @@
 title: "Kölner Dom"
 date: 2025-01-03T22:15:07+02:00
 params:
+  place:
+  - Kölner Dom
+  - Köln
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q4176
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

@@ -2,6 +2,11 @@
 title: "Trinkhalle Baden-Baden"
 date: 2025-01-10T17:15:07+02:00
 params:
+  place:
+  - Trinkhalle Baden-Baden
+  - Baden-Baden
+  - Deutschland
+  wikidata: https://www.wikidata.org/wiki/Q2453648
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

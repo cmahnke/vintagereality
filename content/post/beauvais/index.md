@@ -2,6 +2,11 @@
 title: "Bischofspalast Beauvais"
 date: 2024-03-08T17:15:07+02:00
 params:
+  place:
+  - Bischofspalast
+  - Beauvais
+  - Frankreich
+  wikidata: https://www.wikidata.org/wiki/Q3330521
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

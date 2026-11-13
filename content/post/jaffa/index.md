@@ -2,6 +2,11 @@
 title: "Eine Karawane von Kamelen bei Jaffa, Palästina"
 date: 2024-06-14T22:15:07+02:00
 params:
+  place:
+  - Jaffa
+  - Israel
+  - Palästina
+  wikidata: https://www.wikidata.org/wiki/Q180294
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   itemType: 3d

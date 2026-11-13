@@ -1,0 +1,56 @@
+{{- /*
+  Site-local override of the theme's iiif/3/metadata-place.json (see
+  "IIIF manifest: place and year metadata from tag terms" in the theme's
+  Upgrade.md): this site carries its place information per post instead of on
+  tag term pages - most place tags would be singular, so the tag based lookup
+  was replaced.
+
+  Changes against the theme's version:
+  - "Place" is built from the page's `params.place` front matter, a string or
+    slice of names ordered landmark first. The labels keep the theme's i18n
+    keys, values are IIIF language maps in the site language.
+  - The per-term "Year" entry was dropped, this site has no per-place years.
+  - The "Address" and "Coordinates" blocks are identical to the theme's.
+
+  Everything is optional: only entries with data are returned. Kinds other
+  than page return an empty slice, so section manifests stay untouched.
+*/ -}}
+
+{{- if ne .Kind "page" -}}
+  {{- return slice -}}
+{{- end -}}
+
+{{- $metadata := slice -}}
+
+{{- /* Place names from the page's `params.place` front matter */ -}}
+{{- with .Params.place -}}
+  {{- $names := slice -}}
+  {{- if reflect.IsSlice . -}}
+    {{- range $name := . -}}
+      {{- $names = $names | append (printf "%v" $name) -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $names = slice (printf "%v" .) -}}
+  {{- end -}}
+  {{- with $names -}}
+    {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifPlace"))) "value" (dict site.Language.Lang $names)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- with .Params.address -}}
+  {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifAddress"))) "value" (dict "none" (slice (printf "%v" .)))) -}}
+{{- end -}}
+
+{{- with .Params.geojson -}}
+  {{- $geometryType := "Point" -}}
+  {{- with index . "type" -}}
+    {{- $geometryType = . -}}
+  {{- end -}}
+  {{- if eq $geometryType "Point" -}}
+    {{- with index . "coordinates" -}}
+      {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifCoordinates"))) "value" (dict "none" (slice (printf "%v, %v" (index . 0) (index . 1))))) -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- return $metadata -}}

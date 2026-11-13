@@ -2,6 +2,10 @@
 title: "Salon in the harem of a Mohammedan Pasha, Damascus"
 date: 2024-03-29T22:15:07+02:00
 params:
+  place:
+  - Damaskus
+  - Syrien
+  wikidata: https://www.wikidata.org/wiki/Q3766
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

@@ -2,6 +2,11 @@
 title: "Louvre Paris"
 date: 2024-02-16T17:15:07+02:00
 params:
+  place:
+  - Louvre
+  - Paris
+  - Frankreich
+  wikidata: https://www.wikidata.org/wiki/Q1075988
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

@@ -2,6 +2,11 @@
 title: "Georgetown Loop Railroad - Colorado"
 date: 2024-03-15T17:15:07+02:00
 params:
+  place:
+  - Georgetown Loop Railroad
+  - Colorado
+  - Vereinigte Staaten
+  wikidata: https://www.wikidata.org/wiki/Q5547027
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

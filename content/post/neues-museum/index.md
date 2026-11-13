@@ -2,6 +2,10 @@
 title: "Neues Museum - Gruppe des farnesischen Stiers"
 date: 2024-02-09T17:15:07+02:00
 params:
+  place:
+  - Neues Museum
+  - Berlin
+  wikidata: https://www.wikidata.org/wiki/Q157316
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

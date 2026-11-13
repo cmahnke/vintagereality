@@ -2,6 +2,11 @@
 title: "Milan from its Cathedral Spires, Italy"
 date: 2024-05-03T22:15:07+02:00
 params:
+  place:
+  - Mailänder Dom
+  - Mailand
+  - Italien
+  wikidata: https://www.wikidata.org/wiki/Q18068
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

@@ -2,6 +2,11 @@
 title: "Der Sphinx und die größte Pyramide von den Ruinen des Tempels aus gesehen"
 date: 2024-05-10T22:15:07+02:00
 params:
+  place:
+  - Große Sphinx von Gizeh
+  - Gizeh
+  - Ägypten
+  wikidata: https://www.wikidata.org/wiki/Q130958
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:

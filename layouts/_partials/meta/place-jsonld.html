@@ -1,0 +1,40 @@
+{{- /*
+  schema.org JSON-LD for the place a post depicts: a Place node with the
+  most specific name from `params.place` (first entry), the Wikidata entity
+  URI from `params.wikidata` (the theme's wiki URL form,
+  `https://www.wikidata.org/wiki/Q…`, normalized to the entity form) as
+  `sameAs`, and GeoCoordinates derived from the page's
+  `params.geojson.coordinates` (GeoJSON order, longitude first). Rendered as
+  a separate ld+json script in the document head; pages without place data
+  emit nothing.
+*/ -}}
+{{- if ne .Kind "page" -}}
+  {{- return -}}
+{{- end -}}
+{{- $name := "" -}}
+{{- with .Params.place -}}
+  {{- if reflect.IsSlice . -}}
+    {{- with index . 0 -}}
+      {{- $name = printf "%v" . -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $name = printf "%v" . -}}
+  {{- end -}}
+{{- end -}}
+{{- if eq $name "" -}}
+  {{- return -}}
+{{- end -}}
+{{- $place := dict "@context" "https://schema.org" "@type" "Place" "name" $name -}}
+{{- with .Params.wikidata -}}
+  {{- $entity := replaceRE `^https?://www\.wikidata\.org/wiki/` "" (printf "%v" .) -}}
+  {{- if $entity -}}
+    {{- $place = $place | merge (dict "sameAs" (printf "http://www.wikidata.org/entity/%s" $entity)) -}}
+  {{- end -}}
+{{- end -}}
+{{- with .Params.geojson -}}
+  {{- with index . "coordinates" -}}
+    {{- $geo := dict "@type" "GeoCoordinates" "longitude" (index . 0) "latitude" (index . 1) -}}
+    {{- $place = $place | merge (dict "geo" $geo) -}}
+  {{- end -}}
+{{- end -}}
+<script type="application/ld+json">{{ $place | jsonify | safeJS }}</script>

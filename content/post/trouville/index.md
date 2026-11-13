@@ -2,6 +2,10 @@
 title: "Trouville-sur-Mer"
 date: 2024-02-02T17:15:07+02:00
 params:
+  place:
+  - Trouville-sur-Mer
+  - Frankreich
+  wikidata: https://www.wikidata.org/wiki/Q272320
   subtype: stereoscopic
   iiifContext: http://iiif.io/api/image/2/context.json
   geojson:
