@@ -10,21 +10,24 @@
   useragent = "HugoBot/1.0 (https://vintagereality.projektemacher.org/; User:CMahnke)"
   schemaPerson = "https://christianmahnke.de/person.jsonld"
 
-  [params.preview]
-    outputPrefix = "ogPreview"
-    outputSuffix = ".jpg"
-    format =  "svg"
-    image = "front.jpg"
-    source = "post"
+[params.preview]
+  outputPrefix = "ogPreview"
+  outputSuffix = ".jpg"
+  format =  "svg"
+  image = "front.jpg"
+  source = "post"
 
-    [params.preview.size]
-      height = 630
-      width = 1200
+[params.preview.size]
+  height = 630
+  width = 1200
 
-    [params.preview.svg]
-      template = "./Source Files/Other/preview-template.svg"
-      scale = "width"
-      removeMissing = true
+[params.preview.svg]
+  template = "./Source Files/Other/preview-template.svg"
+  scale = "width"
+  removeMissing = true
+
+#[params.iiif]
+#  defaultBehavior = "individuals"
 
 #    [params.footer]
 #      privacy = true

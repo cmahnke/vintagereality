@@ -8,7 +8,8 @@
   Changes against the theme's version:
   - "Place" is built from the page's `params.place` front matter, a string or
     slice of names ordered landmark first. The labels keep the theme's i18n
-    keys, values are IIIF language maps in the site language.
+    keys (built by functions/iiif/i18n-label.html, one entry per site
+    language), values are IIIF language maps in the site language.
   - The per-term "Year" entry was dropped, this site has no per-place years.
   - The "Address" and "Coordinates" blocks are identical to the theme's.
 
@@ -33,12 +34,12 @@
     {{- $names = slice (printf "%v" .) -}}
   {{- end -}}
   {{- with $names -}}
-    {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifPlace"))) "value" (dict site.Language.Lang $names)) -}}
+    {{- $metadata = $metadata | append (dict "label" (partial "functions/iiif/i18n-label.html" (dict "key" "iiifPlace")) "value" (dict site.Language.Lang $names)) -}}
   {{- end -}}
 {{- end -}}
 
 {{- with .Params.address -}}
-  {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifAddress"))) "value" (dict "none" (slice (printf "%v" .)))) -}}
+  {{- $metadata = $metadata | append (dict "label" (partial "functions/iiif/i18n-label.html" (dict "key" "iiifAddress")) "value" (dict "none" (slice (printf "%v" .)))) -}}
 {{- end -}}
 
 {{- with .Params.geojson -}}
@@ -48,7 +49,7 @@
   {{- end -}}
   {{- if eq $geometryType "Point" -}}
     {{- with index . "coordinates" -}}
-      {{- $metadata = $metadata | append (dict "label" (dict site.Language.Lang (slice (i18n "iiifCoordinates"))) "value" (dict "none" (slice (printf "%v, %v" (index . 0) (index . 1))))) -}}
+      {{- $metadata = $metadata | append (dict "label" (partial "functions/iiif/i18n-label.html" (dict "key" "iiifCoordinates")) "value" (dict "none" (slice (printf "%v, %v" (index . 0) (index . 1))))) -}}
     {{- end -}}
   {{- end -}}
 {{- end -}}
